@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPizzaria", "ProjetoPizzaria\ProjetoPizzaria.csproj", "{DAC47BBC-7143-4788-9EDD-1C8A12727601}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Apresentacao", "1.Apresentacao", "{C7E1E592-DEDE-4786-A579-3B955EE8FC43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAC47BBC-7143-4788-9EDD-1C8A12727601} = {C7E1E592-DEDE-4786-A579-3B955EE8FC43}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92C4E7ED-F6F6-41B4-A057-0455EB949479}
+	EndGlobalSection
+EndGlobal
