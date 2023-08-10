@@ -47,12 +47,14 @@
             label9 = new Label();
             label10 = new Label();
             panel1 = new Panel();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             label11 = new Label();
             maskedTextBox1 = new MaskedTextBox();
             maskedTextBox2 = new MaskedTextBox();
+            button2 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -215,16 +217,16 @@
             panel1.TabIndex = 21;
             panel1.Paint += panel1_Paint;
             // 
-            // radioButton1
+            // radioButton3
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(18, 53);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(94, 19);
+            radioButton3.TabIndex = 2;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "radioButton3";
+            radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -237,16 +239,16 @@
             radioButton2.Text = "radioButton2";
             radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton1
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(18, 53);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(94, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(18, 3);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(94, 19);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -273,11 +275,33 @@
             maskedTextBox2.Size = new Size(105, 23);
             maskedTextBox2.TabIndex = 24;
             // 
+            // button2
+            // 
+            button2.DialogResult = DialogResult.Cancel;
+            button2.Location = new Point(486, 420);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 41);
+            button2.TabIndex = 26;
+            button2.Text = "Cancelar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.DialogResult = DialogResult.OK;
+            button1.Location = new Point(405, 420);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 41);
+            button1.TabIndex = 25;
+            button1.Text = "Cadastrar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // TelaFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(586, 399);
+            ClientSize = new Size(586, 473);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(maskedTextBox2);
             Controls.Add(maskedTextBox1);
             Controls.Add(label11);
@@ -335,5 +359,7 @@
         private Label label11;
         private MaskedTextBox maskedTextBox1;
         private MaskedTextBox maskedTextBox2;
+        private Button button2;
+        private Button button1;
     }
 }
