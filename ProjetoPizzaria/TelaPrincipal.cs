@@ -1,4 +1,6 @@
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.ModuloCep;
+using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
 using ProjetoPizzaria.ModuloProdutos;
 
@@ -60,7 +62,9 @@ namespace ProjetoPizzaria
 
         private void cepToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCep();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,32 +76,44 @@ namespace ProjetoPizzaria
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void igredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void valoresPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlador = new ControladorCliente();
 
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
