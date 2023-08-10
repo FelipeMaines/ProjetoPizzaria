@@ -1,4 +1,5 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.ModuloValores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace ProjetoPizzaria.ModuloSabor
 {
     public class ControladorSabores : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private TabelaSabores tabelaSabores;
+        public override string ToolTipInserir => "Cadastrar Sabores";
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        public override string ToolTipEditar => "Editar Sabores";
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public override string ToolTipExcluir => "Excluir Sabores";
 
         public override void CarregarItens()
         {
@@ -32,17 +34,22 @@ namespace ProjetoPizzaria.ModuloSabor
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            var telaValoresForm = new TelaSaborForm();
+
+            telaValoresForm.ShowDialog();
         }
 
         public override UserControl ObterTabela()
         {
-            throw new NotImplementedException();
+            if(tabelaSabores == null)
+                tabelaSabores = new TabelaSabores();
+
+            return tabelaSabores;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Sabores";
         }
     }
 }

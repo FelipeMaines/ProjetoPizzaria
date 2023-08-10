@@ -9,11 +9,11 @@ namespace ProjetoPizzaria.ModuloPedidos
 {
     public class ControladorPedidos : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        public override string ToolTipInserir => "Cadastr de Pedidos";
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        public override string ToolTipEditar => "Editar Pedidos";
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public override string ToolTipExcluir => "Excluir Pedidos";
 
         public override void CarregarItens()
         {
@@ -42,7 +42,7 @@ namespace ProjetoPizzaria.ModuloPedidos
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Pedidos";
         }
     }
 }

@@ -9,11 +9,12 @@ namespace ProjetoPizzaria.ModuloValores
 {
     public class ControladorValores : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private TabelaValores tabelaValores;
+        public override string ToolTipInserir => "Cadastrar Valores";
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        public override string ToolTipEditar => "Editar Valores";
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public override string ToolTipExcluir => "Excluir Valores";
 
         public override void CarregarItens()
         {
@@ -32,17 +33,22 @@ namespace ProjetoPizzaria.ModuloValores
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            TelaValorForm telaValoresForm = new TelaValorForm();
+
+            telaValoresForm.ShowDialog();
         }
 
         public override UserControl ObterTabela()
         {
-            throw new NotImplementedException();
+            if (tabelaValores == null)
+                tabelaValores = new TabelaValores();
+
+            return tabelaValores;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Valores";
         }
     }
 }

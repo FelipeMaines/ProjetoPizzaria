@@ -1,6 +1,6 @@
 ﻿namespace ProjetoPizzaria.ModuloCep
 {
-    partial class tabela
+    partial class TabelaCep
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,16 +39,16 @@
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
             grid.RowTemplate.Height = 25;
-            grid.Size = new Size(389, 316);
+            grid.Size = new Size(404, 378);
             grid.TabIndex = 0;
             // 
-            // tabela
+            // TabelaCep
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
-            Name = "tabela";
-            Size = new Size(389, 316);
+            Name = "TabelaCep";
+            Size = new Size(404, 378);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

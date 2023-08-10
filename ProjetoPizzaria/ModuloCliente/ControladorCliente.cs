@@ -9,11 +9,12 @@ namespace ProjetoPizzaria.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private TabelaCliente tabelaCliente;
+        public override string ToolTipInserir => "Cadastrar Cliente";
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        public override string ToolTipEditar => "Editar Cliente";
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public override string ToolTipExcluir => "Excluir Cliente";
 
         public override void CarregarItens()
         {
@@ -32,17 +33,22 @@ namespace ProjetoPizzaria.ModuloCliente
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            TelaClienteForm telaCliente = new TelaClienteForm();
+
+            telaCliente.ShowDialog();
         }
 
         public override UserControl ObterTabela()
         {
-            throw new NotImplementedException();
+            if (tabelaCliente == null)
+                this.tabelaCliente = new TabelaCliente();
+
+            return tabelaCliente;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Clientes";
         }
     }
 }

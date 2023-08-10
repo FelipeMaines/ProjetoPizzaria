@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoPizzaria.ModuloCep
 {
-    public partial class tabela : UserControl
+    public partial class TabelaCep : UserControl
     {
-        public tabela()
+        public TabelaCep()
         {
             InitializeComponent();
         }

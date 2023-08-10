@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoPizzaria.ModuloIgrediente
+namespace ProjetoPizzaria.ModuloValores
 {
-    public partial class CadastroIgredienteForm : Form
+    public partial class TelaValorForm : Form
     {
-        public CadastroIgredienteForm()
+        public TelaValorForm()
         {
             InitializeComponent();
         }

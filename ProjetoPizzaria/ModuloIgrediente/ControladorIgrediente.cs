@@ -1,4 +1,6 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.ModuloProdutos;
+using ProjetoPizzaria.ModuloSabor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,12 @@ namespace ProjetoPizzaria.ModuloIgrediente
 {
     public class ControladorIgrediente : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private TabelaIgredientes tabelaIgredientes;
+        public override string ToolTipInserir => "Cadastrar Igrediente";
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        public override string ToolTipEditar => "Editar Igrediente";
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public override string ToolTipExcluir => "Excluir Igrediente";
 
         public override void CarregarItens()
         {
@@ -32,17 +35,22 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            var telaIgrediente = new TelaIgredienteForm();
+
+            telaIgrediente.ShowDialog();
         }
 
         public override UserControl ObterTabela()
         {
-            throw new NotImplementedException();
+            if (tabelaIgredientes == null)
+                tabelaIgredientes = new TabelaIgredientes();
+
+            return tabelaIgredientes;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Igredientes";
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProjetoPizzaria.ModuloIgrediente
 {
-    partial class CadastroIgredienteForm
+    partial class TelaIgredienteForm
     {
         /// <summary>
         /// Required designer variable.
