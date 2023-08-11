@@ -3,6 +3,7 @@ using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
 using ProjetoPizzaria.ModuloIgrediente;
+using ProjetoPizzaria.ModuloLogin;
 using ProjetoPizzaria.ModuloPedidos;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
@@ -17,7 +18,23 @@ namespace ProjetoPizzaria
         public TelaPrincipal()
         {
             InitializeComponent();
+
+            telaPrincipal = this;
+
+            FazerLogin();
+
         }
+
+        private static void FazerLogin()
+        {
+            telaPrincipal.Visible = false;
+
+            TelaLoginForm telaLoginForm = new TelaLoginForm();
+
+            if (telaLoginForm.ShowDialog() == DialogResult.OK)
+                telaPrincipal.Visible = true;
+        }
+
         public void ConfigurarTelaPrincipal(ControladorBase controlador)
         {
             this.controlador = controlador;
