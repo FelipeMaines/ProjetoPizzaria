@@ -28,194 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox8 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            richTextBox1 = new RichTextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            panel1 = new Panel();
+            txId = new TextBox();
+            txNome = new TextBox();
+            txMatricula = new TextBox();
+            txCarteira = new TextBox();
+            txEmail = new TextBox();
+            txSenha = new TextBox();
+            txValidade = new DateTimePicker();
+            txDescricao = new RichTextBox();
+            lbId = new Label();
+            lbCpf = new Label();
+            lbMatricula = new Label();
+            lbNome = new Label();
+            lbTelefone = new Label();
+            lbEmail = new Label();
+            lbCarteiraMotorista = new Label();
+            lbValidade = new Label();
+            lbSenha = new Label();
+            lbDescricao = new Label();
+            PnlCv = new Panel();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
-            label11 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            maskedTextBox2 = new MaskedTextBox();
-            button2 = new Button();
-            button1 = new Button();
-            panel1.SuspendLayout();
+            lbCv = new Label();
+            txCpf = new MaskedTextBox();
+            txTelefone = new MaskedTextBox();
+            btnCancelar = new Button();
+            btnCadastrar = new Button();
+            PnlCv.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txId
             // 
-            textBox1.Location = new Point(68, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(80, 23);
-            textBox1.TabIndex = 0;
+            txId.Location = new Point(68, 44);
+            txId.Name = "txId";
+            txId.Size = new Size(80, 23);
+            txId.TabIndex = 0;
             // 
-            // textBox2
+            // txNome
             // 
-            textBox2.Location = new Point(68, 112);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(360, 23);
-            textBox2.TabIndex = 1;
+            txNome.Location = new Point(68, 112);
+            txNome.Name = "txNome";
+            txNome.Size = new Size(360, 23);
+            txNome.TabIndex = 1;
             // 
-            // textBox4
+            // txMatricula
             // 
-            textBox4.Location = new Point(288, 44);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(140, 23);
-            textBox4.TabIndex = 3;
+            txMatricula.Location = new Point(288, 44);
+            txMatricula.Name = "txMatricula";
+            txMatricula.Size = new Size(140, 23);
+            txMatricula.TabIndex = 3;
             // 
-            // textBox5
+            // txCarteira
             // 
-            textBox5.Location = new Point(68, 249);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(105, 23);
-            textBox5.TabIndex = 4;
+            txCarteira.Location = new Point(68, 249);
+            txCarteira.Name = "txCarteira";
+            txCarteira.Size = new Size(105, 23);
+            txCarteira.TabIndex = 4;
             // 
-            // textBox6
+            // txEmail
             // 
-            textBox6.Location = new Point(189, 181);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(239, 23);
-            textBox6.TabIndex = 5;
+            txEmail.Location = new Point(189, 181);
+            txEmail.Name = "txEmail";
+            txEmail.Size = new Size(239, 23);
+            txEmail.TabIndex = 5;
             // 
-            // textBox8
+            // txSenha
             // 
-            textBox8.Location = new Point(337, 249);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(91, 23);
-            textBox8.TabIndex = 7;
+            txSenha.Location = new Point(337, 249);
+            txSenha.Name = "txSenha";
+            txSenha.Size = new Size(91, 23);
+            txSenha.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // txValidade
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(189, 249);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(132, 23);
-            dateTimePicker1.TabIndex = 8;
+            txValidade.Format = DateTimePickerFormat.Short;
+            txValidade.Location = new Point(189, 249);
+            txValidade.Name = "txValidade";
+            txValidade.Size = new Size(132, 23);
+            txValidade.TabIndex = 8;
             // 
-            // richTextBox1
+            // txDescricao
             // 
-            richTextBox1.Location = new Point(68, 300);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(487, 96);
-            richTextBox1.TabIndex = 10;
-            richTextBox1.Text = "";
+            txDescricao.Location = new Point(68, 300);
+            txDescricao.Name = "txDescricao";
+            txDescricao.Size = new Size(487, 96);
+            txDescricao.TabIndex = 10;
+            txDescricao.Text = "";
             // 
-            // label1
+            // lbId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(68, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(18, 15);
-            label1.TabIndex = 11;
-            label1.Text = "ID";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(68, 26);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(18, 15);
+            lbId.TabIndex = 11;
+            lbId.Text = "ID";
             // 
-            // label2
+            // lbCpf
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(166, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 15);
-            label2.TabIndex = 12;
-            label2.Text = "CPF";
+            lbCpf.AutoSize = true;
+            lbCpf.Location = new Point(166, 26);
+            lbCpf.Name = "lbCpf";
+            lbCpf.Size = new Size(28, 15);
+            lbCpf.TabIndex = 12;
+            lbCpf.Text = "CPF";
             // 
-            // label3
+            // lbMatricula
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(288, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Matrícula";
+            lbMatricula.AutoSize = true;
+            lbMatricula.Location = new Point(288, 26);
+            lbMatricula.Name = "lbMatricula";
+            lbMatricula.Size = new Size(57, 15);
+            lbMatricula.TabIndex = 13;
+            lbMatricula.Text = "Matrícula";
             // 
-            // label4
+            // lbNome
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(68, 94);
-            label4.Name = "label4";
-            label4.Size = new Size(40, 15);
-            label4.TabIndex = 14;
-            label4.Text = "Nome";
+            lbNome.AutoSize = true;
+            lbNome.Location = new Point(68, 94);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new Size(40, 15);
+            lbNome.TabIndex = 14;
+            lbNome.Text = "Nome";
             // 
-            // label5
+            // lbTelefone
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(68, 163);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 15);
-            label5.TabIndex = 15;
-            label5.Text = "Telefone";
+            lbTelefone.AutoSize = true;
+            lbTelefone.Location = new Point(68, 163);
+            lbTelefone.Name = "lbTelefone";
+            lbTelefone.Size = new Size(51, 15);
+            lbTelefone.TabIndex = 15;
+            lbTelefone.Text = "Telefone";
             // 
-            // label6
+            // lbEmail
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(189, 163);
-            label6.Name = "label6";
-            label6.Size = new Size(41, 15);
-            label6.TabIndex = 16;
-            label6.Text = "E-mail";
+            lbEmail.AutoSize = true;
+            lbEmail.Location = new Point(189, 163);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(41, 15);
+            lbEmail.TabIndex = 16;
+            lbEmail.Text = "E-mail";
             // 
-            // label7
+            // lbCarteiraMotorista
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(68, 231);
-            label7.Name = "label7";
-            label7.Size = new Size(102, 15);
-            label7.TabIndex = 17;
-            label7.Text = "Carteira Motorista";
+            lbCarteiraMotorista.AutoSize = true;
+            lbCarteiraMotorista.Location = new Point(68, 231);
+            lbCarteiraMotorista.Name = "lbCarteiraMotorista";
+            lbCarteiraMotorista.Size = new Size(102, 15);
+            lbCarteiraMotorista.TabIndex = 17;
+            lbCarteiraMotorista.Text = "Carteira Motorista";
             // 
-            // label8
+            // lbValidade
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(189, 231);
-            label8.Name = "label8";
-            label8.Size = new Size(51, 15);
-            label8.TabIndex = 18;
-            label8.Text = "Validade";
+            lbValidade.AutoSize = true;
+            lbValidade.Location = new Point(189, 231);
+            lbValidade.Name = "lbValidade";
+            lbValidade.Size = new Size(51, 15);
+            lbValidade.TabIndex = 18;
+            lbValidade.Text = "Validade";
             // 
-            // label9
+            // lbSenha
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(337, 231);
-            label9.Name = "label9";
-            label9.Size = new Size(39, 15);
-            label9.TabIndex = 19;
-            label9.Text = "Senha";
+            lbSenha.AutoSize = true;
+            lbSenha.Location = new Point(337, 231);
+            lbSenha.Name = "lbSenha";
+            lbSenha.Size = new Size(39, 15);
+            lbSenha.TabIndex = 19;
+            lbSenha.Text = "Senha";
             // 
-            // label10
+            // lbDescricao
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(68, 282);
-            label10.Name = "label10";
-            label10.Size = new Size(58, 15);
-            label10.TabIndex = 20;
-            label10.Text = "Descrição";
+            lbDescricao.AutoSize = true;
+            lbDescricao.Location = new Point(68, 282);
+            lbDescricao.Name = "lbDescricao";
+            lbDescricao.Size = new Size(58, 15);
+            lbDescricao.TabIndex = 20;
+            lbDescricao.Text = "Descrição";
             // 
-            // panel1
+            // PnlCv
             // 
-            panel1.Controls.Add(radioButton3);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
-            panel1.Location = new Point(443, 44);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(133, 134);
-            panel1.TabIndex = 21;
-            panel1.Paint += panel1_Paint;
+            PnlCv.Controls.Add(radioButton3);
+            PnlCv.Controls.Add(radioButton2);
+            PnlCv.Controls.Add(radioButton1);
+            PnlCv.Location = new Point(443, 44);
+            PnlCv.Name = "PnlCv";
+            PnlCv.Size = new Size(133, 134);
+            PnlCv.TabIndex = 21;
+            PnlCv.Paint += panel1_Paint;
             // 
             // radioButton3
             // 
@@ -250,116 +250,116 @@
             radioButton1.Text = "radioButton1";
             radioButton1.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lbCv
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(458, 26);
-            label11.Name = "label11";
-            label11.Size = new Size(22, 15);
-            label11.TabIndex = 22;
-            label11.Text = "CV";
+            lbCv.AutoSize = true;
+            lbCv.Location = new Point(458, 26);
+            lbCv.Name = "lbCv";
+            lbCv.Size = new Size(22, 15);
+            lbCv.TabIndex = 22;
+            lbCv.Text = "CV";
             // 
-            // maskedTextBox1
+            // txCpf
             // 
-            maskedTextBox1.Location = new Point(166, 44);
-            maskedTextBox1.Mask = "000.000.000-00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(101, 23);
-            maskedTextBox1.TabIndex = 23;
+            txCpf.Location = new Point(166, 44);
+            txCpf.Mask = "000.000.000-00";
+            txCpf.Name = "txCpf";
+            txCpf.Size = new Size(101, 23);
+            txCpf.TabIndex = 23;
             // 
-            // maskedTextBox2
+            // txTelefone
             // 
-            maskedTextBox2.Location = new Point(68, 181);
-            maskedTextBox2.Mask = "(99) 0 0000-0000";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(105, 23);
-            maskedTextBox2.TabIndex = 24;
+            txTelefone.Location = new Point(68, 181);
+            txTelefone.Mask = "(99) 0 0000-0000";
+            txTelefone.Name = "txTelefone";
+            txTelefone.Size = new Size(105, 23);
+            txTelefone.TabIndex = 24;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(486, 420);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 41);
-            button2.TabIndex = 26;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(486, 420);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 41);
+            btnCancelar.TabIndex = 26;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCadastrar
             // 
-            button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(405, 420);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 41);
-            button1.TabIndex = 25;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            btnCadastrar.DialogResult = DialogResult.OK;
+            btnCadastrar.Location = new Point(405, 420);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(75, 41);
+            btnCadastrar.TabIndex = 25;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // TelaFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(586, 473);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(maskedTextBox2);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(label11);
-            Controls.Add(panel1);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(richTextBox1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox8);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(txTelefone);
+            Controls.Add(txCpf);
+            Controls.Add(lbCv);
+            Controls.Add(PnlCv);
+            Controls.Add(lbDescricao);
+            Controls.Add(lbSenha);
+            Controls.Add(lbValidade);
+            Controls.Add(lbCarteiraMotorista);
+            Controls.Add(lbEmail);
+            Controls.Add(lbTelefone);
+            Controls.Add(lbNome);
+            Controls.Add(lbMatricula);
+            Controls.Add(lbCpf);
+            Controls.Add(lbId);
+            Controls.Add(txDescricao);
+            Controls.Add(txValidade);
+            Controls.Add(txSenha);
+            Controls.Add(txEmail);
+            Controls.Add(txCarteira);
+            Controls.Add(txMatricula);
+            Controls.Add(txNome);
+            Controls.Add(txId);
             Name = "TelaFuncionarioForm";
             Text = "TelaFuncionarioForm";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            PnlCv.ResumeLayout(false);
+            PnlCv.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox8;
-        private DateTimePicker dateTimePicker1;
-        private RichTextBox richTextBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Panel panel1;
+        private TextBox txId;
+        private TextBox txNome;
+        private TextBox txMatricula;
+        private TextBox txCarteira;
+        private TextBox txEmail;
+        private TextBox txSenha;
+        private DateTimePicker txValidade;
+        private RichTextBox txDescricao;
+        private Label lbId;
+        private Label lbCpf;
+        private Label lbMatricula;
+        private Label lbNome;
+        private Label lbTelefone;
+        private Label lbEmail;
+        private Label lbCarteiraMotorista;
+        private Label lbValidade;
+        private Label lbSenha;
+        private Label lbDescricao;
+        private Panel PnlCv;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
-        private Label label11;
-        private MaskedTextBox maskedTextBox1;
-        private MaskedTextBox maskedTextBox2;
-        private Button button2;
-        private Button button1;
+        private Label lbCv;
+        private MaskedTextBox txCpf;
+        private MaskedTextBox txTelefone;
+        private Button btnCancelar;
+        private Button btnCadastrar;
     }
 }

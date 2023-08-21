@@ -28,66 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            button1 = new Button();
+            txUsuario = new TextBox();
+            txSenha = new TextBox();
+            lbUsuario = new Label();
+            lbSenha = new Label();
+            btnEntrar = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txUsuario
             // 
-            textBox1.Location = new Point(282, 142);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(253, 23);
-            textBox1.TabIndex = 0;
+            txUsuario.Location = new Point(282, 142);
+            txUsuario.Name = "txUsuario";
+            txUsuario.Size = new Size(253, 23);
+            txUsuario.TabIndex = 0;
             // 
-            // textBox2
+            // txSenha
             // 
-            textBox2.Location = new Point(282, 224);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(253, 23);
-            textBox2.TabIndex = 1;
+            txSenha.Location = new Point(282, 224);
+            txSenha.Name = "txSenha";
+            txSenha.Size = new Size(253, 23);
+            txSenha.TabIndex = 1;
             // 
-            // label1
+            // lbUsuario
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(282, 124);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Usuário";
+            lbUsuario.AutoSize = true;
+            lbUsuario.Location = new Point(282, 124);
+            lbUsuario.Name = "lbUsuario";
+            lbUsuario.Size = new Size(47, 15);
+            lbUsuario.TabIndex = 2;
+            lbUsuario.Text = "Usuário";
             // 
-            // label2
+            // lbSenha
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(282, 206);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Senha";
+            lbSenha.AutoSize = true;
+            lbSenha.Location = new Point(282, 206);
+            lbSenha.Name = "lbSenha";
+            lbSenha.Size = new Size(39, 15);
+            lbSenha.TabIndex = 3;
+            lbSenha.Text = "Senha";
             // 
-            // button1
+            // btnEntrar
             // 
-            button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(302, 278);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 46);
-            button1.TabIndex = 4;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnEntrar.DialogResult = DialogResult.OK;
+            btnEntrar.Location = new Point(302, 278);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(200, 46);
+            btnEntrar.TabIndex = 4;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += button1_Click;
             // 
             // TelaLoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnEntrar);
+            Controls.Add(lbSenha);
+            Controls.Add(lbUsuario);
+            Controls.Add(txSenha);
+            Controls.Add(txUsuario);
             Name = "TelaLoginForm";
             Text = "TelaLoginForm";
             ResumeLayout(false);
@@ -96,10 +96,10 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label1;
-        private Label label2;
-        private Button button1;
+        private TextBox txUsuario;
+        private TextBox txSenha;
+        private Label lbUsuario;
+        private Label lbSenha;
+        private Button btnEntrar;
     }
 }

@@ -28,103 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox2 = new ListBox();
-            listBox1 = new ListBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            textBox3 = new TextBox();
+            ListBoxMedida = new ListBox();
+            ListBoxTipo = new ListBox();
+            lbTipo = new Label();
+            lbUnidadeMedida = new Label();
+            lbNome = new Label();
+            lbId = new Label();
+            txNome = new TextBox();
+            txId = new TextBox();
+            lbValor = new Label();
+            txValor = new TextBox();
             btnCadastrar = new Button();
             btnCancelar = new Button();
             SuspendLayout();
             // 
-            // listBox2
+            // ListBoxMedida
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(209, 218);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(126, 169);
-            listBox2.TabIndex = 23;
+            ListBoxMedida.FormattingEnabled = true;
+            ListBoxMedida.ItemHeight = 15;
+            ListBoxMedida.Location = new Point(209, 218);
+            ListBoxMedida.Name = "ListBoxMedida";
+            ListBoxMedida.Size = new Size(126, 169);
+            ListBoxMedida.TabIndex = 23;
             // 
-            // listBox1
+            // ListBoxTipo
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(44, 218);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(126, 169);
-            listBox1.TabIndex = 22;
+            ListBoxTipo.FormattingEnabled = true;
+            ListBoxTipo.ItemHeight = 15;
+            ListBoxTipo.Location = new Point(44, 218);
+            ListBoxTipo.Name = "ListBoxTipo";
+            ListBoxTipo.Size = new Size(126, 169);
+            ListBoxTipo.TabIndex = 22;
             // 
-            // label4
+            // lbTipo
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(44, 200);
-            label4.Name = "label4";
-            label4.Size = new Size(30, 15);
-            label4.TabIndex = 21;
-            label4.Text = "Tipo";
+            lbTipo.AutoSize = true;
+            lbTipo.Location = new Point(44, 200);
+            lbTipo.Name = "lbTipo";
+            lbTipo.Size = new Size(30, 15);
+            lbTipo.TabIndex = 21;
+            lbTipo.Text = "Tipo";
             // 
-            // label3
+            // lbUnidadeMedida
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(209, 200);
-            label3.Name = "label3";
-            label3.Size = new Size(24, 15);
-            label3.TabIndex = 20;
-            label3.Text = "ML";
+            lbUnidadeMedida.AutoSize = true;
+            lbUnidadeMedida.Location = new Point(209, 200);
+            lbUnidadeMedida.Name = "lbUnidadeMedida";
+            lbUnidadeMedida.Size = new Size(24, 15);
+            lbUnidadeMedida.TabIndex = 20;
+            lbUnidadeMedida.Text = "ML";
             // 
-            // label2
+            // lbNome
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(44, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 19;
-            label2.Text = "Nome";
+            lbNome.AutoSize = true;
+            lbNome.Location = new Point(44, 86);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new Size(40, 15);
+            lbNome.TabIndex = 19;
+            lbNome.Text = "Nome";
             // 
-            // label1
+            // lbId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(44, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(17, 15);
-            label1.TabIndex = 18;
-            label1.Text = "Id";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(44, 23);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(17, 15);
+            lbId.TabIndex = 18;
+            lbId.Text = "Id";
             // 
-            // textBox2
+            // txNome
             // 
-            textBox2.Location = new Point(44, 104);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(335, 23);
-            textBox2.TabIndex = 17;
+            txNome.Location = new Point(44, 104);
+            txNome.Name = "txNome";
+            txNome.Size = new Size(335, 23);
+            txNome.TabIndex = 17;
             // 
-            // textBox1
+            // txId
             // 
-            textBox1.Location = new Point(44, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 16;
+            txId.Location = new Point(44, 41);
+            txId.Name = "txId";
+            txId.Size = new Size(100, 23);
+            txId.TabIndex = 16;
             // 
-            // label5
+            // lbValor
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(44, 151);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 15);
-            label5.TabIndex = 25;
-            label5.Text = "Valor";
+            lbValor.AutoSize = true;
+            lbValor.Location = new Point(44, 151);
+            lbValor.Name = "lbValor";
+            lbValor.Size = new Size(33, 15);
+            lbValor.TabIndex = 25;
+            lbValor.Text = "Valor";
             // 
-            // textBox3
+            // txValor
             // 
-            textBox3.Location = new Point(44, 169);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(335, 23);
-            textBox3.TabIndex = 24;
+            txValor.Location = new Point(44, 169);
+            txValor.Name = "txValor";
+            txValor.Size = new Size(335, 23);
+            txValor.TabIndex = 24;
             // 
             // btnCadastrar
             // 
@@ -151,16 +151,16 @@
             ClientSize = new Size(402, 446);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
-            Controls.Add(label5);
-            Controls.Add(textBox3);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(lbValor);
+            Controls.Add(txValor);
+            Controls.Add(ListBoxMedida);
+            Controls.Add(ListBoxTipo);
+            Controls.Add(lbTipo);
+            Controls.Add(lbUnidadeMedida);
+            Controls.Add(lbNome);
+            Controls.Add(lbId);
+            Controls.Add(txNome);
+            Controls.Add(txId);
             Name = "TelaProdutoForm";
             Text = "TelaProdutoForm";
             ResumeLayout(false);
@@ -169,16 +169,16 @@
 
         #endregion
 
-        private ListBox listBox2;
-        private ListBox listBox1;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label5;
-        private TextBox textBox3;
+        private ListBox ListBoxMedida;
+        private ListBox ListBoxTipo;
+        private Label lbTipo;
+        private Label lbUnidadeMedida;
+        private Label lbNome;
+        private Label lbId;
+        private TextBox txNome;
+        private TextBox txId;
+        private Label lbValor;
+        private TextBox txValor;
         private Button btnCadastrar;
         private Button btnCancelar;
     }

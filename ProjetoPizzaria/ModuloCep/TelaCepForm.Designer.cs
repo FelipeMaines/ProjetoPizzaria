@@ -28,183 +28,183 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            txId = new TextBox();
+            txBairro = new TextBox();
+            txLograduro = new TextBox();
+            cbPais = new ComboBox();
+            cbUf = new ComboBox();
+            cbCidade = new ComboBox();
+            btnCadastrar = new Button();
+            btnCancelar = new Button();
+            lbId = new Label();
+            lbCep = new Label();
+            lbLogradouro = new Label();
+            lbPais = new Label();
+            lbUf = new Label();
+            lbCidade = new Label();
+            lbBairro = new Label();
+            txCep = new MaskedTextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // txId
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(28, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            txId.Enabled = false;
+            txId.Location = new Point(28, 35);
+            txId.Name = "txId";
+            txId.Size = new Size(100, 23);
+            txId.TabIndex = 0;
             // 
-            // textBox2
+            // txBairro
             // 
-            textBox2.Location = new Point(266, 138);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 1;
+            txBairro.Location = new Point(266, 138);
+            txBairro.Name = "txBairro";
+            txBairro.Size = new Size(100, 23);
+            txBairro.TabIndex = 1;
             // 
-            // textBox3
+            // txLograduro
             // 
-            textBox3.Location = new Point(266, 35);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(188, 23);
-            textBox3.TabIndex = 2;
+            txLograduro.Location = new Point(266, 35);
+            txLograduro.Name = "txLograduro";
+            txLograduro.Size = new Size(188, 23);
+            txLograduro.TabIndex = 2;
             // 
-            // comboBox1
+            // cbPais
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(28, 82);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(218, 23);
-            comboBox1.TabIndex = 4;
+            cbPais.FormattingEnabled = true;
+            cbPais.Location = new Point(28, 82);
+            cbPais.Name = "cbPais";
+            cbPais.Size = new Size(218, 23);
+            cbPais.TabIndex = 4;
             // 
-            // comboBox2
+            // cbUf
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(266, 82);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(100, 23);
-            comboBox2.TabIndex = 5;
+            cbUf.FormattingEnabled = true;
+            cbUf.Location = new Point(266, 82);
+            cbUf.Name = "cbUf";
+            cbUf.Size = new Size(100, 23);
+            cbUf.TabIndex = 5;
             // 
-            // comboBox3
+            // cbCidade
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(28, 138);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(218, 23);
-            comboBox3.TabIndex = 6;
+            cbCidade.FormattingEnabled = true;
+            cbCidade.Location = new Point(28, 138);
+            cbCidade.Name = "cbCidade";
+            cbCidade.Size = new Size(218, 23);
+            cbCidade.TabIndex = 6;
             // 
-            // button1
+            // btnCadastrar
             // 
-            button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(291, 181);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 41);
-            button1.TabIndex = 7;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            btnCadastrar.DialogResult = DialogResult.OK;
+            btnCadastrar.Location = new Point(291, 181);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(75, 41);
+            btnCadastrar.TabIndex = 7;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(372, 181);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 41);
-            button2.TabIndex = 8;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(372, 181);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 41);
+            btnCancelar.TabIndex = 8;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(17, 15);
-            label1.TabIndex = 9;
-            label1.Text = "Id";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(28, 17);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(17, 15);
+            lbId.TabIndex = 9;
+            lbId.Text = "Id";
             // 
-            // label2
+            // lbCep
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(146, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 15);
-            label2.TabIndex = 10;
-            label2.Text = "CEP";
+            lbCep.AutoSize = true;
+            lbCep.Location = new Point(146, 17);
+            lbCep.Name = "lbCep";
+            lbCep.Size = new Size(28, 15);
+            lbCep.TabIndex = 10;
+            lbCep.Text = "CEP";
             // 
-            // label3
+            // lbLogradouro
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(266, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 15);
-            label3.TabIndex = 11;
-            label3.Text = "Logradouro";
+            lbLogradouro.AutoSize = true;
+            lbLogradouro.Location = new Point(266, 17);
+            lbLogradouro.Name = "lbLogradouro";
+            lbLogradouro.Size = new Size(69, 15);
+            lbLogradouro.TabIndex = 11;
+            lbLogradouro.Text = "Logradouro";
             // 
-            // label4
+            // lbPais
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(28, 64);
-            label4.Name = "label4";
-            label4.Size = new Size(28, 15);
-            label4.TabIndex = 12;
-            label4.Text = "País";
+            lbPais.AutoSize = true;
+            lbPais.Location = new Point(28, 64);
+            lbPais.Name = "lbPais";
+            lbPais.Size = new Size(28, 15);
+            lbPais.TabIndex = 12;
+            lbPais.Text = "País";
             // 
-            // label5
+            // lbUf
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(266, 64);
-            label5.Name = "label5";
-            label5.Size = new Size(21, 15);
-            label5.TabIndex = 13;
-            label5.Text = "UF";
+            lbUf.AutoSize = true;
+            lbUf.Location = new Point(266, 64);
+            lbUf.Name = "lbUf";
+            lbUf.Size = new Size(21, 15);
+            lbUf.TabIndex = 13;
+            lbUf.Text = "UF";
             // 
-            // label6
+            // lbCidade
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(28, 120);
-            label6.Name = "label6";
-            label6.Size = new Size(44, 15);
-            label6.TabIndex = 14;
-            label6.Text = "Cidade";
+            lbCidade.AutoSize = true;
+            lbCidade.Location = new Point(28, 120);
+            lbCidade.Name = "lbCidade";
+            lbCidade.Size = new Size(44, 15);
+            lbCidade.TabIndex = 14;
+            lbCidade.Text = "Cidade";
             // 
-            // label7
+            // lbBairro
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(266, 120);
-            label7.Name = "label7";
-            label7.Size = new Size(38, 15);
-            label7.TabIndex = 15;
-            label7.Text = "Bairro";
+            lbBairro.AutoSize = true;
+            lbBairro.Location = new Point(266, 120);
+            lbBairro.Name = "lbBairro";
+            lbBairro.Size = new Size(38, 15);
+            lbBairro.TabIndex = 15;
+            lbBairro.Text = "Bairro";
             // 
-            // maskedTextBox1
+            // txCep
             // 
-            maskedTextBox1.Location = new Point(146, 35);
-            maskedTextBox1.Mask = "00 . 000 - 000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
-            maskedTextBox1.TabIndex = 16;
-            maskedTextBox1.TextAlign = HorizontalAlignment.Center;
+            txCep.Location = new Point(146, 35);
+            txCep.Mask = "00 . 000 - 000";
+            txCep.Name = "txCep";
+            txCep.Size = new Size(100, 23);
+            txCep.TabIndex = 16;
+            txCep.TextAlign = HorizontalAlignment.Center;
             // 
             // TelaCepForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(459, 233);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txCep);
+            Controls.Add(lbBairro);
+            Controls.Add(lbCidade);
+            Controls.Add(lbUf);
+            Controls.Add(lbPais);
+            Controls.Add(lbLogradouro);
+            Controls.Add(lbCep);
+            Controls.Add(lbId);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(cbCidade);
+            Controls.Add(cbUf);
+            Controls.Add(cbPais);
+            Controls.Add(txLograduro);
+            Controls.Add(txBairro);
+            Controls.Add(txId);
             Name = "TelaCepForm";
             Text = "TelaCepForm";
             ResumeLayout(false);
@@ -213,21 +213,21 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox txId;
+        private TextBox txBairro;
+        private TextBox txLograduro;
+        private ComboBox cbPais;
+        private ComboBox cbUf;
+        private ComboBox cbCidade;
+        private Button btnCadastrar;
+        private Button btnCancelar;
+        private Label lbId;
+        private Label lbCep;
+        private Label lbLogradouro;
+        private Label lbPais;
+        private Label lbUf;
+        private Label lbCidade;
+        private Label lbBairro;
+        private MaskedTextBox txCep;
     }
 }

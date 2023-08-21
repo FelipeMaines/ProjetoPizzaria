@@ -28,141 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtId = new TextBox();
-            txtNome = new TextBox();
-            txtEmail = new TextBox();
-            txtCpf = new MaskedTextBox();
-            txtTelefone = new MaskedTextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            txId = new TextBox();
+            txNome = new TextBox();
+            txEmail = new TextBox();
+            txCpf = new MaskedTextBox();
+            txTelefone = new MaskedTextBox();
+            lbId = new Label();
+            lbCpf = new Label();
+            lbNome = new Label();
+            lbTelefone = new Label();
+            lbEmail = new Label();
+            btnCadastrar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
-            // txtId
+            // txId
             // 
-            txtId.AccessibleRole = AccessibleRole.None;
-            txtId.Location = new Point(12, 59);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(118, 23);
-            txtId.TabIndex = 0;
+            txId.AccessibleRole = AccessibleRole.None;
+            txId.Location = new Point(12, 59);
+            txId.Name = "txId";
+            txId.Size = new Size(118, 23);
+            txId.TabIndex = 0;
             // 
-            // txtNome
+            // txNome
             // 
-            txtNome.Location = new Point(12, 127);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(429, 23);
-            txtNome.TabIndex = 1;
+            txNome.Location = new Point(12, 127);
+            txNome.Name = "txNome";
+            txNome.Size = new Size(429, 23);
+            txNome.TabIndex = 1;
             // 
-            // txtEmail
+            // txEmail
             // 
-            txtEmail.Location = new Point(222, 205);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(268, 23);
-            txtEmail.TabIndex = 2;
+            txEmail.Location = new Point(222, 205);
+            txEmail.Name = "txEmail";
+            txEmail.Size = new Size(268, 23);
+            txEmail.TabIndex = 2;
             // 
-            // txtCpf
+            // txCpf
             // 
-            txtCpf.Location = new Point(136, 59);
-            txtCpf.Mask = "000.000.000-00";
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(157, 23);
-            txtCpf.TabIndex = 3;
-            txtCpf.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            txCpf.Location = new Point(136, 59);
+            txCpf.Mask = "000.000.000-00";
+            txCpf.Name = "txCpf";
+            txCpf.Size = new Size(157, 23);
+            txCpf.TabIndex = 3;
+            txCpf.MaskInputRejected += maskedTextBox1_MaskInputRejected;
             // 
-            // txtTelefone
+            // txTelefone
             // 
-            txtTelefone.Location = new Point(12, 205);
-            txtTelefone.Mask = "(00) 0 0000 - 0000";
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(186, 23);
-            txtTelefone.TabIndex = 4;
+            txTelefone.Location = new Point(12, 205);
+            txTelefone.Mask = "(00) 0 0000 - 0000";
+            txTelefone.Name = "txTelefone";
+            txTelefone.Size = new Size(186, 23);
+            txTelefone.TabIndex = 4;
             // 
-            // label1
+            // lbId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(10, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(17, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Id";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(10, 35);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(17, 15);
+            lbId.TabIndex = 5;
+            lbId.Text = "Id";
             // 
-            // label2
+            // lbCpf
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(149, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 15);
-            label2.TabIndex = 6;
-            label2.Text = "CPF";
+            lbCpf.AutoSize = true;
+            lbCpf.Location = new Point(136, 35);
+            lbCpf.Name = "lbCpf";
+            lbCpf.Size = new Size(28, 15);
+            lbCpf.TabIndex = 6;
+            lbCpf.Text = "CPF";
             // 
-            // label3
+            // lbNome
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 109);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Nome";
+            lbNome.AutoSize = true;
+            lbNome.Location = new Point(12, 109);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new Size(40, 15);
+            lbNome.TabIndex = 7;
+            lbNome.Text = "Nome";
             // 
-            // label4
+            // lbTelefone
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 187);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Telefone";
+            lbTelefone.AutoSize = true;
+            lbTelefone.Location = new Point(12, 187);
+            lbTelefone.Name = "lbTelefone";
+            lbTelefone.Size = new Size(51, 15);
+            lbTelefone.TabIndex = 8;
+            lbTelefone.Text = "Telefone";
             // 
-            // label5
+            // lbEmail
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(222, 187);
-            label5.Name = "label5";
-            label5.Size = new Size(41, 15);
-            label5.TabIndex = 9;
-            label5.Text = "E-mail";
+            lbEmail.AutoSize = true;
+            lbEmail.Location = new Point(222, 187);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(41, 15);
+            lbEmail.TabIndex = 9;
+            lbEmail.Text = "E-mail";
             // 
-            // button1
+            // btnCadastrar
             // 
-            button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(299, 256);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 43);
-            button1.TabIndex = 10;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            btnCadastrar.DialogResult = DialogResult.OK;
+            btnCadastrar.Location = new Point(299, 256);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(94, 43);
+            btnCadastrar.TabIndex = 10;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(399, 256);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 43);
-            button2.TabIndex = 11;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(399, 256);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(94, 43);
+            btnCancelar.TabIndex = 11;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // TelaClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(505, 311);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(txtTelefone);
-            Controls.Add(txtCpf);
-            Controls.Add(txtEmail);
-            Controls.Add(txtNome);
-            Controls.Add(txtId);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(lbEmail);
+            Controls.Add(lbTelefone);
+            Controls.Add(lbNome);
+            Controls.Add(lbCpf);
+            Controls.Add(lbId);
+            Controls.Add(txTelefone);
+            Controls.Add(txCpf);
+            Controls.Add(txEmail);
+            Controls.Add(txNome);
+            Controls.Add(txId);
             Name = "TelaClienteForm";
             Text = "TelaClienteForm";
             ResumeLayout(false);
@@ -171,17 +171,17 @@
 
         #endregion
 
-        private TextBox txtId;
-        private TextBox txtNome;
-        private TextBox txtEmail;
-        private MaskedTextBox txtCpf;
-        private MaskedTextBox txtTelefone;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Button button1;
-        private Button button2;
+        private TextBox txId;
+        private TextBox txNome;
+        private TextBox txEmail;
+        private MaskedTextBox txCpf;
+        private MaskedTextBox txTelefone;
+        private Label lbId;
+        private Label lbCpf;
+        private Label lbNome;
+        private Label lbTelefone;
+        private Label lbEmail;
+        private Button btnCadastrar;
+        private Button btnCancelar;
     }
 }
