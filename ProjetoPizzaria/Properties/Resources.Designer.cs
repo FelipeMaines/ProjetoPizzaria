@@ -61,47 +61,65 @@ namespace ProjetoPizzaria.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registrar.
+        /// </summary>
+        internal static string btnCadastrar_Text {
+            get {
+                return ResourceManager.GetString("btnCadastrar.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string btnCancelar_Text {
+            get {
+                return ResourceManager.GetString("btnCancelar.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
-        internal static string btnEditar {
+        internal static string btnEditar_Text {
             get {
-                return ResourceManager.GetString("btnEditar", resourceCulture);
+                return ResourceManager.GetString("btnEditar.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Excluir.
         /// </summary>
-        internal static string btnExcluir {
+        internal static string btnExcluir_Text {
             get {
-                return ResourceManager.GetString("btnExcluir", resourceCulture);
+                return ResourceManager.GetString("btnExcluir.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Inserir.
         /// </summary>
-        internal static string btnInserir {
+        internal static string btnInserir_Text {
             get {
-                return ResourceManager.GetString("btnInserir", resourceCulture);
+                return ResourceManager.GetString("btnInserir.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CEP.
         /// </summary>
-        internal static string cepToolStripMenuItem {
+        internal static string cepToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("cepToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("cepToolStripMenuItem.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cliente.
         /// </summary>
-        internal static string clientesToolStripMenuItem {
+        internal static string clientesToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("clientesToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("clientesToolStripMenuItem.Text", resourceCulture);
             }
         }
         
@@ -137,18 +155,18 @@ namespace ProjetoPizzaria.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Funcionário.
         /// </summary>
-        internal static string funcionarioToolStripMenuItem {
+        internal static string funcionarioToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("funcionarioToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("funcionarioToolStripMenuItem.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Igrediente.
         /// </summary>
-        internal static string igredientesToolStripMenuItem {
+        internal static string igredientesToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("igredientesToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("igredientesToolStripMenuItem.Text", resourceCulture);
             }
         }
         
@@ -389,9 +407,9 @@ namespace ProjetoPizzaria.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Pedidos.
         /// </summary>
-        internal static string pedidosToolStripMenuItem {
+        internal static string pedidosToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("pedidosToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("pedidosToolStripMenuItem.Text", resourceCulture);
             }
         }
         
@@ -408,36 +426,36 @@ namespace ProjetoPizzaria.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Produtos.
         /// </summary>
-        internal static string produtosToolStripMenuItem {
+        internal static string produtosToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("produtosToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("produtosToolStripMenuItem.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sabor.
         /// </summary>
-        internal static string saboresToolStripMenuItem {
+        internal static string saboresToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("saboresToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("saboresToolStripMenuItem.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
-        internal static string toolStripStatusLabel1 {
+        internal static string toolStripStatusLabel1_Text {
             get {
-                return ResourceManager.GetString("toolStripStatusLabel1", resourceCulture);
+                return ResourceManager.GetString("toolStripStatusLabel1.Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Valores.
         /// </summary>
-        internal static string valoresPizzaToolStripMenuItem {
+        internal static string valoresPizzaToolStripMenuItem_Text {
             get {
-                return ResourceManager.GetString("valoresPizzaToolStripMenuItem", resourceCulture);
+                return ResourceManager.GetString("valoresPizzaToolStripMenuItem.Text", resourceCulture);
             }
         }
     }

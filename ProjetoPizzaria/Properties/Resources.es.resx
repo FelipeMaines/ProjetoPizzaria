@@ -117,28 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnEditar" xml:space="preserve">
+  <data name="btnCadastrar.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelar.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnEditar.Text" xml:space="preserve">
     <value>Para editar</value>
   </data>
-  <data name="btnExcluir" xml:space="preserve">
+  <data name="btnExcluir.Text" xml:space="preserve">
     <value>Borrar</value>
   </data>
-  <data name="btnInserir" xml:space="preserve">
+  <data name="btnInserir.Text" xml:space="preserve">
     <value>Insertar</value>
   </data>
-  <data name="cepToolStripMenuItem" xml:space="preserve">
+  <data name="cepToolStripMenuItem.Text" xml:space="preserve">
     <value>Código postal</value>
   </data>
-  <data name="clientesToolStripMenuItem" xml:space="preserve">
+  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Cliente</value>
   </data>
   <data name="exibirToolStripMenuItem.Text" xml:space="preserve">
     <value>no sé</value>
   </data>
-  <data name="funcionarioToolStripMenuItem" xml:space="preserve">
+  <data name="funcionarioToolStripMenuItem.Text" xml:space="preserve">
     <value>Empleado</value>
   </data>
-  <data name="igredientesToolStripMenuItem" xml:space="preserve">
+  <data name="igredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Regordete</value>
   </data>
   <data name="lbBairro.Text" xml:space="preserve">
@@ -219,19 +225,19 @@
   <data name="lbValorBorda.Text" xml:space="preserve">
     <value>Valor fronterizo</value>
   </data>
-  <data name="pedidosToolStripMenuItem" xml:space="preserve">
+  <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
     <value>Peticiones</value>
   </data>
-  <data name="produtosToolStripMenuItem" xml:space="preserve">
+  <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
     <value>Productos</value>
   </data>
-  <data name="saboresToolStripMenuItem" xml:space="preserve">
+  <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
     <value>Sabor</value>
   </data>
-  <data name="toolStripStatusLabel1" xml:space="preserve">
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
     <value>Estado</value>
   </data>
-  <data name="valoresPizzaToolStripMenuItem" xml:space="preserve">
+  <data name="valoresPizzaToolStripMenuItem.Text" xml:space="preserve">
     <value>Valores</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoPizzaria.Compartilhado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace ProjetoPizzaria.ModuloCep
         public tabela()
         {
             InitializeComponent();
+
+
+            #region idioma/região interface - satellite assembly
+
+            Funcoes.AjustaResourcesControl(this);
+
+            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
         }
     }
 }

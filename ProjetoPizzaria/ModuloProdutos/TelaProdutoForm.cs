@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace ProjetoPizzaria.ModuloProdutos
         public TelaProdutoForm()
         {
             InitializeComponent();
+
+            #region idioma/região interface - satellite assembly
+
+            Funcoes.AjustaResourcesControl(this);
+
+            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
         }
     }
 }

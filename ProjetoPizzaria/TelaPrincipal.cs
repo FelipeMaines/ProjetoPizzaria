@@ -19,6 +19,13 @@ namespace ProjetoPizzaria
         {
             InitializeComponent();
 
+            #region idioma/região interface - satellite assembly
+
+            Funcoes.AjustaResourcesControl(this);
+
+            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
+
             telaPrincipal = this;
 
             FazerLogin();
@@ -142,6 +149,7 @@ namespace ProjetoPizzaria
             if (controlador == null)
             {
                 MessageBox.Show("Selecione uma área primeiro!", "Selecione uma Área", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             controlador.Inserir();
@@ -152,6 +160,8 @@ namespace ProjetoPizzaria
             if (controlador == null)
             {
                 MessageBox.Show("Selecione uma área primeiro!", "Selecione uma Área", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
 
             controlador.Editar();
@@ -162,6 +172,8 @@ namespace ProjetoPizzaria
             if (controlador == null)
             {
                 MessageBox.Show("Selecione uma área primeiro!", "Selecione uma Área", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
 
             controlador.Excluir();
