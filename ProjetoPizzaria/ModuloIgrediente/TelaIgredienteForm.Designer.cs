@@ -1,4 +1,4 @@
-﻿namespace ProjetoPizzaria.ModuloIgrediente
+﻿    namespace ProjetoPizzaria.ModuloIgrediente
 {
     partial class TelaIgredienteForm
     {

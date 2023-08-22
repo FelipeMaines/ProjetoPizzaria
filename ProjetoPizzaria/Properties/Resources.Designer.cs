@@ -61,6 +61,51 @@ namespace ProjetoPizzaria.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        internal static string btnEditar {
+            get {
+                return ResourceManager.GetString("btnEditar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluir.
+        /// </summary>
+        internal static string btnExcluir {
+            get {
+                return ResourceManager.GetString("btnExcluir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserir.
+        /// </summary>
+        internal static string btnInserir {
+            get {
+                return ResourceManager.GetString("btnInserir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CEP.
+        /// </summary>
+        internal static string cepToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("cepToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliente.
+        /// </summary>
+        internal static string clientesToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("clientesToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap delete_FILL0_wght400_GRAD0_opsz40 {
@@ -81,12 +126,318 @@ namespace ProjetoPizzaria.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nsei.
+        /// </summary>
+        internal static string exibirToolStripMenuItem_Text {
+            get {
+                return ResourceManager.GetString("exibirToolStripMenuItem.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Funcionário.
+        /// </summary>
+        internal static string funcionarioToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("funcionarioToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Igrediente.
+        /// </summary>
+        internal static string igredientesToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("igredientesToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bairro.
+        /// </summary>
+        internal static string lbBairro_Text {
+            get {
+                return ResourceManager.GetString("lbBairro.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CNH.
+        /// </summary>
+        internal static string lbCarteiraMotorista_Text {
+            get {
+                return ResourceManager.GetString("lbCarteiraMotorista.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Catergoria.
+        /// </summary>
+        internal static string lbCategoria_Text {
+            get {
+                return ResourceManager.GetString("lbCategoria.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cep.
+        /// </summary>
+        internal static string lbCep_Text {
+            get {
+                return ResourceManager.GetString("lbCep.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cidade.
+        /// </summary>
+        internal static string lbCidade_Text {
+            get {
+                return ResourceManager.GetString("lbCidade.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CPF.
+        /// </summary>
+        internal static string lbCpf_Text {
+            get {
+                return ResourceManager.GetString("lbCpf.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cv.
+        /// </summary>
+        internal static string lbCv_Text {
+            get {
+                return ResourceManager.GetString("lbCv.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrição.
+        /// </summary>
+        internal static string lbDescricao_Text {
+            get {
+                return ResourceManager.GetString("lbDescricao.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string lbEmail_Text {
+            get {
+                return ResourceManager.GetString("lbEmail.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        internal static string lbId_Text {
+            get {
+                return ResourceManager.GetString("lbId.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Igredientes.
+        /// </summary>
+        internal static string lbIgredientes_Text {
+            get {
+                return ResourceManager.GetString("lbIgredientes.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imagem.
+        /// </summary>
+        internal static string lbImagem_Text {
+            get {
+                return ResourceManager.GetString("lbImagem.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logradouro.
+        /// </summary>
+        internal static string lbLogradouro_Text {
+            get {
+                return ResourceManager.GetString("lbLogradouro.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matricula.
+        /// </summary>
+        internal static string lbMatricula_Text {
+            get {
+                return ResourceManager.GetString("lbMatricula.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome.
+        /// </summary>
+        internal static string lbNome_Text {
+            get {
+                return ResourceManager.GetString("lbNome.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to País.
+        /// </summary>
+        internal static string lbPais_Text {
+            get {
+                return ResourceManager.GetString("lbPais.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senha.
+        /// </summary>
+        internal static string lbSenha_Text {
+            get {
+                return ResourceManager.GetString("lbSenha.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamanho.
+        /// </summary>
+        internal static string lbTamanho_Text {
+            get {
+                return ResourceManager.GetString("lbTamanho.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefone.
+        /// </summary>
+        internal static string lbTelefone_Text {
+            get {
+                return ResourceManager.GetString("lbTelefone.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo.
+        /// </summary>
+        internal static string lbTipo_Text {
+            get {
+                return ResourceManager.GetString("lbTipo.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uf.
+        /// </summary>
+        internal static string lbUf_Text {
+            get {
+                return ResourceManager.GetString("lbUf.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamanho.
+        /// </summary>
+        internal static string lbUnidadeMedida_Text {
+            get {
+                return ResourceManager.GetString("lbUnidadeMedida.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário.
+        /// </summary>
+        internal static string lbUsuario_Text {
+            get {
+                return ResourceManager.GetString("lbUsuario.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validade.
+        /// </summary>
+        internal static string lbValidade_Text {
+            get {
+                return ResourceManager.GetString("lbValidade.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor.
+        /// </summary>
+        internal static string lbValor_Text {
+            get {
+                return ResourceManager.GetString("lbValor.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor Borda.
+        /// </summary>
+        internal static string lbValorBorda_Text {
+            get {
+                return ResourceManager.GetString("lbValorBorda.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pedidos.
+        /// </summary>
+        internal static string pedidosToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("pedidosToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap person_add_FILL0_wght400_GRAD0_opsz40 {
             get {
                 object obj = ResourceManager.GetObject("person_add_FILL0_wght400_GRAD0_opsz40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Produtos.
+        /// </summary>
+        internal static string produtosToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("produtosToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sabor.
+        /// </summary>
+        internal static string saboresToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("saboresToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string toolStripStatusLabel1 {
+            get {
+                return ResourceManager.GetString("toolStripStatusLabel1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valores.
+        /// </summary>
+        internal static string valoresPizzaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("valoresPizzaToolStripMenuItem", resourceCulture);
             }
         }
     }
