@@ -154,6 +154,9 @@
   <data name="igredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Igrediente</value>
   </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>TEsteLavbel</value>
+  </data>
   <data name="lbBairro.Text" xml:space="preserve">
     <value>Bairro</value>
   </data>

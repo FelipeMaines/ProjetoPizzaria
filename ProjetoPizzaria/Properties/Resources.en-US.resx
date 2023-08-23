@@ -147,6 +147,9 @@
   <data name="igredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Chubby</value>
   </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>TestAA</value>
+  </data>
   <data name="lbBairro.Text" xml:space="preserve">
     <value>Neighborhood</value>
   </data>

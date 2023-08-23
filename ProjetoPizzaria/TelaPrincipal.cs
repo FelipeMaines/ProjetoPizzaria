@@ -178,5 +178,79 @@ namespace ProjetoPizzaria
 
             controlador.Excluir();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void exibirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRegistros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnEndereco_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCep();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorFuncionario();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCliente();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorProdutos();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnIgredientes_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorIgrediente();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnSabores_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorSabores();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnValores_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorValores();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
     }
 }
