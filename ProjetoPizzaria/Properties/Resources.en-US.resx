@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnCadastrar.Text" xml:space="preserve">
-    <value>Ok</value>
+    <value>Register</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -126,11 +126,29 @@
   <data name="btnEditar.Text" xml:space="preserve">
     <value>To edit</value>
   </data>
+  <data name="btnEndereco.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
   <data name="btnExcluir.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="btnFuncionario.Text" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="btnIgredientes.Text" xml:space="preserve">
+    <value>Chisel</value>
+  </data>
   <data name="btnInserir.Text" xml:space="preserve">
     <value>Insert</value>
+  </data>
+  <data name="btnProdutos.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="btnSabores.Text" xml:space="preserve">
+    <value>Flavors</value>
+  </data>
+  <data name="btnValores.Text" xml:space="preserve">
+    <value>Values</value>
   </data>
   <data name="cepToolStripMenuItem.Text" xml:space="preserve">
     <value>Zip code</value>
@@ -148,7 +166,7 @@
     <value>Chubby</value>
   </data>
   <data name="label123.Text" xml:space="preserve">
-    <value>TestAA</value>
+    <value>Testlavbel</value>
   </data>
   <data name="lbBairro.Text" xml:space="preserve">
     <value>Neighborhood</value>

@@ -118,19 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnCadastrar.Text" xml:space="preserve">
-    <value />
+    <value>Registro</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
-    <value />
+    <value>Cancelar</value>
   </data>
   <data name="btnEditar.Text" xml:space="preserve">
     <value>Para editar</value>
   </data>
+  <data name="btnEndereco.Text" xml:space="preserve">
+    <value>DIRECCIÓN</value>
+  </data>
   <data name="btnExcluir.Text" xml:space="preserve">
     <value>Borrar</value>
   </data>
+  <data name="btnFuncionario.Text" xml:space="preserve">
+    <value>Empleado</value>
+  </data>
+  <data name="btnIgredientes.Text" xml:space="preserve">
+    <value>Cincel</value>
+  </data>
   <data name="btnInserir.Text" xml:space="preserve">
     <value>Insertar</value>
+  </data>
+  <data name="btnProdutos.Text" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="btnSabores.Text" xml:space="preserve">
+    <value>Sabores</value>
+  </data>
+  <data name="btnValores.Text" xml:space="preserve">
+    <value>Valores</value>
   </data>
   <data name="cepToolStripMenuItem.Text" xml:space="preserve">
     <value>Código postal</value>
@@ -146,6 +164,9 @@
   </data>
   <data name="igredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Regordete</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>Testlavbel</value>
   </data>
   <data name="lbBairro.Text" xml:space="preserve">
     <value>Vecindario</value>
@@ -233,6 +254,9 @@
   </data>
   <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
     <value>Sabor</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="toolStripStatusLabel1.Text" xml:space="preserve">
     <value>Estado</value>

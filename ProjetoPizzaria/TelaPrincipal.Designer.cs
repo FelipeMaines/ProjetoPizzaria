@@ -36,8 +36,6 @@
             toolStripLabel1 = new ToolStripLabel();
             toolStripLabel2 = new ToolStripLabel();
             toolStripLabel3 = new ToolStripLabel();
-            statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
             panelRegistros = new Panel();
             panel1 = new Panel();
             btnValores = new Button();
@@ -51,7 +49,6 @@
             lbNome = new Label();
             pictureBox1 = new PictureBox();
             toolStrip1.SuspendLayout();
-            statusStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -59,13 +56,13 @@
             // toolStrip1
             // 
             toolStrip1.AutoSize = false;
-            toolStrip1.BackColor = SystemColors.ActiveCaption;
+            toolStrip1.BackColor = Color.FromArgb(55, 61, 66);
             toolStrip1.Dock = DockStyle.None;
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1, toolStripLabel2, toolStripLabel3 });
             toolStrip1.Location = new Point(128, -1);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(8);
-            toolStrip1.Size = new Size(663, 58);
+            toolStrip1.Size = new Size(672, 84);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             toolStrip1.ItemClicked += toolStrip1_ItemClicked;
@@ -75,6 +72,7 @@
             btnInserir.AutoSize = false;
             btnInserir.BackgroundImage = Properties.Resources.person_add_FILL0_wght400_GRAD0_opsz40;
             btnInserir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnInserir.ForeColor = Color.FromArgb(206, 246, 255);
             btnInserir.ImageTransparentColor = Color.Magenta;
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(40, 40);
@@ -107,51 +105,38 @@
             // 
             toolStripSeparator1.BackColor = SystemColors.ActiveBorder;
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 42);
+            toolStripSeparator1.Size = new Size(6, 68);
             // 
             // toolStripLabel1
             // 
             toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(0, 39);
+            toolStripLabel1.Size = new Size(0, 65);
             // 
             // toolStripLabel2
             // 
             toolStripLabel2.Name = "toolStripLabel2";
-            toolStripLabel2.Size = new Size(10, 39);
+            toolStripLabel2.Size = new Size(10, 65);
             toolStripLabel2.Text = ".";
             // 
             // toolStripLabel3
             // 
+            toolStripLabel3.ForeColor = Color.FromArgb(206, 246, 255);
             toolStripLabel3.Name = "toolStripLabel3";
-            toolStripLabel3.Size = new Size(86, 39);
+            toolStripLabel3.Size = new Size(86, 65);
             toolStripLabel3.Text = "toolStripLabel3";
-            // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 428);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 22);
-            statusStrip1.TabIndex = 2;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // panelRegistros
             // 
-            panelRegistros.Location = new Point(128, 49);
+            panelRegistros.BackColor = Color.FromArgb(102, 108, 114);
+            panelRegistros.Location = new Point(0, 79);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(672, 379);
+            panelRegistros.Size = new Size(800, 371);
             panelRegistros.TabIndex = 3;
             panelRegistros.Paint += panelRegistros_Paint;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = Color.FromArgb(55, 61, 66);
             panel1.Controls.Add(btnValores);
             panel1.Controls.Add(btnSabores);
             panel1.Controls.Add(btnIgredientes);
@@ -164,84 +149,98 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(131, 429);
+            panel1.Size = new Size(131, 451);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // btnValores
             // 
-            btnValores.Location = new Point(12, 372);
+            btnValores.BackColor = Color.FromArgb(233, 154, 39);
+            btnValores.ForeColor = Color.Black;
+            btnValores.Location = new Point(12, 407);
             btnValores.Name = "btnValores";
             btnValores.Size = new Size(100, 31);
             btnValores.TabIndex = 9;
             btnValores.Text = "Valores";
-            btnValores.UseVisualStyleBackColor = true;
+            btnValores.UseVisualStyleBackColor = false;
             btnValores.Click += btnValores_Click;
             // 
             // btnSabores
             // 
-            btnSabores.Location = new Point(12, 332);
+            btnSabores.BackColor = Color.FromArgb(233, 154, 39);
+            btnSabores.ForeColor = Color.Black;
+            btnSabores.Location = new Point(12, 367);
             btnSabores.Name = "btnSabores";
             btnSabores.Size = new Size(100, 31);
             btnSabores.TabIndex = 8;
             btnSabores.Text = "Sabores";
-            btnSabores.UseVisualStyleBackColor = true;
+            btnSabores.UseVisualStyleBackColor = false;
             btnSabores.Click += btnSabores_Click;
             // 
             // btnIgredientes
             // 
-            btnIgredientes.Location = new Point(12, 292);
+            btnIgredientes.BackColor = Color.FromArgb(233, 154, 39);
+            btnIgredientes.ForeColor = Color.Black;
+            btnIgredientes.Location = new Point(12, 327);
             btnIgredientes.Name = "btnIgredientes";
             btnIgredientes.Size = new Size(100, 31);
             btnIgredientes.TabIndex = 7;
             btnIgredientes.Text = "Igredientes";
-            btnIgredientes.UseVisualStyleBackColor = true;
+            btnIgredientes.UseVisualStyleBackColor = false;
             btnIgredientes.Click += btnIgredientes_Click;
             // 
             // btnProdutos
             // 
-            btnProdutos.Location = new Point(12, 252);
+            btnProdutos.BackColor = Color.FromArgb(233, 154, 39);
+            btnProdutos.ForeColor = Color.Black;
+            btnProdutos.Location = new Point(12, 287);
             btnProdutos.Name = "btnProdutos";
             btnProdutos.Size = new Size(100, 31);
             btnProdutos.TabIndex = 6;
             btnProdutos.Text = "Produtos";
-            btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.UseVisualStyleBackColor = false;
             btnProdutos.Click += btnProdutos_Click;
             // 
             // btnCliente
             // 
-            btnCliente.Location = new Point(12, 212);
+            btnCliente.BackColor = Color.FromArgb(233, 154, 39);
+            btnCliente.ForeColor = Color.Black;
+            btnCliente.Location = new Point(12, 247);
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(100, 31);
             btnCliente.TabIndex = 5;
             btnCliente.Text = "Cliente";
-            btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.UseVisualStyleBackColor = false;
             btnCliente.Click += btnCliente_Click;
             // 
             // btnEndereco
             // 
-            btnEndereco.Location = new Point(12, 172);
+            btnEndereco.BackColor = Color.FromArgb(233, 154, 39);
+            btnEndereco.ForeColor = Color.Black;
+            btnEndereco.Location = new Point(12, 207);
             btnEndereco.Name = "btnEndereco";
             btnEndereco.Size = new Size(100, 31);
             btnEndereco.TabIndex = 4;
             btnEndereco.Text = "Endereço";
-            btnEndereco.UseVisualStyleBackColor = true;
+            btnEndereco.UseVisualStyleBackColor = false;
             btnEndereco.Click += btnEndereco_Click;
             // 
             // btnFuncionario
             // 
-            btnFuncionario.Location = new Point(12, 132);
+            btnFuncionario.BackColor = Color.FromArgb(233, 154, 39);
+            btnFuncionario.ForeColor = Color.Black;
+            btnFuncionario.Location = new Point(12, 167);
             btnFuncionario.Name = "btnFuncionario";
             btnFuncionario.Size = new Size(100, 31);
             btnFuncionario.TabIndex = 3;
             btnFuncionario.Text = "Funcionario";
-            btnFuncionario.UseVisualStyleBackColor = true;
+            btnFuncionario.UseVisualStyleBackColor = false;
             btnFuncionario.Click += btnFuncionario_Click;
             // 
             // lbNomeFuncionario
             // 
             lbNomeFuncionario.AutoSize = true;
-            lbNomeFuncionario.Location = new Point(41, 130);
+            lbNomeFuncionario.Location = new Point(41, 148);
             lbNomeFuncionario.Name = "lbNomeFuncionario";
             lbNomeFuncionario.Size = new Size(0, 15);
             lbNomeFuncionario.TabIndex = 2;
@@ -249,15 +248,17 @@
             // lbNome
             // 
             lbNome.AutoSize = true;
-            lbNome.Location = new Point(41, 98);
+            lbNome.ForeColor = Color.FromArgb(206, 246, 255);
+            lbNome.Location = new Point(41, 123);
             lbNome.Name = "lbNome";
             lbNome.Size = new Size(40, 15);
             lbNome.TabIndex = 1;
             lbNome.Text = "Nome";
+            lbNome.Click += lbNome_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(12, 3);
+            pictureBox1.Location = new Point(12, 13);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 92);
             pictureBox1.TabIndex = 0;
@@ -267,22 +268,21 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(59, 45, 30);
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(panelRegistros);
             Controls.Add(toolStrip1);
-            Controls.Add(statusStrip1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "TelaPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pizzaria";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -294,8 +294,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel toolStripLabel1;
         private ToolStripLabel toolStripLabel2;
-        private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private Panel panelRegistros;
         private ToolStripLabel toolStripLabel3;
         private Panel panel1;

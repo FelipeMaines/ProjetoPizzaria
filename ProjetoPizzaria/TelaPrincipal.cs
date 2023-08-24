@@ -252,5 +252,10 @@ namespace ProjetoPizzaria
 
             ConfigurarTelaPrincipal(controlador);
         }
+
+        private void lbNome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
