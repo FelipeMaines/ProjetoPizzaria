@@ -8,6 +8,7 @@ using ProjetoPizzaria.ModuloPedidos;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
+using System.Configuration;
 
 namespace ProjetoPizzaria
 {
@@ -29,6 +30,8 @@ namespace ProjetoPizzaria
             telaPrincipal = this;
 
             FazerLogin();
+
+            ConfigurarLinguagem();
 
         }
 
@@ -256,6 +259,52 @@ namespace ProjetoPizzaria
         private void lbNome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConfiguracao_Click(object sender, EventArgs e)
+        {
+            FormConfiguracoes config = new()
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            _ = config.ShowDialog();
+            // remove todos os controles e recria a tela, aplicando assim o novo idioma
+
+            string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
+
+            if (!LinguagemSelecionada.fechaAplicacao)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+            else
+            {
+                Controls.Clear();
+                InitializeComponent();
+            }
+        }
+
+        private void ConfigurarLinguagem()
+        {
+            FormConfiguracoes config = new()
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            _ = config.ShowDialog();
+            // remove todos os controles e recria a tela, aplicando assim o novo idioma
+
+            string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
+
+            if (!LinguagemSelecionada.fechaAplicacao)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+            else
+            {
+                Controls.Clear();
+                InitializeComponent();
+            }
         }
     }
 }

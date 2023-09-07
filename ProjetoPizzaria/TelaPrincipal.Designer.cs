@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             toolStrip1 = new ToolStrip();
             btnInserir = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -48,6 +49,7 @@
             lbNomeFuncionario = new Label();
             lbNome = new Label();
             pictureBox1 = new PictureBox();
+            btnConfiguracao = new ToolStripButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,7 +60,7 @@
             toolStrip1.AutoSize = false;
             toolStrip1.BackColor = Color.FromArgb(55, 61, 66);
             toolStrip1.Dock = DockStyle.None;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1, toolStripLabel2, toolStripLabel3 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1, toolStripLabel2, toolStripLabel3, btnConfiguracao });
             toolStrip1.Location = new Point(128, -1);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(8);
@@ -264,6 +266,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // btnConfiguracao
+            // 
+            btnConfiguracao.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnConfiguracao.Image = (Image)resources.GetObject("btnConfiguracao.Image");
+            btnConfiguracao.ImageTransparentColor = Color.Magenta;
+            btnConfiguracao.Name = "btnConfiguracao";
+            btnConfiguracao.Size = new Size(23, 65);
+            btnConfiguracao.Text = "toolStripButton1";
+            btnConfiguracao.Click += btnConfiguracao_Click;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -307,5 +319,6 @@
         private Button btnCliente;
         private Button btnEndereco;
         private Button btnFuncionario;
+        private ToolStripButton btnConfiguracao;
     }
 }

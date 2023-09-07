@@ -1,4 +1,5 @@
 using ProjetoPizzaria.ModuloLogin;
+using System.Configuration;
 using System.Globalization;
 
 namespace ProjetoPizzaria
@@ -13,17 +14,21 @@ namespace ProjetoPizzaria
         {
 
             #region Idioma
-            // en-US, es, pt-BR, etc
-            string auxIdiomaRegiao = "";
-            //ajusta o idioma/região
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(auxIdiomaRegiao);
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(auxIdiomaRegiao);
+            AjustaIdiomaRegiao();
             #endregion
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new TelaPrincipal());
+        }
+
+        static public void AjustaIdiomaRegiao()
+        {
+            string? auxIdiomaRegiao = (ConfigurationManager.AppSettings.Get("IdiomaRegiao") is not null) ? ConfigurationManager.AppSettings.Get("IdiomaRegiao") : "";
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(auxIdiomaRegiao!);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(auxIdiomaRegiao!);
         }
     }
 }
