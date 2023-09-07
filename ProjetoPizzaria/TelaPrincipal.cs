@@ -18,6 +18,8 @@ namespace ProjetoPizzaria
         private static TelaPrincipal telaPrincipal;
         public TelaPrincipal()
         {
+            ConfigurarLinguagem();
+
             InitializeComponent();
 
             #region idioma/região interface - satellite assembly
@@ -30,9 +32,6 @@ namespace ProjetoPizzaria
             telaPrincipal = this;
 
             FazerLogin();
-
-            ConfigurarLinguagem();
-
         }
 
         private static void FazerLogin()
@@ -263,25 +262,7 @@ namespace ProjetoPizzaria
 
         private void btnConfiguracao_Click(object sender, EventArgs e)
         {
-            FormConfiguracoes config = new()
-            {
-                StartPosition = FormStartPosition.CenterScreen
-            };
-            _ = config.ShowDialog();
-            // remove todos os controles e recria a tela, aplicando assim o novo idioma
-
-            string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
-
-            if (!LinguagemSelecionada.fechaAplicacao)
-            {
-                Application.Restart();
-                Environment.Exit(0);
-            }
-            else
-            {
-                Controls.Clear();
-                InitializeComponent();
-            }
+            ConfigurarLinguagem();
         }
 
         private void ConfigurarLinguagem()
@@ -291,7 +272,7 @@ namespace ProjetoPizzaria
                 StartPosition = FormStartPosition.CenterScreen
             };
             _ = config.ShowDialog();
-            // remove todos os controles e recria a tela, aplicando assim o novo idioma
+           // remove todos os controles e recria a tela, aplicando assim o novo idioma
 
             string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
 
