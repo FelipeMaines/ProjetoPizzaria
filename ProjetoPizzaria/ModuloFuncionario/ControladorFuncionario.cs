@@ -20,29 +20,39 @@ namespace ProjetoPizzaria.ModuloFuncionario
         {
             
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, onde correga os itens cadastrados no sistema
+        /// </summary>
         public override void CarregarItens()
         {
             MessageBox.Show("Nao implementado");
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, método para editar os itens já cadastrados no sistema
+        /// </summary>
         public override void Editar()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, método para excluir os itens já cadastrados no sistema
+        /// </summary>
         public override void Excluir()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, método para inseriros itens no sistema
+        /// </summary>
         public override void Inserir()
         {
             TelaFuncionarioForm telaFuncionarioForm = new TelaFuncionarioForm();
 
             telaFuncionarioForm.ShowDialog();
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, método para pegar a tebela/grid atual
+        /// </summary>
         public override UserControl ObterTabela()
         {
             if(this.tabelaFuncionario == null)
@@ -52,7 +62,9 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
             return tabelaFuncionario;
         }
-
+        /// <summary>
+        ///     override da classe ControladorBase, método para pegar qual sera o item a ser cadastado/editado/excluido de cadastro
+        /// </summary>
         public override string ObterTipoCadastro() => "Cadastro de Funcionario";
         
     }

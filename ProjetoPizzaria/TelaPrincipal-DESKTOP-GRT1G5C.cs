@@ -31,9 +31,7 @@ namespace ProjetoPizzaria
             FazerLogin();
 
         }
-        /// <summary>
-        /// Abre a tela de login e valida usuario
-        /// </summary>
+
         private static void FazerLogin()
         {
             telaPrincipal.Visible = false;
@@ -43,10 +41,7 @@ namespace ProjetoPizzaria
             if (telaLoginForm.ShowDialog() == DialogResult.OK)
                 telaPrincipal.Visible = true;
         }
-        /// <summary>
-        /// Configura toda a tela de acordo com o controlador referenciado
-        /// </summary>
-        /// <param name="controlador">Controlaodr da tela referenciada</param>
+
         public void ConfigurarTelaPrincipal(ControladorBase controlador)
         {
             this.controlador = controlador;
@@ -59,9 +54,7 @@ namespace ProjetoPizzaria
 
             ConfigurarEstados(controlador);
         }
-        /// <summary>
-        /// Pega uma instancia da tela principal static
-        /// </summary>
+
         public static TelaPrincipal Instancia
         {
             get
@@ -72,30 +65,21 @@ namespace ProjetoPizzaria
                 return telaPrincipal;
             }
         }
-        /// <summary>
-        /// Configura o estado dos botoes da tela referenciada
-        /// </summary>
-        /// <param name="controlador">controlaodr da tela referenciada</param>
+
         private void ConfigurarEstados(ControladorBase controlador)
         {
             btnInserir.Enabled = controlador.InserirHabilitado;
             btnEditar.Enabled = controlador.EditarHabilitado;
             btnExcluir.Enabled = controlador.ExcluirHabilitado;
         }
-        /// <summary>
-        /// Configura as ToolTipText dos botoes de acordo com a tela
-        /// </summary>
-        /// <param name="controlador">controlador da tela referenciada</param>
+
         private void ConfigurarToolTips(ControladorBase controlador)
         {
             btnInserir.ToolTipText = controlador.ToolTipInserir;
             btnEditar.ToolTipText = controlador.ToolTipEditar;
             btnExcluir.ToolTipText = controlador.ToolTipExcluir;
         }
-        /// <summary>
-        /// Configura a tabela da tela referenciada
-        /// </summary>
-        /// <param name="controlador">controlador da tela referenciada</param>
+
         private void ConfigurarTabela(ControladorBase controlador)
         {
             UserControl listagem = controlador.ObterTabela();
@@ -103,99 +87,63 @@ namespace ProjetoPizzaria
             panelRegistros.Controls.Clear();
             panelRegistros.Controls.Add(listagem);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void cepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCep();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorFuncionario();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void igredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorIgrediente();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorSabores();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void valoresPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorValores();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorProdutos();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click seleciona o controlador do item clicado e chama o metodo de configurarTelaPrincipal passando o controlaodr selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorPedidos();
 
             ConfigurarTelaPrincipal(controlador);
         }
-        /// <summary>
-        /// Com o click no botao de inserir, chama o metodo de inserir do controlador selecionado anteriormente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btnInserir_Click(object sender, EventArgs e)
         {
             if (controlador == null)
@@ -206,11 +154,7 @@ namespace ProjetoPizzaria
 
             controlador.Inserir();
         }
-        /// <summary>
-        /// Com o click no botao de editar, chama o metodo de editar do controlador selecionado anteriormente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (controlador == null)
@@ -222,11 +166,7 @@ namespace ProjetoPizzaria
 
             controlador.Editar();
         }
-        /// <summary>
-        /// Com o click no botao de excluir, chama o metodo de excluir do controlador selecionado anteriormente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             if (controlador == null)
@@ -237,6 +177,16 @@ namespace ProjetoPizzaria
             }
 
             controlador.Excluir();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void exibirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void panelRegistros_Paint(object sender, PaintEventArgs e)
@@ -301,11 +251,6 @@ namespace ProjetoPizzaria
             controlador = new ControladorValores();
 
             ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void lbNome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ProjetoPizzaria
 
             #region Idioma
             // en-US, es, pt-BR, etc
-            string auxIdiomaRegiao = "";
+            string auxIdiomaRegiao = "pt-BR";
             //ajusta o idioma/região
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(auxIdiomaRegiao);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(auxIdiomaRegiao);
