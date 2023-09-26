@@ -74,21 +74,21 @@
             txValor.Location = new Point(26, 98);
             txValor.Name = "txValor";
             txValor.Size = new Size(131, 23);
-            txValor.TabIndex = 6;
+            txValor.TabIndex = 1;
             // 
             // txValorBorda
             // 
             txValorBorda.Location = new Point(172, 98);
             txValorBorda.Name = "txValorBorda";
             txValorBorda.Size = new Size(139, 23);
-            txValorBorda.TabIndex = 7;
+            txValorBorda.TabIndex = 2;
             // 
             // txId
             // 
             txId.Location = new Point(26, 33);
             txId.Name = "txId";
             txId.Size = new Size(100, 23);
-            txId.TabIndex = 8;
+            txId.TabIndex = 0;
             // 
             // listBoxTamanho
             // 
@@ -97,7 +97,7 @@
             listBoxTamanho.Location = new Point(26, 158);
             listBoxTamanho.Name = "listBoxTamanho";
             listBoxTamanho.Size = new Size(131, 169);
-            listBoxTamanho.TabIndex = 9;
+            listBoxTamanho.TabIndex = 3;
             // 
             // listBoxCategoria
             // 
@@ -106,7 +106,7 @@
             listBoxCategoria.Location = new Point(172, 158);
             listBoxCategoria.Name = "listBoxCategoria";
             listBoxCategoria.Size = new Size(131, 169);
-            listBoxCategoria.TabIndex = 10;
+            listBoxCategoria.TabIndex = 4;
             // 
             // btnCadastrar
             // 
@@ -114,7 +114,7 @@
             btnCadastrar.Location = new Point(172, 351);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(78, 41);
-            btnCadastrar.TabIndex = 11;
+            btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
@@ -124,7 +124,7 @@
             btnCancelar.Location = new Point(258, 351);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(78, 41);
-            btnCancelar.TabIndex = 12;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 

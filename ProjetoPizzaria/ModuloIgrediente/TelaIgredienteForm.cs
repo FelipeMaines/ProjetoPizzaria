@@ -23,6 +23,17 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            EventoTarget();
+        }
+
+        private void EventoTarget()
+        {
+            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txNome.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
     }
 }

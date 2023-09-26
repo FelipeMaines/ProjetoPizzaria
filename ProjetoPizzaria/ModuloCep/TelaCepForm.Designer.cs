@@ -59,7 +59,7 @@
             txBairro.Location = new Point(266, 138);
             txBairro.Name = "txBairro";
             txBairro.Size = new Size(100, 23);
-            txBairro.TabIndex = 1;
+            txBairro.TabIndex = 6;
             // 
             // txLograduro
             // 
@@ -74,7 +74,7 @@
             cbPais.Location = new Point(28, 82);
             cbPais.Name = "cbPais";
             cbPais.Size = new Size(218, 23);
-            cbPais.TabIndex = 4;
+            cbPais.TabIndex = 3;
             // 
             // cbUf
             // 
@@ -82,7 +82,7 @@
             cbUf.Location = new Point(266, 82);
             cbUf.Name = "cbUf";
             cbUf.Size = new Size(100, 23);
-            cbUf.TabIndex = 5;
+            cbUf.TabIndex = 4;
             // 
             // cbCidade
             // 
@@ -90,7 +90,7 @@
             cbCidade.Location = new Point(28, 138);
             cbCidade.Name = "cbCidade";
             cbCidade.Size = new Size(218, 23);
-            cbCidade.TabIndex = 6;
+            cbCidade.TabIndex = 5;
             // 
             // btnCadastrar
             // 
@@ -181,7 +181,7 @@
             txCep.Mask = "00 . 000 - 000";
             txCep.Name = "txCep";
             txCep.Size = new Size(100, 23);
-            txCep.TabIndex = 16;
+            txCep.TabIndex = 1;
             txCep.TextAlign = HorizontalAlignment.Center;
             // 
             // TelaCepForm

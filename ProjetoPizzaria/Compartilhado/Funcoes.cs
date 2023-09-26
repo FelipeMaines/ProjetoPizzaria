@@ -27,5 +27,79 @@ namespace ProjetoPizzaria.Compartilhado
                 resources.ApplyResources(c, c.Name);
             }
         }
+
+        /// <summary>
+        /// Altera a cor do BackGroud quando o campo ganha o foco
+        /// </summary>
+        /// <param name="sender">Objeto que gerou o evento</param>
+        /// <param name="e">Evento que foi capturado</param>
+        /// <example> textBoxUsuario.Enter += new System.EventHandler(ClassFuncoes.CampoEventoEnter); </example>
+        public static void CampoEventoEnter(object sender, System.EventArgs e)
+        {
+            if (sender is TextBoxBase txt) //MaskedTextBox, TextBox
+            {
+                txt.BackColor = Color.LightCyan;
+            }
+            else if (sender is ComboBox cb)
+            {
+                cb.BackColor = Color.LightCyan;
+            }
+            else if (sender is RadioButton rb)
+            {
+                rb.BackColor = Color.LightCyan;
+            }
+            else if (sender is ButtonBase btn)
+            {
+                btn.BackColor = Color.LightGreen;
+            }
+        }
+        /// <summary>
+        /// Alterar a cor do BackGroup quando o campo perde o foco
+        /// </summary>
+        /// <param name="sender">Objeto que gerou o evento</param>
+        /// <param name="e">Evento que foi capturado</param>
+        /// <example> textBoxUsuario.Leave += new System.EventHandler(ClassFuncoes.CampoEventoLeave); </example>
+        public static void CampoEventoLeave(object sender, System.EventArgs e)
+        {
+            if (sender is TextBoxBase txt)
+            {
+                txt.BackColor = Color.White;
+            }
+            else if (sender is ComboBox cb)
+            {
+                cb.BackColor = Color.White;
+            }
+            else if (sender is RadioButton rb)
+            {
+                rb.BackColor = SystemColors.ActiveBorder;
+            }
+            else if (sender is ButtonBase btn)
+            {
+                btn.BackColor = Color.Red;
+            }
+        }
+
+        public static void FormEventoKeyDown(object sender, KeyEventArgs e)
+        {
+            //obtém o form onde o componente gerou o evento
+            Control x = (Control)sender;
+            Form form = x.FindForm();
+
+            //verifica se foi pressionado ENTER
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Obtém ou define um valor que indica se o evento de chave deve ser passado para o controle
+                //subjacente.
+                //true caso o evento chave não deva ser enviado ao controle; caso contrário, false
+                //com isso evitamos o som de erro toda vez que pressionamos enter em algum campo
+                e.SuppressKeyPress = true;
+                //SendKeys.Send("{TAB}");
+                form.SelectNextControl(form.ActiveControl, !e.Shift, true, true, true);
+            }
+
+            //verifica se foi pressionado ESC
+            else if (e.KeyCode == Keys.Escape)
+                form.Close();
+        }
     }
 }

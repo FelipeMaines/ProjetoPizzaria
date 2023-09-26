@@ -27,6 +27,40 @@ namespace ProjetoPizzaria.ModuloCep
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            EventTarget();
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+        }
+
+        private void EventTarget()
+        {
+            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txBairro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txBairro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txLograduro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txLograduro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            cbPais.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            cbPais.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            cbUf.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            cbUf.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            cbCidade.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            cbCidade.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txBairro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txBairro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txCep.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txCep.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
     }
 }

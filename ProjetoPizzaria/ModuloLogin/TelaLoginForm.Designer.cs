@@ -73,7 +73,7 @@
             btnEntrar.Location = new Point(302, 278);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(200, 46);
-            btnEntrar.TabIndex = 4;
+            btnEntrar.TabIndex = 2;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += button1_Click;

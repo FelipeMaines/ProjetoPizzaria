@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             toolStrip1 = new ToolStrip();
             btnInserir = new ToolStripButton();
@@ -37,6 +38,7 @@
             toolStripLabel1 = new ToolStripLabel();
             toolStripLabel2 = new ToolStripLabel();
             toolStripLabel3 = new ToolStripLabel();
+            btnConfiguracao = new ToolStripButton();
             panelRegistros = new Panel();
             panel1 = new Panel();
             btnValores = new Button();
@@ -49,10 +51,15 @@
             lbNomeFuncionario = new Label();
             lbNome = new Label();
             pictureBox1 = new PictureBox();
-            btnConfiguracao = new ToolStripButton();
+            notifyIconSystemTray = new NotifyIcon(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            abrirAplicacaoToolStripMenuItem = new ToolStripMenuItem();
+            encerrarToolStripMenuItem = new ToolStripMenuItem();
+            sobreToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
@@ -127,6 +134,16 @@
             toolStripLabel3.Size = new Size(86, 65);
             toolStripLabel3.Text = "toolStripLabel3";
             // 
+            // btnConfiguracao
+            // 
+            btnConfiguracao.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnConfiguracao.Image = (Image)resources.GetObject("btnConfiguracao.Image");
+            btnConfiguracao.ImageTransparentColor = Color.Magenta;
+            btnConfiguracao.Name = "btnConfiguracao";
+            btnConfiguracao.Size = new Size(23, 65);
+            btnConfiguracao.Text = "toolStripButton1";
+            btnConfiguracao.Click += btnConfiguracao_Click;
+            // 
             // panelRegistros
             // 
             panelRegistros.BackColor = Color.FromArgb(102, 108, 114);
@@ -135,6 +152,7 @@
             panelRegistros.Size = new Size(800, 371);
             panelRegistros.TabIndex = 3;
             panelRegistros.Paint += panelRegistros_Paint;
+            panelRegistros.MouseDoubleClick += panelRegistros_MouseDoubleClick;
             // 
             // panel1
             // 
@@ -236,8 +254,10 @@
             btnFuncionario.Size = new Size(100, 31);
             btnFuncionario.TabIndex = 3;
             btnFuncionario.Text = "Funcionario";
+            btnFuncionario.UseMnemonic = false;
             btnFuncionario.UseVisualStyleBackColor = false;
             btnFuncionario.Click += btnFuncionario_Click;
+            btnFuncionario.KeyDown += btnFuncionario_KeyDown;
             // 
             // lbNomeFuncionario
             // 
@@ -263,37 +283,70 @@
             pictureBox1.Location = new Point(12, 13);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 92);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // btnConfiguracao
+            // notifyIconSystemTray
             // 
-            btnConfiguracao.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConfiguracao.Image = (Image)resources.GetObject("btnConfiguracao.Image");
-            btnConfiguracao.ImageTransparentColor = Color.Magenta;
-            btnConfiguracao.Name = "btnConfiguracao";
-            btnConfiguracao.Size = new Size(23, 65);
-            btnConfiguracao.Text = "toolStripButton1";
-            btnConfiguracao.Click += btnConfiguracao_Click;
+            notifyIconSystemTray.BalloonTipText = "App continua execultando na bandeja";
+            notifyIconSystemTray.BalloonTipTitle = "Pizzaria Do Zé";
+            notifyIconSystemTray.ContextMenuStrip = contextMenuStrip1;
+            notifyIconSystemTray.Icon = (Icon)resources.GetObject("notifyIconSystemTray.Icon");
+            notifyIconSystemTray.Text = "Pizzaria Do Zé";
+            notifyIconSystemTray.MouseDoubleClick += notifyIconSystemTray_MouseDoubleClick;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { abrirAplicacaoToolStripMenuItem, encerrarToolStripMenuItem, sobreToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(156, 70);
+            contextMenuStrip1.MouseDoubleClick += contextMenuStrip1_MouseDoubleClick;
+            // 
+            // abrirAplicacaoToolStripMenuItem
+            // 
+            abrirAplicacaoToolStripMenuItem.Name = "abrirAplicacaoToolStripMenuItem";
+            abrirAplicacaoToolStripMenuItem.Size = new Size(155, 22);
+            abrirAplicacaoToolStripMenuItem.Text = "Abrir Aplicacao";
+            abrirAplicacaoToolStripMenuItem.Click += abrirAplicacaoToolStripMenuItem_Click;
+            // 
+            // encerrarToolStripMenuItem
+            // 
+            encerrarToolStripMenuItem.Name = "encerrarToolStripMenuItem";
+            encerrarToolStripMenuItem.Size = new Size(155, 22);
+            encerrarToolStripMenuItem.Text = "Encerrar";
+            encerrarToolStripMenuItem.Click += encerrarToolStripMenuItem_Click;
+            // 
+            // sobreToolStripMenuItem
+            // 
+            sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            sobreToolStripMenuItem.Size = new Size(155, 22);
+            sobreToolStripMenuItem.Text = "Sobre";
             // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.FromArgb(59, 45, 30);
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(panelRegistros);
             Controls.Add(toolStrip1);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pizzaria";
+            FormClosed += TelaPrincipal_FormClosed;
+            Load += TelaPrincipal_Load;
+            Resize += FormPrincipal_Resize;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -320,5 +373,10 @@
         private Button btnEndereco;
         private Button btnFuncionario;
         private ToolStripButton btnConfiguracao;
+        private NotifyIcon notifyIconSystemTray;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem abrirAplicacaoToolStripMenuItem;
+        private ToolStripMenuItem encerrarToolStripMenuItem;
+        private ToolStripMenuItem sobreToolStripMenuItem;
     }
 }

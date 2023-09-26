@@ -24,6 +24,26 @@ namespace ProjetoPizzaria.ModuloProdutos
 
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            EventTarget();
+        }
+
+        private void EventTarget()
+        {
+            ListBoxMedida.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            ListBoxMedida.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            ListBoxTipo.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            ListBoxTipo.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txNome.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txValor.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txValor.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
     }
 }

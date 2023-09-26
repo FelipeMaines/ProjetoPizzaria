@@ -32,6 +32,7 @@ namespace ProjetoPizzaria
             telaPrincipal = this;
 
             FazerLogin();
+
         }
 
         private static void FazerLogin()
@@ -272,20 +273,128 @@ namespace ProjetoPizzaria
                 StartPosition = FormStartPosition.CenterScreen
             };
             _ = config.ShowDialog();
-           // remove todos os controles e recria a tela, aplicando assim o novo idioma
+            // remove todos os controles e recria a tela, aplicando assim o novo idioma
 
             string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
 
-            if (!LinguagemSelecionada.fechaAplicacao)
+            Controls.Clear();
+            InitializeComponent();
+            Funcoes.AjustaResourcesControl(this);
+
+            //if (!LinguagemSelecionada.fechaAplicacao)
+            //{
+            //    Application.Restart();
+            //    Environment.Exit(0);
+            //}
+            //else
+            //{
+            //    Controls.Clear();
+            //    InitializeComponent();
+            //    Funcoes.AjustaResourcesControl(this);
+            //}
+        }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFuncionario_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
             {
-                Application.Restart();
-                Environment.Exit(0);
+                case Keys.F2:
+                    controlador = new ControladorFuncionario();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F3:
+                    controlador = new ControladorCep();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F4:
+                    controlador = new ControladorCliente();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F5:
+                    controlador = new ControladorProdutos();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F6:
+                    controlador = new ControladorIgrediente();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F7:
+                    controlador = new ControladorSabores();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F8:
+                    controlador = new ControladorValores();
+
+                    ConfigurarTelaPrincipal(controlador);
+                    break;
+                case Keys.F9:
+                    ConfigurarLinguagem();
+                    break;
+                case Keys.Delete:
+                    Application.Exit();
+                    break;
             }
-            else
+        }
+
+        private void FormPrincipal_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
             {
-                Controls.Clear();
-                InitializeComponent();
+                this.Hide();
+                notifyIconSystemTray.Visible = true;
+                notifyIconSystemTray.ShowBalloonTip(1000);
             }
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                notifyIconSystemTray.Visible = false;
+            }
+        }
+
+        private void panelRegistros_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void abrirAplicacaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = false;
+        }
+
+        private void encerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            WindowState = FormWindowState.Minimized;
+            notifyIconSystemTray.Visible = true;
+        }
+
+        private void TelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void notifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = false;
         }
     }
 }

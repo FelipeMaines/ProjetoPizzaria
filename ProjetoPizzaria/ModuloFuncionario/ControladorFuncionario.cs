@@ -23,7 +23,7 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
         public override void CarregarItens()
         {
-            MessageBox.Show("Nao implementado");
+            Console.WriteLine('a');
         }
 
         public override void Editar()

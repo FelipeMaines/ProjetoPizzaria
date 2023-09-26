@@ -128,7 +128,7 @@
             checkedListBox1.Location = new Point(392, 41);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(211, 400);
-            checkedListBox1.TabIndex = 11;
+            checkedListBox1.TabIndex = 4;
             // 
             // btnCadastrar
             // 
@@ -136,7 +136,7 @@
             btnCadastrar.Location = new Point(434, 472);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(88, 48);
-            btnCadastrar.TabIndex = 12;
+            btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
@@ -146,7 +146,7 @@
             btnCancelar.Location = new Point(528, 472);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(94, 48);
-            btnCancelar.TabIndex = 13;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +157,7 @@
             ListBoxCategoria.Location = new Point(30, 222);
             ListBoxCategoria.Name = "ListBoxCategoria";
             ListBoxCategoria.Size = new Size(126, 109);
-            ListBoxCategoria.TabIndex = 14;
+            ListBoxCategoria.TabIndex = 2;
             // 
             // ListBoxTipo
             // 
@@ -166,7 +166,7 @@
             ListBoxTipo.Location = new Point(215, 222);
             ListBoxTipo.Name = "ListBoxTipo";
             ListBoxTipo.Size = new Size(126, 109);
-            ListBoxTipo.TabIndex = 15;
+            ListBoxTipo.TabIndex = 3;
             // 
             // TelaSaborForm
             // 

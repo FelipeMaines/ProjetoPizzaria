@@ -26,6 +26,26 @@ namespace ProjetoPizzaria.ModuloCliente
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            EnventosTarget();
+        }
+
+        private void EnventosTarget()
+        {
+            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txNome.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txEmail.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txEmail.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txCpf.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txCpf.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txTelefone.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txTelefone.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

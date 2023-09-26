@@ -1,4 +1,4 @@
-﻿    namespace ProjetoPizzaria.ModuloIgrediente
+﻿namespace ProjetoPizzaria.ModuloIgrediente
 {
     partial class TelaIgredienteForm
     {
@@ -59,14 +59,14 @@
             txId.Location = new Point(23, 41);
             txId.Name = "txId";
             txId.Size = new Size(100, 23);
-            txId.TabIndex = 2;
+            txId.TabIndex = 0;
             // 
             // txNome
             // 
             txNome.Location = new Point(148, 41);
             txNome.Name = "txNome";
             txNome.Size = new Size(219, 23);
-            txNome.TabIndex = 3;
+            txNome.TabIndex = 1;
             // 
             // btnCadastrar
             // 
@@ -74,7 +74,7 @@
             btnCadastrar.Location = new Point(211, 97);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 40);
-            btnCadastrar.TabIndex = 4;
+            btnCadastrar.TabIndex = 2;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
@@ -84,7 +84,7 @@
             btnCancelar.Location = new Point(292, 97);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 40);
-            btnCancelar.TabIndex = 5;
+            btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 

@@ -55,14 +55,14 @@
             txNome.Location = new Point(12, 127);
             txNome.Name = "txNome";
             txNome.Size = new Size(429, 23);
-            txNome.TabIndex = 1;
+            txNome.TabIndex = 2;
             // 
             // txEmail
             // 
             txEmail.Location = new Point(222, 205);
             txEmail.Name = "txEmail";
             txEmail.Size = new Size(268, 23);
-            txEmail.TabIndex = 2;
+            txEmail.TabIndex = 4;
             // 
             // txCpf
             // 
@@ -70,7 +70,7 @@
             txCpf.Mask = "000.000.000-00";
             txCpf.Name = "txCpf";
             txCpf.Size = new Size(157, 23);
-            txCpf.TabIndex = 3;
+            txCpf.TabIndex = 1;
             txCpf.MaskInputRejected += maskedTextBox1_MaskInputRejected;
             // 
             // txTelefone
@@ -79,7 +79,7 @@
             txTelefone.Mask = "(00) 0 0000 - 0000";
             txTelefone.Name = "txTelefone";
             txTelefone.Size = new Size(186, 23);
-            txTelefone.TabIndex = 4;
+            txTelefone.TabIndex = 3;
             // 
             // lbId
             // 
@@ -132,7 +132,7 @@
             btnCadastrar.Location = new Point(299, 256);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(94, 43);
-            btnCadastrar.TabIndex = 10;
+            btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +142,7 @@
             btnCancelar.Location = new Point(399, 256);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(94, 43);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 

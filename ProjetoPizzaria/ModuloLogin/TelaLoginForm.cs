@@ -23,6 +23,12 @@ namespace ProjetoPizzaria.ModuloLogin
 
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            txUsuario.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txUsuario.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+
+            txSenha.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
+            txSenha.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
         private void button1_Click(object sender, EventArgs e)

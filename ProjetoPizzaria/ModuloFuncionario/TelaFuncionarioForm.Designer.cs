@@ -70,35 +70,35 @@
             txNome.Location = new Point(68, 112);
             txNome.Name = "txNome";
             txNome.Size = new Size(360, 23);
-            txNome.TabIndex = 1;
+            txNome.TabIndex = 4;
             // 
             // txMatricula
             // 
             txMatricula.Location = new Point(288, 44);
             txMatricula.Name = "txMatricula";
             txMatricula.Size = new Size(140, 23);
-            txMatricula.TabIndex = 3;
+            txMatricula.TabIndex = 2;
             // 
             // txCarteira
             // 
             txCarteira.Location = new Point(68, 249);
             txCarteira.Name = "txCarteira";
             txCarteira.Size = new Size(105, 23);
-            txCarteira.TabIndex = 4;
+            txCarteira.TabIndex = 7;
             // 
             // txEmail
             // 
             txEmail.Location = new Point(189, 181);
             txEmail.Name = "txEmail";
             txEmail.Size = new Size(239, 23);
-            txEmail.TabIndex = 5;
+            txEmail.TabIndex = 6;
             // 
             // txSenha
             // 
             txSenha.Location = new Point(337, 249);
             txSenha.Name = "txSenha";
             txSenha.Size = new Size(91, 23);
-            txSenha.TabIndex = 7;
+            txSenha.TabIndex = 9;
             // 
             // txValidade
             // 
@@ -214,7 +214,7 @@
             PnlCv.Location = new Point(443, 44);
             PnlCv.Name = "PnlCv";
             PnlCv.Size = new Size(133, 134);
-            PnlCv.TabIndex = 21;
+            PnlCv.TabIndex = 3;
             PnlCv.Paint += panel1_Paint;
             // 
             // radioButton3
@@ -223,7 +223,7 @@
             radioButton3.Location = new Point(18, 53);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(94, 19);
-            radioButton3.TabIndex = 2;
+            radioButton3.TabIndex = 6;
             radioButton3.TabStop = true;
             radioButton3.Text = "radioButton3";
             radioButton3.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             radioButton2.Location = new Point(18, 28);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(94, 19);
-            radioButton2.TabIndex = 1;
+            radioButton2.TabIndex = 5;
             radioButton2.TabStop = true;
             radioButton2.Text = "radioButton2";
             radioButton2.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             radioButton1.Location = new Point(18, 3);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 0;
+            radioButton1.TabIndex = 4;
             radioButton1.TabStop = true;
             radioButton1.Text = "radioButton1";
             radioButton1.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             txCpf.Mask = "000.000.000-00";
             txCpf.Name = "txCpf";
             txCpf.Size = new Size(101, 23);
-            txCpf.TabIndex = 23;
+            txCpf.TabIndex = 1;
             // 
             // txTelefone
             // 
@@ -273,7 +273,7 @@
             txTelefone.Mask = "(99) 0 0000-0000";
             txTelefone.Name = "txTelefone";
             txTelefone.Size = new Size(105, 23);
-            txTelefone.TabIndex = 24;
+            txTelefone.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -281,7 +281,7 @@
             btnCancelar.Location = new Point(486, 420);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 41);
-            btnCancelar.TabIndex = 26;
+            btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -291,7 +291,7 @@
             btnCadastrar.Location = new Point(405, 420);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 41);
-            btnCadastrar.TabIndex = 25;
+            btnCadastrar.TabIndex = 11;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
