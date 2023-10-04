@@ -11,6 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetoPizzaria.infra\ProjetoPizzaria.infra.csproj" />
+    <ProjectReference Include="..\ProjetoPizzariaDominio\ProjetoPizzariaDominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

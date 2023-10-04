@@ -88,6 +88,7 @@
             Controls.Add(lbUsuario);
             Controls.Add(txSenha);
             Controls.Add(txUsuario);
+            KeyPreview = true;
             Name = "TelaLoginForm";
             Text = "TelaLoginForm";
             ResumeLayout(false);

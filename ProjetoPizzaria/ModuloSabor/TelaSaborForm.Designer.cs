@@ -187,6 +187,7 @@
             Controls.Add(lbId);
             Controls.Add(txNome);
             Controls.Add(txId);
+            KeyPreview = true;
             Name = "TelaSaborForm";
             Text = "TelaSaborForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();

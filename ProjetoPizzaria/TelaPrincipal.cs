@@ -1,4 +1,5 @@
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.infra.ModuloIgrediente;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
@@ -8,6 +9,7 @@ using ProjetoPizzaria.ModuloPedidos;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
+using ProjetoPizzariaDominio.ModuloIgrediente;
 using System.Configuration;
 
 namespace ProjetoPizzaria
@@ -16,6 +18,9 @@ namespace ProjetoPizzaria
     {
         private ControladorBase controlador;
         private static TelaPrincipal telaPrincipal;
+
+        IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
+
         public TelaPrincipal()
         {
             ConfigurarLinguagem();
@@ -87,8 +92,11 @@ namespace ProjetoPizzaria
         {
             UserControl listagem = controlador.ObterTabela();
             listagem.Dock = DockStyle.Fill;
-            panelRegistros.Controls.Clear();
-            panelRegistros.Controls.Add(listagem);
+
+            panelContainerTabela.Dock = DockStyle.None;
+            panelContainerTabela.Visible = true;
+            panelContainerTabela.Controls.Add(listagem);
+            listagem.BringToFront();
         }
 
         private void cepToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +122,7 @@ namespace ProjetoPizzaria
 
         private void igredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorIgrediente();
+            controlador = new ControladorIgrediente(repositorioIgrediente);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -182,31 +190,6 @@ namespace ProjetoPizzaria
             controlador.Excluir();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void exibirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelRegistros_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnEndereco_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCep();
@@ -237,7 +220,7 @@ namespace ProjetoPizzaria
 
         private void btnIgredientes_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorIgrediente();
+            controlador = new ControladorIgrediente(repositorioIgrediente);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -273,25 +256,12 @@ namespace ProjetoPizzaria
                 StartPosition = FormStartPosition.CenterScreen
             };
             _ = config.ShowDialog();
-            // remove todos os controles e recria a tela, aplicando assim o novo idioma
 
             string idiomaAtual = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
 
             Controls.Clear();
             InitializeComponent();
             Funcoes.AjustaResourcesControl(this);
-
-            //if (!LinguagemSelecionada.fechaAplicacao)
-            //{
-            //    Application.Restart();
-            //    Environment.Exit(0);
-            //}
-            //else
-            //{
-            //    Controls.Clear();
-            //    InitializeComponent();
-            //    Funcoes.AjustaResourcesControl(this);
-            //}
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
@@ -324,7 +294,7 @@ namespace ProjetoPizzaria
                     ConfigurarTelaPrincipal(controlador);
                     break;
                 case Keys.F6:
-                    controlador = new ControladorIgrediente();
+                    controlador = new ControladorIgrediente(repositorioIgrediente);
 
                     ConfigurarTelaPrincipal(controlador);
                     break;

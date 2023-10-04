@@ -25,6 +25,9 @@ namespace ProjetoPizzaria.ModuloProdutos
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
 
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
             EventTarget();
         }
 

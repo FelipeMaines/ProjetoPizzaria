@@ -205,7 +205,9 @@
             Controls.Add(txLograduro);
             Controls.Add(txBairro);
             Controls.Add(txId);
+            KeyPreview = true;
             Name = "TelaCepForm";
+            RightToLeftLayout = true;
             Text = "TelaCepForm";
             ResumeLayout(false);
             PerformLayout();

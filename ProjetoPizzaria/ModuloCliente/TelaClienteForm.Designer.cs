@@ -163,6 +163,7 @@
             Controls.Add(txEmail);
             Controls.Add(txNome);
             Controls.Add(txId);
+            KeyPreview = true;
             Name = "TelaClienteForm";
             Text = "TelaClienteForm";
             ResumeLayout(false);

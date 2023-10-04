@@ -1,5 +1,6 @@
 using ProjetoPizzaria.ModuloLogin;
 using System.Configuration;
+using System.Data.Common;
 using System.Globalization;
 
 namespace ProjetoPizzaria
@@ -16,6 +17,9 @@ namespace ProjetoPizzaria
             #region Idioma
             AjustaIdiomaRegiao();
             #endregion
+
+            //DbProviderFactories.RegisterFactory("System.Data.SqlClient", System.Data.SqlClient.SqlClientFactory.Instance);
+            //DbProviderFactories.RegisterFactory("MySql.Data.MySqlClient", MySql.Data.MySqlClient.MySqlClientFactory.Instance);
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

@@ -28,6 +28,9 @@ namespace ProjetoPizzaria.ModuloCliente
             #endregion
 
             EnventosTarget();
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
         }
 
         private void EnventosTarget()

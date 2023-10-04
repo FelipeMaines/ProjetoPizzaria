@@ -77,6 +77,7 @@
             btnCadastrar.TabIndex = 2;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnCancelar
             // 
@@ -99,6 +100,7 @@
             Controls.Add(txId);
             Controls.Add(lbNome);
             Controls.Add(lbId);
+            KeyPreview = true;
             Name = "TelaIgredienteForm";
             Text = "CadastroIgredienteForm";
             ResumeLayout(false);

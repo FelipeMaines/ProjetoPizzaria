@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPizzaria", "ProjetoPizzaria\ProjetoPizzaria.csproj", "{DAC47BBC-7143-4788-9EDD-1C8A12727601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPizzaria", "ProjetoPizzaria\ProjetoPizzaria.csproj", "{DAC47BBC-7143-4788-9EDD-1C8A12727601}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Apresentacao", "1.Apresentacao", "{C7E1E592-DEDE-4786-A579-3B955EE8FC43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Dominio", "2.Dominio", "{7F8129AA-3594-4945-918C-07A071490A48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPizzariaDominio", "ProjetoPizzariaDominio\ProjetoPizzariaDominio.csproj", "{CA46E323-5921-435C-B631-CD0516AAAF46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Infra", "3.Infra", "{79A25F36-792C-49E6-BFBE-3C10A5632FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPizzaria.infra", "ProjetoPizzaria.infra\ProjetoPizzaria.infra.csproj", "{F788A36A-1A4B-4B47-B15D-E4F7100B985D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +25,22 @@ Global
 		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAC47BBC-7143-4788-9EDD-1C8A12727601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA46E323-5921-435C-B631-CD0516AAAF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA46E323-5921-435C-B631-CD0516AAAF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA46E323-5921-435C-B631-CD0516AAAF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA46E323-5921-435C-B631-CD0516AAAF46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F788A36A-1A4B-4B47-B15D-E4F7100B985D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F788A36A-1A4B-4B47-B15D-E4F7100B985D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F788A36A-1A4B-4B47-B15D-E4F7100B985D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F788A36A-1A4B-4B47-B15D-E4F7100B985D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DAC47BBC-7143-4788-9EDD-1C8A12727601} = {C7E1E592-DEDE-4786-A579-3B955EE8FC43}
+		{CA46E323-5921-435C-B631-CD0516AAAF46} = {7F8129AA-3594-4945-918C-07A071490A48}
+		{F788A36A-1A4B-4B47-B15D-E4F7100B985D} = {79A25F36-792C-49E6-BFBE-3C10A5632FF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92C4E7ED-F6F6-41B4-A057-0455EB949479}

@@ -324,6 +324,7 @@
             Controls.Add(txMatricula);
             Controls.Add(txNome);
             Controls.Add(txId);
+            KeyPreview = true;
             Name = "TelaFuncionarioForm";
             Text = "TelaFuncionarioForm";
             PnlCv.ResumeLayout(false);

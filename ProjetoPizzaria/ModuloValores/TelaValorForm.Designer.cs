@@ -163,6 +163,7 @@
             Controls.Add(lbValorBorda);
             Controls.Add(lbValor);
             Controls.Add(lbId);
+            KeyPreview = true;
             Name = "TelaValorForm";
             Text = "TelaValorForm";
             ResumeLayout(false);

@@ -25,6 +25,9 @@ namespace ProjetoPizzaria.ModuloSabor
             #endregion
 
             EventTarget();
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
         }
 
         private void EventTarget()

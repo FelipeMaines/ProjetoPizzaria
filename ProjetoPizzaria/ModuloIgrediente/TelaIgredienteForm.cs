@@ -1,4 +1,7 @@
-﻿using ProjetoPizzaria.Compartilhado;
+﻿using Microsoft.Identity.Client;
+using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.infra.ModuloIgrediente;
+using ProjetoPizzariaDominio.ModuloIgrediente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +28,14 @@ namespace ProjetoPizzaria.ModuloIgrediente
             #endregion
 
             EventoTarget();
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+            
+
         }
+
+        public Igrediente igrediente { get; set; }
 
         private void EventoTarget()
         {
@@ -34,6 +44,17 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
             txNome.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
             txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+        }
+
+        public Igrediente PegarIgrendiente()
+        {
+            string nome = txNome.Text;
+            return new Igrediente(nome);
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            igrediente = PegarIgrendiente();
         }
     }
 }

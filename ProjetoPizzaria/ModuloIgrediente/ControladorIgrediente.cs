@@ -1,6 +1,7 @@
 ﻿using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
+using ProjetoPizzariaDominio.ModuloIgrediente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,14 @@ namespace ProjetoPizzaria.ModuloIgrediente
 {
     public class ControladorIgrediente : ControladorBase
     {
+        IRepositorioIgrediente repositorioIgrediente;
         private TabelaIgredientes tabelaIgredientes;
+        public ControladorIgrediente(IRepositorioIgrediente repositorioIgrediente)
+        {
+            this.tabelaIgredientes = new TabelaIgredientes();
+            this.repositorioIgrediente = repositorioIgrediente;
+        }
+
         public override string ToolTipInserir => "Cadastrar Igrediente";
 
         public override string ToolTipEditar => "Editar Igrediente";
@@ -20,7 +28,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
         public override void CarregarItens()
         {
-            throw new NotImplementedException();
+            tabelaIgredientes.AtualizarRegistros(repositorioIgrediente.SelecionarTodos());
         }
 
         public override void Editar()
@@ -37,7 +45,12 @@ namespace ProjetoPizzaria.ModuloIgrediente
         {
             var telaIgrediente = new TelaIgredienteForm();
 
-            telaIgrediente.ShowDialog();
+            if(telaIgrediente.ShowDialog() == DialogResult.OK)
+            {
+                repositorioIgrediente.Inserir(telaIgrediente.igrediente);
+            }
+
+            tabelaIgredientes.AtualizarRegistros(repositorioIgrediente.SelecionarTodos());
         }
 
         public override UserControl ObterTabela()

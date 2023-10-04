@@ -26,6 +26,9 @@ namespace ProjetoPizzaria
 
             EventTarget();
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+
         }
 
         private void EventTarget()

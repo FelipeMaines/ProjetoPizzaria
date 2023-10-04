@@ -16,6 +16,9 @@ namespace ProjetoPizzaria.ModuloProdutos
         public TabelaProdutos()
         {
             InitializeComponent();
+            ConfigurarColunas();
+            ConfiguracaoGrid.ConfigurarGridZebrado(grid);
+            ConfiguracaoGrid.ConfigurarGridSomenteLeitura(grid);
 
             #region idioma/região interface - satellite assembly
 
@@ -23,6 +26,36 @@ namespace ProjetoPizzaria.ModuloProdutos
 
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+        }
+
+        private void ConfigurarColunas()
+        {
+            DataGridViewColumn[] colunas = new DataGridViewColumn[]
+            {
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "id",
+                    HeaderText = "Id"
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "materia",
+                    HeaderText = "Materia"
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "titulo",
+                    HeaderText = "Titulo"
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "alternativaCorreta",
+                    HeaderText = "Alternativa Correta"
+                }
+            };
+
+            grid.Columns.AddRange(colunas);
         }
     }
 }
