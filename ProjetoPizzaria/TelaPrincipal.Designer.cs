@@ -65,6 +65,7 @@
             // 
             toolStrip1.AutoSize = false;
             toolStrip1.BackColor = Color.FromArgb(55, 61, 66);
+            toolStrip1.Dock = DockStyle.None;
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1, toolStripLabel2, toolStripLabel3, btnConfiguracao });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Margin = new Padding(10);
