@@ -303,6 +303,7 @@
             // 
             // panelContainerTabela
             // 
+            panelContainerTabela.CausesValidation = false;
             panelContainerTabela.Location = new Point(127, 80);
             panelContainerTabela.Name = "panelContainerTabela";
             panelContainerTabela.Size = new Size(669, 484);
