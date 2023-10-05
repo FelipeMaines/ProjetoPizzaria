@@ -52,5 +52,10 @@ namespace ProjetoPizzaria.ModuloProdutos
         {
             return "Cadastro de Produtos";
         }
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using ProjetoPizzariaDominio.Compartilhado;
 using System.Configuration;
 using System.Data.Common;
+using System.Net;
 
 namespace ProjetoPizzaria.infra.Compartilhado
 {
@@ -16,6 +17,7 @@ namespace ProjetoPizzaria.infra.Compartilhado
         protected abstract string sqlExcluir { get; }
         protected abstract string sqlSelecionarTodos { get; }
         protected abstract string sqlSelecionarPorId { get; }
+        protected abstract string sqlPesquisar { get; }
 
         public virtual void Inserir(TEntidade registro)
         {
@@ -61,7 +63,7 @@ namespace ProjetoPizzaria.infra.Compartilhado
             SqlCommand comandoExcluir = conexaoComBanco.CreateCommand();
             comandoExcluir.CommandText = sqlExcluir;
 
-            comandoExcluir.Parameters.AddWithValue("ID", registroSelecionado.id);
+            comandoExcluir.Parameters.AddWithValue("ID_IGREDIENTE", registroSelecionado.id);
 
             comandoExcluir.ExecuteNonQuery();
 
@@ -76,7 +78,7 @@ namespace ProjetoPizzaria.infra.Compartilhado
             SqlCommand comandoSelecionarPorId = conexaoComBanco.CreateCommand();
             comandoSelecionarPorId.CommandText = sqlSelecionarPorId;
 
-            comandoSelecionarPorId.Parameters.AddWithValue("ID", id);
+            comandoSelecionarPorId.Parameters.AddWithValue("ID_IGREDIENTE", id);
 
             SqlDataReader leitorItems = comandoSelecionarPorId.ExecuteReader();
 
@@ -101,6 +103,34 @@ namespace ProjetoPizzaria.infra.Compartilhado
             comandoSelecionarTodos.CommandText = sqlSelecionarTodos;
 
             SqlDataReader leitorItens = comandoSelecionarTodos.ExecuteReader();
+
+            List<TEntidade> registros = new List<TEntidade>();
+
+            TMapeador mapeador = new TMapeador();
+
+            while (leitorItens.Read())
+            {
+                TEntidade registro = mapeador.ConverterRegistro(leitorItens);
+
+                registros.Add(registro);
+            }
+
+            conexaoComBanco.Close();
+
+            return registros;
+        }
+
+        public virtual List<TEntidade> Pesquisar(string texto)
+        {
+            SqlConnection conexaoComBanco = new SqlConnection(enderecoBanco);
+            conexaoComBanco.Open();
+
+            SqlCommand comandoPesquisarSql = conexaoComBanco.CreateCommand();
+            comandoPesquisarSql.CommandText = sqlPesquisar;
+
+            comandoPesquisarSql.Parameters.AddWithValue("NOME", texto);
+
+            SqlDataReader leitorItens = comandoPesquisarSql.ExecuteReader();
 
             List<TEntidade> registros = new List<TEntidade>();
 

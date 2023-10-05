@@ -18,6 +18,7 @@ namespace ProjetoPizzaria.Compartilhado
         public virtual bool EditarHabilitado { get { return true; } }
         public virtual bool ExcluirHabilitado { get { return true; } }
 
+        public abstract void Pesquisar(string texto);
         public abstract void Inserir();
         public abstract void Editar();
         public abstract void Excluir();

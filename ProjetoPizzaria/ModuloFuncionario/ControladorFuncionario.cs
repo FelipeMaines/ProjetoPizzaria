@@ -54,6 +54,10 @@ namespace ProjetoPizzaria.ModuloFuncionario
         }
 
         public override string ObterTipoCadastro() => "Cadastro de Funcionario";
-        
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

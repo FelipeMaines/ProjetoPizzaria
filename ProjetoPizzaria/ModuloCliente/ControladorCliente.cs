@@ -50,5 +50,10 @@ namespace ProjetoPizzaria.ModuloCliente
         {
             return "Cadastro de Clientes";
         }
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

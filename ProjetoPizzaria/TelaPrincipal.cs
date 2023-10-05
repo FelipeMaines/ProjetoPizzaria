@@ -25,7 +25,6 @@ namespace ProjetoPizzaria
         {
             ConfigurarLinguagem();
 
-            InitializeComponent();
 
             #region idioma/região interface - satellite assembly
 
@@ -33,6 +32,8 @@ namespace ProjetoPizzaria
 
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            //InitializeComponent();
 
             telaPrincipal = this;
 
@@ -54,7 +55,7 @@ namespace ProjetoPizzaria
         {
             this.controlador = controlador;
 
-            toolStripLabel1.Text = controlador.ObterTipoCadastro();
+            //labelToStrip.Text = controlador.ObterTipoCadastro();
 
             ConfigurarToolTips(controlador);
 
@@ -83,76 +84,17 @@ namespace ProjetoPizzaria
 
         private void ConfigurarToolTips(ControladorBase controlador)
         {
-            btnInserir.ToolTipText = controlador.ToolTipInserir;
-            btnEditar.ToolTipText = controlador.ToolTipEditar;
-            btnExcluir.ToolTipText = controlador.ToolTipExcluir;
+            //btnInserir. = controlador.ToolTipInserir;
+            //btnEditar.ToolTipText = controlador.ToolTipEditar;
+            //btnExcluir.ToolTipText = controlador.ToolTipExcluir;
         }
 
         private void ConfigurarTabela(ControladorBase controlador)
         {
             UserControl listagem = controlador.ObterTabela();
             listagem.Dock = DockStyle.Fill;
-
-            panelContainerTabela.Dock = DockStyle.None;
-            panelContainerTabela.Visible = true;
-            panelContainerTabela.Controls.Add(listagem);
-            listagem.BringToFront();
-        }
-
-        private void cepToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorCep();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorFuncionario();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorCliente();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void igredientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorIgrediente(repositorioIgrediente);
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorSabores();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void valoresPizzaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorValores();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorProdutos();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorPedidos();
-
-            ConfigurarTelaPrincipal(controlador);
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(listagem);
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -190,61 +132,56 @@ namespace ProjetoPizzaria
             controlador.Excluir();
         }
 
-        private void btnEndereco_Click(object sender, EventArgs e)
-        {
-            controlador = new ControladorCep();
-
-            ConfigurarTelaPrincipal(controlador);
-        }
-
-        private void btnFuncionario_Click(object sender, EventArgs e)
+        private void btnFuncionario_Click_1(object sender, EventArgs e)
         {
             controlador = new ControladorFuncionario();
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+        private void btnCep_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCep();
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnCliente_Click_1(object sender, EventArgs e)
         {
             controlador = new ControladorCliente();
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void btnProdutos_Click(object sender, EventArgs e)
+        private void btnProduto_Click(object sender, EventArgs e)
         {
             controlador = new ControladorProdutos();
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void btnIgredientes_Click(object sender, EventArgs e)
+        private void btnIgrediente_Click(object sender, EventArgs e)
         {
             controlador = new ControladorIgrediente(repositorioIgrediente);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void btnSabores_Click(object sender, EventArgs e)
+        private void btnSabores_Click_1(object sender, EventArgs e)
         {
             controlador = new ControladorSabores();
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void btnValores_Click(object sender, EventArgs e)
+        private void btnValores_Click_1(object sender, EventArgs e)
         {
             controlador = new ControladorValores();
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void lbNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConfiguracao_Click(object sender, EventArgs e)
+        private void btnConfiguracao_Click_1(object sender, EventArgs e)
         {
             ConfigurarLinguagem();
         }
@@ -262,6 +199,23 @@ namespace ProjetoPizzaria
             Controls.Clear();
             InitializeComponent();
             Funcoes.AjustaResourcesControl(this);
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if(controlador == null)
+            {
+                MessageBox.Show("Selecione uma area primeiro!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                controlador.CarregarItens();
+                return;
+            }
+
+            controlador.Pesquisar(textBox1.Text);
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
@@ -366,5 +320,7 @@ namespace ProjetoPizzaria
             WindowState = FormWindowState.Normal;
             notifyIconSystemTray.Visible = false;
         }
+
+
     }
 }

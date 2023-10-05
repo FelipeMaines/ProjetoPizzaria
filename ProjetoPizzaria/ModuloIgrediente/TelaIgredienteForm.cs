@@ -16,6 +16,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 {
     public partial class TelaIgredienteForm : Form
     {
+        public Igrediente igrediente { get; set; }
         public TelaIgredienteForm()
         {
             InitializeComponent();
@@ -30,12 +31,14 @@ namespace ProjetoPizzaria.ModuloIgrediente
             EventoTarget();
 
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
-
-            
-
         }
 
-        public Igrediente igrediente { get; set; }
+        public TelaIgredienteForm(Igrediente igrediente) : this()
+        {
+            this.igrediente = igrediente;
+            SetarTela();
+        }
+
 
         private void EventoTarget()
         {
@@ -46,15 +49,29 @@ namespace ProjetoPizzaria.ModuloIgrediente
             txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
-        public Igrediente PegarIgrendiente()
+        public Igrediente PegarIgrendiente(bool edicao = false)
         {
             string nome = txNome.Text;
-            return new Igrediente(nome);
+
+            if(!edicao)
+                return new Igrediente(nome);
+
+            else
+            {
+                int id = Convert.ToInt32(txId.Text);
+                return new Igrediente(nome, id);
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             igrediente = PegarIgrendiente();
+        }
+
+        private void SetarTela()
+        {
+            txId.Text = igrediente.id.ToString();
+            txNome.Text = igrediente.nome;
         }
     }
 }

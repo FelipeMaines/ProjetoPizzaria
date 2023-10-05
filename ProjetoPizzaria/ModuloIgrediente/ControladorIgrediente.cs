@@ -5,6 +5,7 @@ using ProjetoPizzariaDominio.ModuloIgrediente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
         {
             this.tabelaIgredientes = new TabelaIgredientes();
             this.repositorioIgrediente = repositorioIgrediente;
+            CarregarItens();
         }
 
         public override string ToolTipInserir => "Cadastrar Igrediente";
@@ -33,12 +35,35 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            int idIgrediente = tabelaIgredientes.ObterIdSelecionado();
+
+            var igrediente = repositorioIgrediente.SelecionarPorId(idIgrediente);
+
+            var telaIgrediente = new TelaIgredienteForm(igrediente);
+
+            if(telaIgrediente.ShowDialog() == DialogResult.OK)
+            {
+                repositorioIgrediente.Editar(telaIgrediente.PegarIgrendiente(true));
+            }
+
+            tabelaIgredientes.AtualizarRegistros(repositorioIgrediente.SelecionarTodos());
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            int idIgrediente = tabelaIgredientes.ObterIdSelecionado();
+
+            var igrediente = repositorioIgrediente.SelecionarPorId(idIgrediente);
+
+            var resultado = MessageBox.Show($"Deseja Realmente excluir o item {igrediente.nome}", "Excluir", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if(resultado == DialogResult.OK)
+            {
+                repositorioIgrediente.Excluir(igrediente);
+                tabelaIgredientes.AtualizarRegistros(repositorioIgrediente.SelecionarTodos());
+            }
+            else
+                return;
         }
 
         public override void Inserir()
@@ -64,6 +89,13 @@ namespace ProjetoPizzaria.ModuloIgrediente
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Igredientes";
+        }
+
+        public override void Pesquisar(string texto)
+        {
+            var lista = repositorioIgrediente.Pesquisar(texto);
+
+            tabelaIgredientes.AtualizarRegistros(lista);
         }
     }
 }

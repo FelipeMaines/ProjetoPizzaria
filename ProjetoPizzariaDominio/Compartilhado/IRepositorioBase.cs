@@ -17,5 +17,7 @@ namespace ProjetoPizzariaDominio.Compartilhado
         List<T> SelecionarTodos();
 
         T SelecionarPorId(int id);
+
+        List<T> Pesquisar(string texto);
     }
 }

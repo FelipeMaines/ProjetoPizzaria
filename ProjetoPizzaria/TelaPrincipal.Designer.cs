@@ -30,118 +30,34 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            toolStrip1 = new ToolStrip();
-            btnInserir = new ToolStripButton();
-            btnEditar = new ToolStripButton();
-            btnExcluir = new ToolStripButton();
-            toolStripSeparator1 = new ToolStripSeparator();
-            toolStripLabel1 = new ToolStripLabel();
-            toolStripLabel2 = new ToolStripLabel();
-            toolStripLabel3 = new ToolStripLabel();
-            btnConfiguracao = new ToolStripButton();
             notifyIconSystemTray = new NotifyIcon(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
             abrirAplicacaoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
-            panel2 = new Panel();
+            panel1 = new Panel();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
-            lbNome = new Label();
-            btnIgredientes = new Button();
-            btnProdutos = new Button();
-            btnFuncionario = new Button();
-            btnEndereco = new Button();
             btnSabores = new Button();
             btnValores = new Button();
+            btnProduto = new Button();
             btnCliente = new Button();
-            panelContainerTabela = new Panel();
-            toolStrip1.SuspendLayout();
+            btnCep = new Button();
+            btnIgrediente = new Button();
+            btnFuncionario = new Button();
+            panel2 = new Panel();
+            btnConfiguracao = new Button();
+            btnPesquisar = new Button();
+            textBox1 = new TextBox();
+            btnExcluir = new Button();
+            btnEditar = new Button();
+            btnInserir = new Button();
+            panelContainer = new Panel();
             contextMenuStrip1.SuspendLayout();
-            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.AutoSize = false;
-            toolStrip1.BackColor = Color.FromArgb(55, 61, 66);
-            toolStrip1.Dock = DockStyle.None;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1, toolStripLabel2, toolStripLabel3, btnConfiguracao });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Margin = new Padding(10);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Padding = new Padding(8);
-            toolStrip1.Size = new Size(796, 80);
-            toolStrip1.TabIndex = 0;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // btnInserir
-            // 
-            btnInserir.AutoSize = false;
-            btnInserir.BackgroundImage = Properties.Resources.person_add_FILL0_wght400_GRAD0_opsz40;
-            btnInserir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnInserir.ForeColor = Color.FromArgb(206, 246, 255);
-            btnInserir.ImageTransparentColor = Color.Magenta;
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(40, 40);
-            btnInserir.Text = "toolStripButton1";
-            btnInserir.Click += btnInserir_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.AutoSize = false;
-            btnEditar.BackgroundImage = Properties.Resources.edit_FILL0_wght400_GRAD0_opsz40;
-            btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEditar.ImageTransparentColor = Color.Magenta;
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(40, 40);
-            btnEditar.Text = "toolStripButton2";
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.AutoSize = false;
-            btnExcluir.BackgroundImage = Properties.Resources.delete_FILL0_wght400_GRAD0_opsz40;
-            btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnExcluir.ImageTransparentColor = Color.Magenta;
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(40, 40);
-            btnExcluir.Text = "toolStripButton3";
-            btnExcluir.Click += btnExcluir_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.BackColor = SystemColors.ActiveBorder;
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 64);
-            // 
-            // toolStripLabel1
-            // 
-            toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(0, 61);
-            // 
-            // toolStripLabel2
-            // 
-            toolStripLabel2.Name = "toolStripLabel2";
-            toolStripLabel2.Size = new Size(10, 61);
-            toolStripLabel2.Text = ".";
-            // 
-            // toolStripLabel3
-            // 
-            toolStripLabel3.ForeColor = Color.FromArgb(206, 246, 255);
-            toolStripLabel3.Name = "toolStripLabel3";
-            toolStripLabel3.Size = new Size(86, 61);
-            toolStripLabel3.Text = "toolStripLabel3";
-            // 
-            // btnConfiguracao
-            // 
-            btnConfiguracao.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConfiguracao.Image = (Image)resources.GetObject("btnConfiguracao.Image");
-            btnConfiguracao.ImageTransparentColor = Color.Magenta;
-            btnConfiguracao.Name = "btnConfiguracao";
-            btnConfiguracao.Size = new Size(23, 61);
-            btnConfiguracao.Text = "toolStripButton1";
-            btnConfiguracao.Click += btnConfiguracao_Click;
             // 
             // notifyIconSystemTray
             // 
@@ -179,190 +95,266 @@
             sobreToolStripMenuItem.Size = new Size(155, 22);
             sobreToolStripMenuItem.Text = "Sobre";
             // 
-            // panel2
+            // panel1
             // 
-            panel2.BackColor = Color.Gray;
-            panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(lbNome);
-            panel2.Controls.Add(btnIgredientes);
-            panel2.Controls.Add(btnProdutos);
-            panel2.Controls.Add(btnFuncionario);
-            panel2.Controls.Add(btnEndereco);
-            panel2.Controls.Add(btnSabores);
-            panel2.Controls.Add(btnValores);
-            panel2.Controls.Add(btnCliente);
-            panel2.Location = new Point(0, 80);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(127, 484);
-            panel2.TabIndex = 10;
+            panel1.BackColor = Color.DarkGray;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnSabores);
+            panel1.Controls.Add(btnValores);
+            panel1.Controls.Add(btnProduto);
+            panel1.Controls.Add(btnCliente);
+            panel1.Controls.Add(btnCep);
+            panel1.Controls.Add(btnIgrediente);
+            panel1.Controls.Add(btnFuncionario);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(160, 451);
+            panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(59, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 11;
+            label1.Text = "label1";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(14, 56);
+            pictureBox1.Location = new Point(27, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 92);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
+            pictureBox1.Size = new Size(100, 76);
+            pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
-            // 
-            // lbNome
-            // 
-            lbNome.AutoSize = true;
-            lbNome.ForeColor = Color.FromArgb(206, 246, 255);
-            lbNome.Location = new Point(42, 21);
-            lbNome.Name = "lbNome";
-            lbNome.Size = new Size(40, 15);
-            lbNome.TabIndex = 1;
-            lbNome.Text = "Nome";
-            lbNome.Click += lbNome_Click;
-            // 
-            // btnIgredientes
-            // 
-            btnIgredientes.BackColor = Color.FromArgb(233, 154, 39);
-            btnIgredientes.ForeColor = Color.Black;
-            btnIgredientes.Location = new Point(12, 327);
-            btnIgredientes.Name = "btnIgredientes";
-            btnIgredientes.Size = new Size(100, 31);
-            btnIgredientes.TabIndex = 7;
-            btnIgredientes.Text = "Igredientes";
-            btnIgredientes.UseVisualStyleBackColor = false;
-            btnIgredientes.Click += btnIgredientes_Click;
-            // 
-            // btnProdutos
-            // 
-            btnProdutos.BackColor = Color.FromArgb(233, 154, 39);
-            btnProdutos.ForeColor = Color.Black;
-            btnProdutos.Location = new Point(12, 364);
-            btnProdutos.Name = "btnProdutos";
-            btnProdutos.Size = new Size(100, 31);
-            btnProdutos.TabIndex = 6;
-            btnProdutos.Text = "Produtos";
-            btnProdutos.UseVisualStyleBackColor = false;
-            btnProdutos.Click += btnProdutos_Click;
-            // 
-            // btnFuncionario
-            // 
-            btnFuncionario.BackColor = Color.FromArgb(233, 154, 39);
-            btnFuncionario.ForeColor = Color.Black;
-            btnFuncionario.Location = new Point(12, 213);
-            btnFuncionario.Name = "btnFuncionario";
-            btnFuncionario.Size = new Size(100, 31);
-            btnFuncionario.TabIndex = 3;
-            btnFuncionario.Text = "Funcionario";
-            btnFuncionario.UseMnemonic = false;
-            btnFuncionario.UseVisualStyleBackColor = false;
-            btnFuncionario.Click += btnFuncionario_Click;
-            btnFuncionario.KeyDown += btnFuncionario_KeyDown;
-            // 
-            // btnEndereco
-            // 
-            btnEndereco.BackColor = Color.FromArgb(233, 154, 39);
-            btnEndereco.ForeColor = Color.Black;
-            btnEndereco.Location = new Point(12, 250);
-            btnEndereco.Name = "btnEndereco";
-            btnEndereco.Size = new Size(100, 31);
-            btnEndereco.TabIndex = 4;
-            btnEndereco.Text = "Endereço";
-            btnEndereco.UseVisualStyleBackColor = false;
-            btnEndereco.Click += btnEndereco_Click;
             // 
             // btnSabores
             // 
-            btnSabores.BackColor = Color.FromArgb(233, 154, 39);
-            btnSabores.ForeColor = Color.Black;
-            btnSabores.Location = new Point(12, 401);
+            btnSabores.BackColor = Color.Coral;
+            btnSabores.Location = new Point(27, 360);
             btnSabores.Name = "btnSabores";
-            btnSabores.Size = new Size(100, 31);
-            btnSabores.TabIndex = 8;
+            btnSabores.Size = new Size(100, 37);
+            btnSabores.TabIndex = 9;
             btnSabores.Text = "Sabores";
             btnSabores.UseVisualStyleBackColor = false;
-            btnSabores.Click += btnSabores_Click;
+            btnSabores.Click += btnSabores_Click_1;
             // 
             // btnValores
             // 
-            btnValores.BackColor = Color.FromArgb(233, 154, 39);
-            btnValores.ForeColor = Color.Black;
-            btnValores.Location = new Point(12, 290);
+            btnValores.BackColor = Color.Coral;
+            btnValores.ForeColor = SystemColors.ButtonHighlight;
+            btnValores.Location = new Point(27, 403);
             btnValores.Name = "btnValores";
-            btnValores.Size = new Size(100, 31);
-            btnValores.TabIndex = 9;
+            btnValores.Size = new Size(100, 37);
+            btnValores.TabIndex = 8;
             btnValores.Text = "Valores";
             btnValores.UseVisualStyleBackColor = false;
-            btnValores.Click += btnValores_Click;
+            btnValores.Click += btnValores_Click_1;
+            // 
+            // btnProduto
+            // 
+            btnProduto.BackColor = Color.Coral;
+            btnProduto.Location = new Point(27, 274);
+            btnProduto.Name = "btnProduto";
+            btnProduto.Size = new Size(100, 37);
+            btnProduto.TabIndex = 7;
+            btnProduto.Text = "Produto";
+            btnProduto.UseVisualStyleBackColor = false;
+            btnProduto.Click += btnProduto_Click;
             // 
             // btnCliente
             // 
-            btnCliente.BackColor = Color.FromArgb(233, 154, 39);
-            btnCliente.ForeColor = Color.Black;
-            btnCliente.Location = new Point(12, 176);
+            btnCliente.BackColor = Color.Coral;
+            btnCliente.Location = new Point(27, 231);
             btnCliente.Name = "btnCliente";
-            btnCliente.Size = new Size(100, 31);
-            btnCliente.TabIndex = 5;
+            btnCliente.Size = new Size(100, 37);
+            btnCliente.TabIndex = 6;
             btnCliente.Text = "Cliente";
             btnCliente.UseVisualStyleBackColor = false;
-            btnCliente.Click += btnCliente_Click;
+            btnCliente.Click += btnCliente_Click_1;
             // 
-            // panelContainerTabela
+            // btnCep
             // 
-            panelContainerTabela.CausesValidation = false;
-            panelContainerTabela.Location = new Point(127, 80);
-            panelContainerTabela.Name = "panelContainerTabela";
-            panelContainerTabela.Size = new Size(669, 484);
-            panelContainerTabela.TabIndex = 11;
+            btnCep.BackColor = Color.Coral;
+            btnCep.Location = new Point(27, 188);
+            btnCep.Name = "btnCep";
+            btnCep.Size = new Size(100, 37);
+            btnCep.TabIndex = 5;
+            btnCep.Text = "Cep";
+            btnCep.UseVisualStyleBackColor = false;
+            btnCep.Click += btnCep_Click;
+            // 
+            // btnIgrediente
+            // 
+            btnIgrediente.BackColor = Color.Coral;
+            btnIgrediente.ForeColor = SystemColors.ButtonHighlight;
+            btnIgrediente.Location = new Point(27, 317);
+            btnIgrediente.Name = "btnIgrediente";
+            btnIgrediente.Size = new Size(100, 37);
+            btnIgrediente.TabIndex = 4;
+            btnIgrediente.Text = "Igredientes";
+            btnIgrediente.UseVisualStyleBackColor = false;
+            btnIgrediente.Click += btnIgrediente_Click;
+            // 
+            // btnFuncionario
+            // 
+            btnFuncionario.BackColor = Color.Coral;
+            btnFuncionario.Location = new Point(27, 145);
+            btnFuncionario.Name = "btnFuncionario";
+            btnFuncionario.Size = new Size(100, 37);
+            btnFuncionario.TabIndex = 0;
+            btnFuncionario.Text = "Funcionario";
+            btnFuncionario.UseVisualStyleBackColor = false;
+            btnFuncionario.Click += btnFuncionario_Click_1;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Gainsboro;
+            panel2.Controls.Add(btnConfiguracao);
+            panel2.Controls.Add(btnPesquisar);
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(btnExcluir);
+            panel2.Controls.Add(btnEditar);
+            panel2.Controls.Add(btnInserir);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(160, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(581, 100);
+            panel2.TabIndex = 2;
+            // 
+            // btnConfiguracao
+            // 
+            btnConfiguracao.Location = new Point(511, 26);
+            btnConfiguracao.Name = "btnConfiguracao";
+            btnConfiguracao.Size = new Size(46, 45);
+            btnConfiguracao.TabIndex = 5;
+            btnConfiguracao.Text = "button8";
+            btnConfiguracao.UseVisualStyleBackColor = true;
+            btnConfiguracao.Click += btnConfiguracao_Click_1;
+            // 
+            // btnPesquisar
+            // 
+            btnPesquisar.ForeColor = SystemColors.ActiveCaptionText;
+            btnPesquisar.Location = new Point(423, 26);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(66, 45);
+            btnPesquisar.TabIndex = 4;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(317, 38);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 3;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.LightGray;
+            btnExcluir.Image = Properties.Resources.delete_FILL0_wght400_GRAD0_opsz40;
+            btnExcluir.ImageAlign = ContentAlignment.MiddleRight;
+            btnExcluir.Location = new Point(172, 26);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(77, 45);
+            btnExcluir.TabIndex = 2;
+            btnExcluir.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.LightGray;
+            btnEditar.Image = Properties.Resources.edit_FILL0_wght400_GRAD0_opsz40;
+            btnEditar.ImageAlign = ContentAlignment.MiddleRight;
+            btnEditar.Location = new Point(89, 26);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(77, 45);
+            btnEditar.TabIndex = 1;
+            btnEditar.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnInserir
+            // 
+            btnInserir.BackColor = Color.Gainsboro;
+            btnInserir.Image = Properties.Resources.person_add_FILL0_wght400_GRAD0_opsz40;
+            btnInserir.ImageAlign = ContentAlignment.MiddleRight;
+            btnInserir.Location = new Point(6, 26);
+            btnInserir.Name = "btnInserir";
+            btnInserir.Size = new Size(77, 45);
+            btnInserir.TabIndex = 0;
+            btnInserir.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnInserir.UseVisualStyleBackColor = false;
+            btnInserir.Click += btnInserir_Click;
+            // 
+            // panelContainer
+            // 
+            panelContainer.BackColor = Color.Azure;
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(160, 100);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(581, 351);
+            panelContainer.TabIndex = 3;
             // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
-            BackColor = Color.FromArgb(59, 45, 30);
-            ClientSize = new Size(796, 564);
-            Controls.Add(panelContainerTabela);
+            BackColor = Color.White;
+            ClientSize = new Size(741, 451);
+            Controls.Add(panelContainer);
             Controls.Add(panel2);
-            Controls.Add(toolStrip1);
-            ForeColor = SystemColors.ControlText;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Controls.Add(panel1);
+            ForeColor = SystemColors.ButtonHighlight;
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pizzaria";
             FormClosed += TelaPrincipal_FormClosed;
             Load += TelaPrincipal_Load;
             Resize += FormPrincipal_Resize;
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
             contextMenuStrip1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ToolStrip toolStrip1;
-        private ToolStripButton btnInserir;
-        private ToolStripButton btnEditar;
-        private ToolStripButton btnExcluir;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripLabel toolStripLabel1;
-        private ToolStripLabel toolStripLabel2;
-        private ToolStripLabel toolStripLabel3;
-        private ToolStripButton btnConfiguracao;
         private NotifyIcon notifyIconSystemTray;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem abrirAplicacaoToolStripMenuItem;
         private ToolStripMenuItem encerrarToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem;
+        private Panel panel1;
         private Panel panel2;
-        private PictureBox pictureBox1;
-        private Label lbNome;
-        private Button btnIgredientes;
-        private Button btnProdutos;
+        private Panel panelContainer;
+        private Button btnIgrediente;
+        private Button button2;
+        private Button button1;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
         private Button btnFuncionario;
-        private Button btnEndereco;
+        private Button btnCliente;
+        private Button btnCep;
+        private Button btnProduto;
         private Button btnSabores;
         private Button btnValores;
-        private Button btnCliente;
-        private Panel panelContainerTabela;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
+        private Button btnExcluir;
+        private Button btnEditar;
+        private Button btnInserir;
+        private Button btnConfiguracao;
+        private Button btnPesquisar;
     }
 }

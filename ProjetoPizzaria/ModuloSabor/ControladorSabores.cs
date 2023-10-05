@@ -51,5 +51,10 @@ namespace ProjetoPizzaria.ModuloSabor
         {
             return "Cadastro de Sabores";
         }
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

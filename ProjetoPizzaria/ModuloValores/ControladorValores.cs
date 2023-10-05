@@ -50,5 +50,10 @@ namespace ProjetoPizzaria.ModuloValores
         {
             return "Cadastro de Valores";
         }
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

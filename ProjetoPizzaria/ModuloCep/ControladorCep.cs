@@ -51,5 +51,10 @@ namespace ProjetoPizzaria.ModuloCep
         {
             return "Cadastro de Cep";
         }
+
+        public override void Pesquisar(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

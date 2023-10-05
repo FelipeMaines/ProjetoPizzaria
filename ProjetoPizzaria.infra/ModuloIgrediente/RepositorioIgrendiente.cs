@@ -25,11 +25,11 @@ namespace ProjetoPizzaria.infra.ModuloIgrediente
                                                 SET
                                                     [NOME] = @NOME_IGREDIENTE
                                                 WHERE
-                                                    [ID] = @ID_IGREDIENTE";
+                                                    [ID_IGREDIENTE] = @ID_IGREDIENTE";
 
         protected override string sqlExcluir => @"DELETE FROM [igredientes]
 	                                                WHERE 
-		                                                [ID] = @ID_IGREDIENTE";
+		                                                [ID_IGREDIENTE] = @ID_IGREDIENTE";
 
         protected override string sqlSelecionarTodos => @"SELECT 
 	                                                    [id_igrediente]        ID_IGREDIENTE 
@@ -46,9 +46,14 @@ namespace ProjetoPizzaria.infra.ModuloIgrediente
                                                     WHERE 
                                                         [id_igrediente] = @ID_IGREDIENTE";
 
-        public void Editar(int id, Igrediente registro)
-        {
-            throw new NotImplementedException();
-        }
+        protected override string sqlPesquisar =>
+                                                    @" SELECT 
+                                                        [id_igrediente] ID_IGREDIENTE,
+                                                        [nome] NOME_IGREDIENTE 
+                                                    FROM 
+                                                        [igredientes]
+                                                    WHERE 
+                                                        nome LIKE '%' + @NOME + '%'";
+
     }
 }

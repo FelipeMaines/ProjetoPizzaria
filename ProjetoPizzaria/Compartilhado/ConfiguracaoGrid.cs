@@ -33,7 +33,6 @@ namespace ProjetoPizzaria.Compartilhado
             {
                 BackColor = Color.LightGray,
                 Font = font,
-                ForeColor = Color.Black,
                 SelectionBackColor = Color.LightYellow,
                 SelectionForeColor = Color.Black
             };
@@ -44,6 +43,7 @@ namespace ProjetoPizzaria.Compartilhado
             {
                 BackColor = Color.White,
                 Font = font,
+                ForeColor = Color.Black,
                 SelectionBackColor = Color.LightYellow,
                 SelectionForeColor = Color.Black
             };
