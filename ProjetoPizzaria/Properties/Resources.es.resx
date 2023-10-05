@@ -123,6 +123,12 @@
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="btnCep.Text" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="btnCliente.Text" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
   <data name="btnEditar.Text" xml:space="preserve">
     <value>Para editar</value>
   </data>
@@ -135,13 +141,16 @@
   <data name="btnFuncionario.Text" xml:space="preserve">
     <value>Empleado</value>
   </data>
-  <data name="btnIgredientes.Text" xml:space="preserve">
+  <data name="btnFuncionarios.Text" xml:space="preserve">
+    <value>Empleado</value>
+  </data>
+  <data name="btnIgrediente.Text" xml:space="preserve">
     <value>Cincel</value>
   </data>
   <data name="btnInserir.Text" xml:space="preserve">
     <value>Insertar</value>
   </data>
-  <data name="btnProdutos.Text" xml:space="preserve">
+  <data name="btnProduto.Text" xml:space="preserve">
     <value>Productos</value>
   </data>
   <data name="btnSabores.Text" xml:space="preserve">
@@ -150,17 +159,8 @@
   <data name="btnValores.Text" xml:space="preserve">
     <value>Valores</value>
   </data>
-  <data name="cepToolStripMenuItem.Text" xml:space="preserve">
-    <value>Código postal</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cliente</value>
-  </data>
   <data name="exibirToolStripMenuItem.Text" xml:space="preserve">
     <value>no sé</value>
-  </data>
-  <data name="funcionarioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Empleado</value>
   </data>
   <data name="igredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Regordete</value>

@@ -123,6 +123,12 @@
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="btnCep.Text" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="btnCliente.Text" xml:space="preserve">
+    <value>Client</value>
+  </data>
   <data name="btnEditar.Text" xml:space="preserve">
     <value>To edit</value>
   </data>
@@ -135,13 +141,13 @@
   <data name="btnFuncionario.Text" xml:space="preserve">
     <value>Employee</value>
   </data>
-  <data name="btnIgredientes.Text" xml:space="preserve">
+  <data name="btnIgrediente.Text" xml:space="preserve">
     <value>Chisel</value>
   </data>
   <data name="btnInserir.Text" xml:space="preserve">
     <value>Insert</value>
   </data>
-  <data name="btnProdutos.Text" xml:space="preserve">
+  <data name="btnProduto.Text" xml:space="preserve">
     <value>Products</value>
   </data>
   <data name="btnSabores.Text" xml:space="preserve">
@@ -149,12 +155,6 @@
   </data>
   <data name="btnValores.Text" xml:space="preserve">
     <value>Values</value>
-  </data>
-  <data name="cepToolStripMenuItem.Text" xml:space="preserve">
-    <value>Zip code</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Client</value>
   </data>
   <data name="exibirToolStripMenuItem.Text" xml:space="preserve">
     <value>I do not know</value>
