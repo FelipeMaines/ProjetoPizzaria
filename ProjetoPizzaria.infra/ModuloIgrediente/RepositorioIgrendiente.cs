@@ -21,6 +21,8 @@ namespace ProjetoPizzaria.infra.ModuloIgrediente
                                                 SELECT SCOPE_IDENTITY();
                                                     ";
 
+        //AA
+
         protected override string sqlEditar => @"UPDATE [igredientes] 
                                                 SET
                                                     [NOME] = @NOME_IGREDIENTE
