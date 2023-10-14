@@ -1,4 +1,5 @@
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.infra.ModuloEndereco;
 using ProjetoPizzaria.infra.ModuloIgrediente;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
@@ -9,6 +10,7 @@ using ProjetoPizzaria.ModuloPedidos;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
+using ProjetoPizzariaDominio.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloIgrediente;
 using System.Configuration;
 
@@ -20,6 +22,7 @@ namespace ProjetoPizzaria
         private static TelaPrincipal telaPrincipal;
 
         IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
+        IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
 
         public TelaPrincipal()
         {
@@ -141,7 +144,7 @@ namespace ProjetoPizzaria
 
         private void btnCep_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorCep();
+            controlador = new ControladorCep(repositorioEndereco);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -233,7 +236,7 @@ namespace ProjetoPizzaria
                     ConfigurarTelaPrincipal(controlador);
                     break;
                 case Keys.F3:
-                    controlador = new ControladorCep();
+                    controlador = new ControladorCep(repositorioEndereco);
 
                     ConfigurarTelaPrincipal(controlador);
                     break;

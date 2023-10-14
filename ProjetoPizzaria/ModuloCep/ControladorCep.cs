@@ -1,5 +1,6 @@
 ﻿using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.ModuloCliente;
+using ProjetoPizzariaDominio.ModuloEndereco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,14 @@ namespace ProjetoPizzaria.ModuloCep
     public class ControladorCep : ControladorBase
     {
         private TabelaCep tabelaCep;
+        private IRepositorioEndereco repositorioEndereco;
+
+        public ControladorCep(IRepositorioEndereco repositorioEndereco)
+        {
+            this.tabelaCep = new TabelaCep();
+            this.repositorioEndereco = repositorioEndereco;
+            CarregarItens();
+        }
         public override string ToolTipInserir => "Cadastrar de Cep";
 
         public override string ToolTipEditar => "Editar Cep";
@@ -19,7 +28,7 @@ namespace ProjetoPizzaria.ModuloCep
 
         public override void CarregarItens()
         {
-            throw new NotImplementedException();
+            this.tabelaCep.AtualizarRegistros(repositorioEndereco.SelecionarTodos());
         }
 
         public override void Editar()
