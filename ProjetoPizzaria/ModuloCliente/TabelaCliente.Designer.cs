@@ -39,7 +39,7 @@
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
             grid.RowTemplate.Height = 25;
-            grid.Size = new Size(369, 299);
+            grid.Size = new Size(393, 346);
             grid.TabIndex = 0;
             // 
             // TabelaCliente
@@ -48,7 +48,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
             Name = "TabelaCliente";
-            Size = new Size(369, 299);
+            Size = new Size(393, 346);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }

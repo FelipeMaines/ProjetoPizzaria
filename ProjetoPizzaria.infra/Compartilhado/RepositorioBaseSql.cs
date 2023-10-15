@@ -63,7 +63,7 @@ namespace ProjetoPizzaria.infra.Compartilhado
             SqlCommand comandoExcluir = conexaoComBanco.CreateCommand();
             comandoExcluir.CommandText = sqlExcluir;
 
-            comandoExcluir.Parameters.AddWithValue("ID_IGREDIENTE", registroSelecionado.id);
+            comandoExcluir.Parameters.AddWithValue("ID", registroSelecionado.id);
 
             comandoExcluir.ExecuteNonQuery();
 
@@ -78,13 +78,14 @@ namespace ProjetoPizzaria.infra.Compartilhado
             SqlCommand comandoSelecionarPorId = conexaoComBanco.CreateCommand();
             comandoSelecionarPorId.CommandText = sqlSelecionarPorId;
 
-            comandoSelecionarPorId.Parameters.AddWithValue("ID_IGREDIENTE", id);
+
+            comandoSelecionarPorId.Parameters.AddWithValue("ID", id);
 
             SqlDataReader leitorItems = comandoSelecionarPorId.ExecuteReader();
 
+            TMapeador mapeador = new TMapeador();
             TEntidade registro = null;
 
-            TMapeador mapeador = new TMapeador();
 
             if (leitorItems.Read())
                 registro = mapeador.ConverterRegistro(leitorItems);

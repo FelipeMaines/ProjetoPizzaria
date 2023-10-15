@@ -1,10 +1,12 @@
-﻿using ProjetoPizzaria.infra.Compartilhado;
+﻿using Microsoft.Data.SqlClient;
+using ProjetoPizzaria.infra.Compartilhado;
 using ProjetoPizzariaDominio.ModuloEndereco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ProjetoPizzaria.infra.ModuloEndereco
 {
@@ -59,7 +61,7 @@ namespace ProjetoPizzaria.infra.ModuloEndereco
                                                             cad_uf AS u ON u.id_uf = c.uf_id
                                                         INNER JOIN
                                                             cad_paises AS p ON p.id_pais = u.pais_id
-                                                            Where e.cep = @ENDERECO_ID
+                                                            Where e.id_endereco = @ID
                                                         ORDER BY
                                                             e.cep";
 
@@ -108,5 +110,29 @@ namespace ProjetoPizzaria.infra.ModuloEndereco
                                                     Where e.cep = @ENDERECO_CEP
                                                 ORDER BY
                                                     e.cep";
+
+        public Endereco SelecionarPorCep(string cep)
+        {
+            SqlConnection conexaoComBanco = new SqlConnection(enderecoBanco);
+            conexaoComBanco.Open();
+
+            SqlCommand comandoSelecionarPorId = conexaoComBanco.CreateCommand();
+            comandoSelecionarPorId.CommandText = sqlSelecionarPorCep;
+
+            comandoSelecionarPorId.Parameters.AddWithValue("ENDERECO_CEP", cep);
+
+            SqlDataReader leitorItems = comandoSelecionarPorId.ExecuteReader();
+
+            Endereco registro = null;
+
+            MapeadorEndereco mapeador = new MapeadorEndereco();
+
+            if (leitorItems.Read())
+                registro = mapeador.ConverterRegistro(leitorItems);
+
+            conexaoComBanco.Close();
+
+            return registro;
+        }
     }
 }

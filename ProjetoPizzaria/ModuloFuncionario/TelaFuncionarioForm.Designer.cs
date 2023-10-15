@@ -47,14 +47,32 @@
             lbSenha = new Label();
             lbDescricao = new Label();
             PnlCv = new Panel();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            radioButtonEntregador = new RadioButton();
+            radioButtonAtendente = new RadioButton();
+            radioButtonAdimin = new RadioButton();
             lbCv = new Label();
             txCpf = new MaskedTextBox();
             txTelefone = new MaskedTextBox();
             btnCancelar = new Button();
             btnCadastrar = new Button();
+            txCep = new MaskedTextBox();
+            lbBairro = new Label();
+            lbCidade = new Label();
+            lbUf = new Label();
+            lbPais = new Label();
+            lbLogradouro = new Label();
+            lbCep = new Label();
+            cbCidade = new ComboBox();
+            cbUf = new ComboBox();
+            cbPais = new ComboBox();
+            txLograduro = new TextBox();
+            txBairro = new TextBox();
+            label1 = new Label();
+            txIdCep = new TextBox();
+            lbComplemento = new Label();
+            txComplemento = new TextBox();
+            lbNumero = new Label();
+            txNumero = new TextBox();
             PnlCv.SuspendLayout();
             SuspendLayout();
             // 
@@ -208,47 +226,47 @@
             // 
             // PnlCv
             // 
-            PnlCv.Controls.Add(radioButton3);
-            PnlCv.Controls.Add(radioButton2);
-            PnlCv.Controls.Add(radioButton1);
+            PnlCv.Controls.Add(radioButtonEntregador);
+            PnlCv.Controls.Add(radioButtonAtendente);
+            PnlCv.Controls.Add(radioButtonAdimin);
             PnlCv.Location = new Point(443, 44);
             PnlCv.Name = "PnlCv";
-            PnlCv.Size = new Size(133, 134);
+            PnlCv.Size = new Size(133, 91);
             PnlCv.TabIndex = 3;
             PnlCv.Paint += panel1_Paint;
             // 
-            // radioButton3
+            // radioButtonEntregador
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(18, 53);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(94, 19);
-            radioButton3.TabIndex = 6;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioButtonEntregador.AutoSize = true;
+            radioButtonEntregador.Location = new Point(18, 53);
+            radioButtonEntregador.Name = "radioButtonEntregador";
+            radioButtonEntregador.Size = new Size(83, 19);
+            radioButtonEntregador.TabIndex = 6;
+            radioButtonEntregador.TabStop = true;
+            radioButtonEntregador.Text = "Entregador";
+            radioButtonEntregador.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonAtendente
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(18, 28);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(94, 19);
-            radioButton2.TabIndex = 5;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButtonAtendente.AutoSize = true;
+            radioButtonAtendente.Location = new Point(18, 28);
+            radioButtonAtendente.Name = "radioButtonAtendente";
+            radioButtonAtendente.Size = new Size(80, 19);
+            radioButtonAtendente.TabIndex = 5;
+            radioButtonAtendente.TabStop = true;
+            radioButtonAtendente.Text = "Atendente";
+            radioButtonAtendente.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonAdimin
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 4;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonAdimin.AutoSize = true;
+            radioButtonAdimin.Location = new Point(18, 3);
+            radioButtonAdimin.Name = "radioButtonAdimin";
+            radioButtonAdimin.Size = new Size(64, 19);
+            radioButtonAdimin.TabIndex = 4;
+            radioButtonAdimin.TabStop = true;
+            radioButtonAdimin.Text = "Adimin";
+            radioButtonAdimin.UseVisualStyleBackColor = true;
             // 
             // lbCv
             // 
@@ -278,7 +296,7 @@
             // btnCancelar
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(486, 420);
+            btnCancelar.Location = new Point(753, 420);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 41);
             btnCancelar.TabIndex = 12;
@@ -288,18 +306,186 @@
             // btnCadastrar
             // 
             btnCadastrar.DialogResult = DialogResult.OK;
-            btnCadastrar.Location = new Point(405, 420);
+            btnCadastrar.Location = new Point(668, 420);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 41);
             btnCadastrar.TabIndex = 11;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // txCep
+            // 
+            txCep.Location = new Point(595, 78);
+            txCep.Mask = "00.000-000";
+            txCep.Name = "txCep";
+            txCep.Size = new Size(67, 23);
+            txCep.TabIndex = 33;
+            txCep.Leave += txCep_Leave;
+            // 
+            // lbBairro
+            // 
+            lbBairro.AutoSize = true;
+            lbBairro.Location = new Point(595, 217);
+            lbBairro.Name = "lbBairro";
+            lbBairro.Size = new Size(38, 15);
+            lbBairro.TabIndex = 47;
+            lbBairro.Text = "Bairro";
+            // 
+            // lbCidade
+            // 
+            lbCidade.AutoSize = true;
+            lbCidade.Location = new Point(593, 163);
+            lbCidade.Name = "lbCidade";
+            lbCidade.Size = new Size(44, 15);
+            lbCidade.TabIndex = 46;
+            lbCidade.Text = "Cidade";
+            // 
+            // lbUf
+            // 
+            lbUf.AutoSize = true;
+            lbUf.Location = new Point(711, 110);
+            lbUf.Name = "lbUf";
+            lbUf.Size = new Size(21, 15);
+            lbUf.TabIndex = 45;
+            lbUf.Text = "UF";
+            // 
+            // lbPais
+            // 
+            lbPais.AutoSize = true;
+            lbPais.Location = new Point(593, 107);
+            lbPais.Name = "lbPais";
+            lbPais.Size = new Size(28, 15);
+            lbPais.TabIndex = 44;
+            lbPais.Text = "País";
+            // 
+            // lbLogradouro
+            // 
+            lbLogradouro.AutoSize = true;
+            lbLogradouro.Location = new Point(701, 57);
+            lbLogradouro.Name = "lbLogradouro";
+            lbLogradouro.Size = new Size(69, 15);
+            lbLogradouro.TabIndex = 43;
+            lbLogradouro.Text = "Logradouro";
+            // 
+            // lbCep
+            // 
+            lbCep.AutoSize = true;
+            lbCep.Location = new Point(595, 57);
+            lbCep.Name = "lbCep";
+            lbCep.Size = new Size(28, 15);
+            lbCep.TabIndex = 42;
+            lbCep.Text = "CEP";
+            // 
+            // cbCidade
+            // 
+            cbCidade.FormattingEnabled = true;
+            cbCidade.Location = new Point(593, 181);
+            cbCidade.Name = "cbCidade";
+            cbCidade.Size = new Size(218, 23);
+            cbCidade.TabIndex = 37;
+            // 
+            // cbUf
+            // 
+            cbUf.FormattingEnabled = true;
+            cbUf.Location = new Point(711, 128);
+            cbUf.Name = "cbUf";
+            cbUf.Size = new Size(100, 23);
+            cbUf.TabIndex = 36;
+            // 
+            // cbPais
+            // 
+            cbPais.FormattingEnabled = true;
+            cbPais.Location = new Point(593, 125);
+            cbPais.Name = "cbPais";
+            cbPais.Size = new Size(102, 23);
+            cbPais.TabIndex = 35;
+            // 
+            // txLograduro
+            // 
+            txLograduro.Location = new Point(668, 79);
+            txLograduro.Name = "txLograduro";
+            txLograduro.Size = new Size(143, 23);
+            txLograduro.TabIndex = 34;
+            // 
+            // txBairro
+            // 
+            txBairro.Location = new Point(593, 234);
+            txBairro.Name = "txBairro";
+            txBairro.Size = new Size(100, 23);
+            txBairro.TabIndex = 38;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(593, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(18, 15);
+            label1.TabIndex = 49;
+            label1.Text = "ID";
+            // 
+            // txIdCep
+            // 
+            txIdCep.Location = new Point(593, 31);
+            txIdCep.Name = "txIdCep";
+            txIdCep.Size = new Size(69, 23);
+            txIdCep.TabIndex = 50;
+            // 
+            // lbComplemento
+            // 
+            lbComplemento.AutoSize = true;
+            lbComplemento.Location = new Point(595, 265);
+            lbComplemento.Name = "lbComplemento";
+            lbComplemento.Size = new Size(84, 15);
+            lbComplemento.TabIndex = 52;
+            lbComplemento.Text = "Complemento";
+            // 
+            // txComplemento
+            // 
+            txComplemento.Location = new Point(593, 282);
+            txComplemento.Name = "txComplemento";
+            txComplemento.Size = new Size(100, 23);
+            txComplemento.TabIndex = 51;
+            // 
+            // lbNumero
+            // 
+            lbNumero.AutoSize = true;
+            lbNumero.Location = new Point(713, 217);
+            lbNumero.Name = "lbNumero";
+            lbNumero.Size = new Size(51, 15);
+            lbNumero.TabIndex = 54;
+            lbNumero.Text = "Numero";
+            // 
+            // txNumero
+            // 
+            txNumero.Location = new Point(711, 234);
+            txNumero.Name = "txNumero";
+            txNumero.Size = new Size(100, 23);
+            txNumero.TabIndex = 53;
             // 
             // TelaFuncionarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(586, 473);
+            ClientSize = new Size(840, 473);
+            Controls.Add(lbNumero);
+            Controls.Add(txNumero);
+            Controls.Add(lbComplemento);
+            Controls.Add(txComplemento);
+            Controls.Add(txIdCep);
+            Controls.Add(label1);
+            Controls.Add(txCep);
+            Controls.Add(lbBairro);
+            Controls.Add(lbCidade);
+            Controls.Add(lbUf);
+            Controls.Add(lbPais);
+            Controls.Add(lbLogradouro);
+            Controls.Add(lbCep);
+            Controls.Add(cbCidade);
+            Controls.Add(cbUf);
+            Controls.Add(cbPais);
+            Controls.Add(txLograduro);
+            Controls.Add(txBairro);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
             Controls.Add(txTelefone);
@@ -326,7 +512,7 @@
             Controls.Add(txId);
             KeyPreview = true;
             Name = "TelaFuncionarioForm";
-            Text = "TelaFuncionarioForm";
+            Text = "v";
             PnlCv.ResumeLayout(false);
             PnlCv.PerformLayout();
             ResumeLayout(false);
@@ -354,13 +540,31 @@
         private Label lbSenha;
         private Label lbDescricao;
         private Panel PnlCv;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton radioButtonEntregador;
+        private RadioButton radioButtonAtendente;
+        private RadioButton radioButtonAdimin;
         private Label lbCv;
         private MaskedTextBox txCpf;
         private MaskedTextBox txTelefone;
         private Button btnCancelar;
         private Button btnCadastrar;
+        private MaskedTextBox txCep;
+        private Label lbBairro;
+        private Label lbCidade;
+        private Label lbUf;
+        private Label lbPais;
+        private Label lbLogradouro;
+        private Label lbCep;
+        private ComboBox cbCidade;
+        private ComboBox cbUf;
+        private ComboBox cbPais;
+        private TextBox txLograduro;
+        private TextBox txBairro;
+        private Label label1;
+        private TextBox txIdCep;
+        private Label lbComplemento;
+        private TextBox txComplemento;
+        private Label lbNumero;
+        private TextBox txNumero;
     }
 }

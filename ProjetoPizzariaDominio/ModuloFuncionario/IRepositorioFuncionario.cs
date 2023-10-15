@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoPizzariaDominio.ModuloEndereco
+namespace ProjetoPizzariaDominio.ModuloFuncionario
 {
-    public interface IRepositorioEndereco : IRepositorioBase<Endereco>
+    public interface IRepositorioFuncionario : IRepositorioBase<Funcionario>
     {
-        Endereco SelecionarPorCep(string cep);
     }
 }

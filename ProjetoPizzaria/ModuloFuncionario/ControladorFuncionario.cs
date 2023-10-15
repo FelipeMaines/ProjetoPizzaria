@@ -1,4 +1,6 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzariaDominio.ModuloEndereco;
+using ProjetoPizzariaDominio.ModuloFuncionario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,38 +11,69 @@ namespace ProjetoPizzaria.ModuloFuncionario
 {
     public class ControladorFuncionario : ControladorBase
     {
-        TabelaFuncionario tabelaFuncionario;
+        private TabelaFuncionario tabelaFuncionario;
+        private IRepositorioFuncionario repositorioFuncionario;
+
+        private IRepositorioEndereco repositorioEndereco;
         public override string ToolTipInserir => "Cadastrar Funcionario";
 
         public override string ToolTipEditar => "Editar Funcionario";
 
         public override string ToolTipExcluir => "Excluir Funcionario";
 
-        public ControladorFuncionario()
+        public ControladorFuncionario(IRepositorioEndereco repositorioEndereco, IRepositorioFuncionario repositorioFuncionario)
         {
-            
+            tabelaFuncionario = new TabelaFuncionario();
+            this.repositorioEndereco = repositorioEndereco;
+            this.repositorioFuncionario = repositorioFuncionario;
+            CarregarItens();
         }
 
         public override void CarregarItens()
         {
-            Console.WriteLine('a');
+            tabelaFuncionario.AtualizarRegistros(repositorioFuncionario.SelecionarTodos());
         }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            int idSelecionado = tabelaFuncionario.ObterIdSelecionado();
+
+            var funcionario = repositorioFuncionario.SelecionarPorId(idSelecionado);
+
+            var telaFuncionario = new TelaFuncionarioForm(repositorioEndereco ,funcionario);
+
+            var result = telaFuncionario.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                repositorioFuncionario.Editar(telaFuncionario.funcionario);
+                CarregarItens();
+            }
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            int idSelecionado = tabelaFuncionario.ObterIdSelecionado();
+
+            var funcionario = repositorioFuncionario.SelecionarPorId(idSelecionado);
+
+            repositorioFuncionario.Excluir(funcionario);
+
+            CarregarItens();
         }
 
         public override void Inserir()
         {
-            TelaFuncionarioForm telaFuncionarioForm = new TelaFuncionarioForm();
+            TelaFuncionarioForm telaFuncionarioForm = new TelaFuncionarioForm(repositorioEndereco);
 
-            telaFuncionarioForm.ShowDialog();
+            var result = telaFuncionarioForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                repositorioFuncionario.Inserir(telaFuncionarioForm.funcionario);
+                CarregarItens();
+
+            }
         }
 
         public override UserControl ObterTabela()

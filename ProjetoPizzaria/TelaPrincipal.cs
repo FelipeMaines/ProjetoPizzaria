@@ -1,5 +1,6 @@
 using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.infra.ModuloEndereco;
+using ProjetoPizzaria.infra.ModuloFuncionario;
 using ProjetoPizzaria.infra.ModuloIgrediente;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
@@ -11,6 +12,7 @@ using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
 using ProjetoPizzariaDominio.ModuloEndereco;
+using ProjetoPizzariaDominio.ModuloFuncionario;
 using ProjetoPizzariaDominio.ModuloIgrediente;
 using System.Configuration;
 
@@ -23,6 +25,7 @@ namespace ProjetoPizzaria
 
         IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
         IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
+        IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
 
         public TelaPrincipal()
         {
@@ -121,6 +124,8 @@ namespace ProjetoPizzaria
             }
 
             controlador.Editar();
+
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -137,7 +142,7 @@ namespace ProjetoPizzaria
 
         private void btnFuncionario_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorFuncionario();
+            controlador = new ControladorFuncionario(repositorioEndereco, repositorioFuncionario);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -231,7 +236,7 @@ namespace ProjetoPizzaria
             switch (e.KeyCode)
             {
                 case Keys.F2:
-                    controlador = new ControladorFuncionario();
+                    controlador = new ControladorFuncionario(repositorioEndereco, repositorioFuncionario);
 
                     ConfigurarTelaPrincipal(controlador);
                     break;
