@@ -1,4 +1,9 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.infra.ModuloFuncionario;
+using ProjetoPizzaria.ModuloFuncionario;
+using ProjetoPizzariaDominio.ModuloCliente;
+using ProjetoPizzariaDominio.ModuloEndereco;
+using ProjetoPizzariaDominio.ModuloFuncionario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +15,16 @@ namespace ProjetoPizzaria.ModuloCliente
     public class ControladorCliente : ControladorBase
     {
         private TabelaCliente tabelaCliente;
+        private IRepositorioEndereco repositorioEndereco;
+        private IRepositorioCliente repositorioCliente;
+
+        public ControladorCliente(IRepositorioEndereco repositorioEndereco, IRepositorioCliente repositorioCliente)
+        {
+            this.tabelaCliente = new TabelaCliente();
+            this.repositorioCliente = repositorioCliente;
+            this.repositorioEndereco = repositorioEndereco;
+            CarregarItens();
+        }
         public override string ToolTipInserir => "Cadastrar Cliente";
 
         public override string ToolTipEditar => "Editar Cliente";
@@ -18,24 +33,48 @@ namespace ProjetoPizzaria.ModuloCliente
 
         public override void CarregarItens()
         {
-            throw new NotImplementedException();
+            tabelaCliente.AtualizarRegistros(repositorioCliente.SelecionarTodos());
         }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            int idSelecionado = tabelaCliente.ObterIdSelecionado();
+
+            var cliente = repositorioCliente.SelecionarPorId(idSelecionado);
+
+            var telaCliente = new TelaClienteForm(repositorioEndereco, cliente);
+
+            var result = telaCliente.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                repositorioCliente.Editar(telaCliente.cliente);
+                CarregarItens();
+            }
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            int idSelecionado = tabelaCliente.ObterIdSelecionado();
+
+            var cliente = repositorioCliente.SelecionarPorId(idSelecionado);
+
+            repositorioCliente.Excluir(cliente);
+
+            CarregarItens();
         }
 
         public override void Inserir()
         {
-            TelaClienteForm telaCliente = new TelaClienteForm();
+            TelaClienteForm telaCliente = new TelaClienteForm(repositorioEndereco);
 
-            telaCliente.ShowDialog();
+            var result = telaCliente.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                repositorioCliente.Inserir(telaCliente.cliente);
+                CarregarItens();
+            }
         }
 
         public override UserControl ObterTabela()
@@ -53,7 +92,10 @@ namespace ProjetoPizzaria.ModuloCliente
 
         public override void Pesquisar(string texto)
         {
-            throw new NotImplementedException();
+            if (texto.Length > 0)
+                tabelaCliente.AtualizarRegistros(repositorioCliente.Pesquisar(texto));
+            else
+                return;
         }
     }
 }

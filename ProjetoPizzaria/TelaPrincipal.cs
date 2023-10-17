@@ -1,4 +1,5 @@
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.infra.ModuloCliente;
 using ProjetoPizzaria.infra.ModuloEndereco;
 using ProjetoPizzaria.infra.ModuloFuncionario;
 using ProjetoPizzaria.infra.ModuloIgrediente;
@@ -11,10 +12,12 @@ using ProjetoPizzaria.ModuloPedidos;
 using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
+using ProjetoPizzariaDominio.ModuloCliente;
 using ProjetoPizzariaDominio.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloFuncionario;
 using ProjetoPizzariaDominio.ModuloIgrediente;
 using System.Configuration;
+using System.Net.Http.Headers;
 
 namespace ProjetoPizzaria
 {
@@ -26,6 +29,8 @@ namespace ProjetoPizzaria
         IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
         IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
         IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
+        IRepositorioCliente repositorioCliente = new RepositorioCliente();
+        
 
         public TelaPrincipal()
         {
@@ -156,7 +161,7 @@ namespace ProjetoPizzaria
 
         private void btnCliente_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorCliente();
+            controlador = new ControladorCliente(repositorioEndereco, repositorioCliente);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -246,7 +251,7 @@ namespace ProjetoPizzaria
                     ConfigurarTelaPrincipal(controlador);
                     break;
                 case Keys.F4:
-                    controlador = new ControladorCliente();
+                    controlador = new ControladorCliente(repositorioEndereco, repositorioCliente);
 
                     ConfigurarTelaPrincipal(controlador);
                     break;

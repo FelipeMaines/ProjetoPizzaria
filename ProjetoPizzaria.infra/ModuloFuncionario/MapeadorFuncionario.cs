@@ -60,7 +60,7 @@ namespace ProjetoPizzaria.infra.ModuloFuncionario
                                                             u.id_uf AS IDUF,
                                                             u.nome_uf AS UF,
                                                             p.id_pais AS IDPais,
-                                                            p.nome_pais AS Pais,
+                                                            p.nome_pais AS IDPais,
                                                             f.numero AS Numero,
                                                             f.complemento AS Complemento
                                                         FROM
@@ -104,7 +104,14 @@ namespace ProjetoPizzaria.infra.ModuloFuncionario
 
             var uf = new Uf(idUf, nomeUf);
 
-            return new Funcionario(id, nome, cpf, matricula, senha, grupo, carteira, validade, observacao, telefone, email, cepid, numero, complemento);
+            int idPais = Convert.ToInt32(leitorRegistros["IDPais"]);
+            string nomePais= Convert.ToString(leitorRegistros["IDPais"]);
+
+            Pais pais = new Pais(idPais, nomePais);
+
+            var endereco = new Endereco(cepid, cep, logradouro, bairro, IdCidade, cidade, idUf, uf, idPais, pais);
+
+            return new Funcionario(endereco, id, nome, cpf, matricula, senha, grupo, carteira, validade, observacao, telefone, email, cepid, numero, complemento);
         }
     }
 }

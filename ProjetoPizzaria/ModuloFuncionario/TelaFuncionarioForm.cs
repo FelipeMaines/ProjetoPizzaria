@@ -140,6 +140,9 @@ namespace ProjetoPizzaria
             cbUf.Text = cep.Uf.nome;
             txBairro.Text = cep.Bairro;
             txIdCep.Text = cep.id.ToString();
+
+            if (txCep.Text.Length != 8)
+                txCep.Text = cep.Cep;
         }
 
         private Funcionario ObterFuncionario()

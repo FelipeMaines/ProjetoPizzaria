@@ -31,7 +31,15 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
         public override void CarregarItens()
         {
-            tabelaFuncionario.AtualizarRegistros(repositorioFuncionario.SelecionarTodos());
+            var funcionarios = new List<Funcionario>();
+            var enderecos = new List<Endereco>();
+
+            foreach (var funcionario in funcionarios)
+            {
+                enderecos.Add(repositorioEndereco.SelecionarPorId(funcionario.EnderecoId));
+            }
+
+            tabelaFuncionario.AtualizarRegistros(repositorioFuncionario.SelecionarTodos(), enderecos);
         }
 
         public override void Editar()
@@ -72,7 +80,6 @@ namespace ProjetoPizzaria.ModuloFuncionario
             {
                 repositorioFuncionario.Inserir(telaFuncionarioForm.funcionario);
                 CarregarItens();
-
             }
         }
 

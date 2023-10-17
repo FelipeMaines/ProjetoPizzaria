@@ -40,6 +40,24 @@
             lbEmail = new Label();
             btnCadastrar = new Button();
             btnCancelar = new Button();
+            lbNumero = new Label();
+            txNumero = new TextBox();
+            lbComplemento = new Label();
+            txComplemento = new TextBox();
+            txIdCep = new TextBox();
+            label1 = new Label();
+            txCep = new MaskedTextBox();
+            lbBairro = new Label();
+            lbCidade = new Label();
+            lbUf = new Label();
+            lbPais = new Label();
+            lbLogradouro = new Label();
+            lbCep = new Label();
+            cbCidade = new ComboBox();
+            cbUf = new ComboBox();
+            cbPais = new ComboBox();
+            txLograduro = new TextBox();
+            txBairro = new TextBox();
             SuspendLayout();
             // 
             // txId
@@ -129,28 +147,196 @@
             // btnCadastrar
             // 
             btnCadastrar.DialogResult = DialogResult.OK;
-            btnCadastrar.Location = new Point(299, 256);
+            btnCadastrar.Location = new Point(550, 300);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(94, 43);
             btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(399, 256);
+            btnCancelar.Location = new Point(650, 300);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(94, 43);
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lbNumero
+            // 
+            lbNumero.AutoSize = true;
+            lbNumero.Location = new Point(636, 167);
+            lbNumero.Name = "lbNumero";
+            lbNumero.Size = new Size(51, 15);
+            lbNumero.TabIndex = 72;
+            lbNumero.Text = "Numero";
+            // 
+            // txNumero
+            // 
+            txNumero.Location = new Point(634, 184);
+            txNumero.Name = "txNumero";
+            txNumero.Size = new Size(100, 23);
+            txNumero.TabIndex = 71;
+            // 
+            // lbComplemento
+            // 
+            lbComplemento.AutoSize = true;
+            lbComplemento.Location = new Point(518, 215);
+            lbComplemento.Name = "lbComplemento";
+            lbComplemento.Size = new Size(84, 15);
+            lbComplemento.TabIndex = 70;
+            lbComplemento.Text = "Complemento";
+            // 
+            // txComplemento
+            // 
+            txComplemento.Location = new Point(516, 232);
+            txComplemento.Name = "txComplemento";
+            txComplemento.Size = new Size(100, 23);
+            txComplemento.TabIndex = 69;
+            // 
+            // txIdCep
+            // 
+            txIdCep.Location = new Point(516, 29);
+            txIdCep.Name = "txIdCep";
+            txIdCep.Size = new Size(69, 23);
+            txIdCep.TabIndex = 68;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(518, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(18, 15);
+            label1.TabIndex = 67;
+            label1.Text = "ID";
+            // 
+            // txCep
+            // 
+            txCep.Location = new Point(310, 59);
+            txCep.Mask = "00.000-000";
+            txCep.Name = "txCep";
+            txCep.Size = new Size(83, 23);
+            txCep.TabIndex = 55;
+            txCep.Leave += txCep_Leave;
+            // 
+            // lbBairro
+            // 
+            lbBairro.AutoSize = true;
+            lbBairro.Location = new Point(518, 167);
+            lbBairro.Name = "lbBairro";
+            lbBairro.Size = new Size(38, 15);
+            lbBairro.TabIndex = 66;
+            lbBairro.Text = "Bairro";
+            // 
+            // lbCidade
+            // 
+            lbCidade.AutoSize = true;
+            lbCidade.Location = new Point(516, 113);
+            lbCidade.Name = "lbCidade";
+            lbCidade.Size = new Size(44, 15);
+            lbCidade.TabIndex = 65;
+            lbCidade.Text = "Cidade";
+            // 
+            // lbUf
+            // 
+            lbUf.AutoSize = true;
+            lbUf.Location = new Point(634, 60);
+            lbUf.Name = "lbUf";
+            lbUf.Size = new Size(21, 15);
+            lbUf.TabIndex = 64;
+            lbUf.Text = "UF";
+            // 
+            // lbPais
+            // 
+            lbPais.AutoSize = true;
+            lbPais.Location = new Point(516, 57);
+            lbPais.Name = "lbPais";
+            lbPais.Size = new Size(28, 15);
+            lbPais.TabIndex = 63;
+            lbPais.Text = "País";
+            // 
+            // lbLogradouro
+            // 
+            lbLogradouro.AutoSize = true;
+            lbLogradouro.Location = new Point(591, 11);
+            lbLogradouro.Name = "lbLogradouro";
+            lbLogradouro.Size = new Size(69, 15);
+            lbLogradouro.TabIndex = 62;
+            lbLogradouro.Text = "Logradouro";
+            // 
+            // lbCep
+            // 
+            lbCep.AutoSize = true;
+            lbCep.Location = new Point(310, 41);
+            lbCep.Name = "lbCep";
+            lbCep.Size = new Size(28, 15);
+            lbCep.TabIndex = 61;
+            lbCep.Text = "CEP";
+            // 
+            // cbCidade
+            // 
+            cbCidade.FormattingEnabled = true;
+            cbCidade.Location = new Point(516, 131);
+            cbCidade.Name = "cbCidade";
+            cbCidade.Size = new Size(218, 23);
+            cbCidade.TabIndex = 59;
+            // 
+            // cbUf
+            // 
+            cbUf.FormattingEnabled = true;
+            cbUf.Location = new Point(634, 78);
+            cbUf.Name = "cbUf";
+            cbUf.Size = new Size(100, 23);
+            cbUf.TabIndex = 58;
+            // 
+            // cbPais
+            // 
+            cbPais.FormattingEnabled = true;
+            cbPais.Location = new Point(516, 75);
+            cbPais.Name = "cbPais";
+            cbPais.Size = new Size(102, 23);
+            cbPais.TabIndex = 57;
+            // 
+            // txLograduro
+            // 
+            txLograduro.Location = new Point(591, 29);
+            txLograduro.Name = "txLograduro";
+            txLograduro.Size = new Size(143, 23);
+            txLograduro.TabIndex = 56;
+            // 
+            // txBairro
+            // 
+            txBairro.Location = new Point(516, 184);
+            txBairro.Name = "txBairro";
+            txBairro.Size = new Size(100, 23);
+            txBairro.TabIndex = 60;
+            // 
             // TelaClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(505, 311);
+            ClientSize = new Size(756, 355);
+            Controls.Add(lbNumero);
+            Controls.Add(txNumero);
+            Controls.Add(lbComplemento);
+            Controls.Add(txComplemento);
+            Controls.Add(txIdCep);
+            Controls.Add(label1);
+            Controls.Add(txCep);
+            Controls.Add(lbBairro);
+            Controls.Add(lbCidade);
+            Controls.Add(lbUf);
+            Controls.Add(lbPais);
+            Controls.Add(lbLogradouro);
+            Controls.Add(lbCep);
+            Controls.Add(cbCidade);
+            Controls.Add(cbUf);
+            Controls.Add(cbPais);
+            Controls.Add(txLograduro);
+            Controls.Add(txBairro);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
             Controls.Add(lbEmail);
@@ -184,5 +370,23 @@
         private Label lbEmail;
         private Button btnCadastrar;
         private Button btnCancelar;
+        private Label lbNumero;
+        private TextBox txNumero;
+        private Label lbComplemento;
+        private TextBox txComplemento;
+        private TextBox txIdCep;
+        private Label label1;
+        private MaskedTextBox txCep;
+        private Label lbBairro;
+        private Label lbCidade;
+        private Label lbUf;
+        private Label lbPais;
+        private Label lbLogradouro;
+        private Label lbCep;
+        private ComboBox cbCidade;
+        private ComboBox cbUf;
+        private ComboBox cbPais;
+        private TextBox txLograduro;
+        private TextBox txBairro;
     }
 }

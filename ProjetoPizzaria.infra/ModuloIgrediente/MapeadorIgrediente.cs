@@ -13,7 +13,7 @@ namespace ProjetoPizzaria.infra.ModuloIgrediente
     {
         public override void ConfigurarParametros(SqlCommand comando, Igrediente registro)
         {
-            comando.Parameters.AddWithValue("ID_IGREDIENTE", registro.id);
+            comando.Parameters.AddWithValue("id", registro.id);
             comando.Parameters.AddWithValue("NOME_IGREDIENTE", registro.nome);
         }
 

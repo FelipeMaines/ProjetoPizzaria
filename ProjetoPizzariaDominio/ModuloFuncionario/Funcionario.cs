@@ -1,4 +1,5 @@
 ﻿using ProjetoPizzariaDominio.Compartilhado;
+using ProjetoPizzariaDominio.ModuloEndereco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,13 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
         public string Numero { get; set; }
         public string Complemento { get; set; }
 
+        public Endereco endereco { get; set; }
+
         public Funcionario()
         {
             
         }
-        public Funcionario(int id = 0, string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
+        public Funcionario(Endereco endereco, int id = 0, string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
         motorista = "", DateTime validade_motorista = default, string observacao = "", string telefone = "", string email = "", int endereco_id = 0,
         string numero = "", string complemento = "")
         {
@@ -45,6 +48,7 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
             EnderecoId = endereco_id;
             Numero = numero;
             Complemento = complemento;
+            this.endereco = endereco;
         }
 
         public Funcionario(string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
@@ -64,6 +68,7 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
             EnderecoId = endereco_id;
             Numero = numero;
             Complemento = complemento;
+            
         }
     }
 }

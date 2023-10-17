@@ -53,7 +53,22 @@ namespace ProjetoPizzaria.ModuloFuncionario
                      new DataGridViewTextBoxColumn()
                 {
                     Name = "Cep",
-                    HeaderText = "Endereco Id"
+                    HeaderText = "Cep"
+                },
+                     new DataGridViewTextBoxColumn()
+                {
+                    Name = "Cidade",
+                    HeaderText = "Cidade"
+                },
+                      new DataGridViewTextBoxColumn()
+                {
+                    Name = "Rua",
+                    HeaderText = "Rua"
+                },
+                    new DataGridViewTextBoxColumn()
+                {
+                    Name = "Numero",
+                    HeaderText = "Numero"
                 },
                   new DataGridViewTextBoxColumn()
                 {
@@ -74,18 +89,24 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
             grid.Columns.AddRange(colunas);
         }
-        public void AtualizarRegistros(List<Funcionario> Funcionarios)
+        public void AtualizarRegistros(List<Funcionario> Funcionarios, List<Endereco> enderecos)
         {
             grid.Rows.Clear();
 
             foreach (Funcionario item in Funcionarios)
+            {
                 grid.Rows.Add(item.id,
                             item.Nome,
                             item.Matricula,
-                            item.EnderecoId,
+                            item.endereco.Cep,
+                            item.endereco.Cidade,
+                            item.endereco.Logradouro,
+                            item.Numero,
                             item.Email,
                             item.Telefone,
                             item.Grupo);
+            }
+                
         }
 
         public int ObterIdSelecionado()
