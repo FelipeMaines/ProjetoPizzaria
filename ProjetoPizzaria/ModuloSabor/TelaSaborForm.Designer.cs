@@ -37,7 +37,7 @@
             lbImagem = new Label();
             lbIgredientes = new Label();
             pictureBox = new PictureBox();
-            checkedListBox1 = new CheckedListBox();
+            cbIgredientes = new CheckedListBox();
             btnCadastrar = new Button();
             btnCancelar = new Button();
             ListBoxCategoria = new ListBox();
@@ -121,14 +121,15 @@
             pictureBox.Size = new Size(335, 165);
             pictureBox.TabIndex = 10;
             pictureBox.TabStop = false;
+            pictureBox.Click += pictureBox_Click;
             // 
-            // checkedListBox1
+            // cbIgredientes
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(392, 41);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(211, 400);
-            checkedListBox1.TabIndex = 4;
+            cbIgredientes.FormattingEnabled = true;
+            cbIgredientes.Location = new Point(392, 41);
+            cbIgredientes.Name = "cbIgredientes";
+            cbIgredientes.Size = new Size(211, 400);
+            cbIgredientes.TabIndex = 4;
             // 
             // btnCadastrar
             // 
@@ -139,6 +140,7 @@
             btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnCancelar
             // 
@@ -177,7 +179,7 @@
             Controls.Add(ListBoxCategoria);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
-            Controls.Add(checkedListBox1);
+            Controls.Add(cbIgredientes);
             Controls.Add(pictureBox);
             Controls.Add(lbIgredientes);
             Controls.Add(lbImagem);
@@ -211,5 +213,6 @@
         private Button btnCancelar;
         private ListBox ListBoxCategoria;
         private ListBox ListBoxTipo;
+        private CheckedListBox cbIgredientes;
     }
 }

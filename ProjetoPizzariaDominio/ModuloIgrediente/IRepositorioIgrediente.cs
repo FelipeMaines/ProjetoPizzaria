@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzariaDominio.ModuloIgrediente
 {
-    public interface IRepositorioIgrediente : IRepositorioBase<Igrediente>
+    public interface IRepositorioIgrediente : IRepositorioBase<Ingrediente>
     {
     }
 }

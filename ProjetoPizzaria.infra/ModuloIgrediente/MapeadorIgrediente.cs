@@ -9,21 +9,23 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzaria.infra.ModuloIgrediente
 {
-    public class MapeadorIgrediente : MapeadorBase<Igrediente>
+    public class MapeadorIgrediente : MapeadorBase<Ingrediente>
     {
-        public override void ConfigurarParametros(SqlCommand comando, Igrediente registro)
+        public override void ConfigurarParametros(SqlCommand comando, Ingrediente registro)
         {
             comando.Parameters.AddWithValue("id", registro.id);
             comando.Parameters.AddWithValue("NOME_IGREDIENTE", registro.nome);
         }
 
-        public override Igrediente ConverterRegistro(SqlDataReader leitorRegistros)
+        public override Ingrediente ConverterRegistro(SqlDataReader leitorRegistros)
         {
+            
+
             int id = Convert.ToInt32(leitorRegistros["ID_IGREDIENTE"]);
 
             string nome = Convert.ToString(leitorRegistros["NOME_IGREDIENTE"]);
 
-            return new Igrediente(nome, id);
+            return new Ingrediente(nome, id);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Data.SqlTypes;
 
 namespace ProjetoPizzaria.Compartilhado
 {
@@ -119,6 +120,29 @@ namespace ProjetoPizzaria.Compartilhado
             }
             // retorna o hash SHA256.
             return hash.ToString();
+        }
+
+        public static byte[] ConverteImagemParaByteArray(Image img)
+        {
+            MemoryStream ms = new();
+            if (img != null)
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return ms.ToArray();
+        }
+
+        public static Image? ConverteByteArrayParaImagem(byte[] pData)
+        {
+            try
+            {
+                ImageConverter imgConverter = new();
+                return imgConverter.ConvertFrom(pData) as Image;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

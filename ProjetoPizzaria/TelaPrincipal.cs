@@ -3,6 +3,7 @@ using ProjetoPizzaria.infra.ModuloCliente;
 using ProjetoPizzaria.infra.ModuloEndereco;
 using ProjetoPizzaria.infra.ModuloFuncionario;
 using ProjetoPizzaria.infra.ModuloIgrediente;
+using ProjetoPizzaria.infra.ModuloSabor;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
@@ -16,6 +17,7 @@ using ProjetoPizzariaDominio.ModuloCliente;
 using ProjetoPizzariaDominio.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloFuncionario;
 using ProjetoPizzariaDominio.ModuloIgrediente;
+using ProjetoPizzariaDominio.ModuloSabor;
 using System.Configuration;
 using System.Net.Http.Headers;
 
@@ -30,6 +32,7 @@ namespace ProjetoPizzaria
         IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
         IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
         IRepositorioCliente repositorioCliente = new RepositorioCliente();
+        IRepositorioSabor repositorioSabor = new RepositorioSabor();
         
 
         public TelaPrincipal()
@@ -182,7 +185,7 @@ namespace ProjetoPizzaria
 
         private void btnSabores_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorSabores();
+            controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -266,7 +269,7 @@ namespace ProjetoPizzaria
                     ConfigurarTelaPrincipal(controlador);
                     break;
                 case Keys.F7:
-                    controlador = new ControladorSabores();
+                    controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
 
                     ConfigurarTelaPrincipal(controlador);
                     break;

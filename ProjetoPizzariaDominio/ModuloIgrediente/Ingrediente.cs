@@ -7,24 +7,29 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzariaDominio.ModuloIgrediente
 {
-    public class Igrediente : EntidadeBase<Igrediente>
+    public class Ingrediente : EntidadeBase<Ingrediente>
     {
         public string nome { get; set; }
 
-        public Igrediente()
+        public Ingrediente()
         {
             
         }
 
-        public Igrediente(string Nome)
+        public Ingrediente(string Nome)
         {
             this.nome = Nome;
         }
 
-        public Igrediente(string Nome, int Id) 
+        public Ingrediente(string Nome, int Id) 
         {
             this.nome = Nome;
             this.id = Id;
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
     }
 }

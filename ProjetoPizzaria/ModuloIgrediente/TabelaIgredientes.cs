@@ -48,11 +48,11 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
             grid.Columns.AddRange(colunas);
         }
-        public void AtualizarRegistros(List<Igrediente> listaIgredientes)
+        public void AtualizarRegistros(List<Ingrediente> listaIgredientes)
         {
             grid.Rows.Clear();
 
-            foreach (Igrediente item in listaIgredientes)
+            foreach (Ingrediente item in listaIgredientes)
                 grid.Rows.Add(item.id,
                             item.nome);
         }

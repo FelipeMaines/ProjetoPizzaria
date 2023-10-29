@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzaria.infra.ModuloIgrediente
 {
-    public class RepositorioIgrendiente : RepositorioBaseSql<Igrediente, MapeadorIgrediente>, IRepositorioIgrediente
+    public class RepositorioIgrendiente : RepositorioBaseSql<Ingrediente, MapeadorIgrediente>, IRepositorioIgrediente
     {
         protected override string sqlInserir => @"INSERT INTO [igredientes]
                                                             (

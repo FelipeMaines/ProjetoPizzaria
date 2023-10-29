@@ -16,7 +16,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 {
     public partial class TelaIgredienteForm : Form
     {
-        public Igrediente igrediente { get; set; }
+        public Ingrediente igrediente { get; set; }
         public TelaIgredienteForm()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
-        public TelaIgredienteForm(Igrediente igrediente) : this()
+        public TelaIgredienteForm(Ingrediente igrediente) : this()
         {
             this.igrediente = igrediente;
             SetarTela();
@@ -49,17 +49,17 @@ namespace ProjetoPizzaria.ModuloIgrediente
             txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
-        public Igrediente PegarIgrendiente(bool edicao = false)
+        public Ingrediente PegarIgrendiente(bool edicao = false)
         {
             string nome = txNome.Text;
 
             if(!edicao)
-                return new Igrediente(nome);
+                return new Ingrediente(nome);
 
             else
             {
                 int id = Convert.ToInt32(txId.Text);
-                return new Igrediente(nome, id);
+                return new Ingrediente(nome, id);
             }
         }
 

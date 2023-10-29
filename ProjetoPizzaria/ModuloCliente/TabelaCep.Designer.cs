@@ -1,6 +1,6 @@
-﻿namespace ProjetoPizzaria.ModuloSabor
+﻿namespace ProjetoPizzaria.ModuloCep
 {
-    partial class TabelaSabores
+    partial class tabela
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,17 +39,16 @@
             grid.Location = new Point(0, 0);
             grid.Name = "grid";
             grid.RowTemplate.Height = 25;
-            grid.Size = new Size(380, 357);
+            grid.Size = new Size(389, 316);
             grid.TabIndex = 0;
-            grid.CellFormatting += grid_CellFormatting;
             // 
-            // TabelaSabores
+            // tabela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(grid);
-            Name = "TabelaSabores";
-            Size = new Size(380, 357);
+            Name = "tabela";
+            Size = new Size(389, 316);
             ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }
