@@ -21,50 +21,55 @@ namespace ProjetoPizzaria.infra.ModuloEndereco
 
         public override Endereco ConverterRegistro(SqlDataReader leitorRegistros)
         {
-            // e.id_endereco AS ID,
-            //e.cep AS CEP,
-            //e.logradouro AS Logradouro,
-            //e.bairro AS Bairro,
-            //c.id_cidade AS IDCidade,
-            //c.nome_cidade AS Cidade,
-            //u.id_uf AS IDUF,
-            //u.nome_uf AS UF,
-            //p.id_pais AS IDPais,
-            //p.nome_pais AS Pais
-
-            int id = Convert.ToInt32(leitorRegistros["ID"]);
-
-            string cep = Convert.ToString(leitorRegistros["CEP"]);
-
-            string logradouro = Convert.ToString(leitorRegistros["Logradouro"]);
-
-            string bairro = Convert.ToString(leitorRegistros["Bairro"]);
-
-            int idCidade = Convert.ToInt32(leitorRegistros["IDCidade"]);
-
-            string nomeCidade = Convert.ToString(leitorRegistros["Cidade"]);
-
-            var cidade = new Cidade(idCidade, nomeCidade);
-
-            //uf
-
-            int idUf = Convert.ToInt32(leitorRegistros["IDUF"]);
-
-            string nomeUf = Convert.ToString(leitorRegistros["UF"]);
-
-            var uf = new Uf(idUf, nomeUf);
-
-            //pais
-
-            int idPais = Convert.ToInt32(leitorRegistros["IDPais"]);
-
-            string nomePais = Convert.ToString(leitorRegistros["Pais"]);
-
-            var pais = new Pais(idCidade, nomeCidade);
-
-            //endereco
-
-            return new Endereco(id, cep, logradouro, bairro, idCidade, cidade, idUf, uf, idPais, pais);
+            throw new NotImplementedException();
         }
+
+        //public override Endereco ConverterRegistro(SqlDataReader leitorRegistros)
+        //{
+        //    // e.id_endereco AS ID,
+        //    //e.cep AS CEP,
+        //    //e.logradouro AS Logradouro,
+        //    //e.bairro AS Bairro,
+        //    //c.id_cidade AS IDCidade,
+        //    //c.nome_cidade AS Cidade,
+        //    //u.id_uf AS IDUF,
+        //    //u.nome_uf AS UF,
+        //    //p.id_pais AS IDPais,
+        //    //p.nome_pais AS Pais
+
+        //    int id = Convert.ToInt32(leitorRegistros["ID"]);
+
+        //    string cep = Convert.ToString(leitorRegistros["CEP"]);
+
+        //    string logradouro = Convert.ToString(leitorRegistros["Logradouro"]);
+
+        //    string bairro = Convert.ToString(leitorRegistros["Bairro"]);
+
+        //    int idCidade = Convert.ToInt32(leitorRegistros["IDCidade"]);
+
+        //    string nomeCidade = Convert.ToString(leitorRegistros["Cidade"]);
+
+        //    var cidade = new Cidade(idCidade, nomeCidade);
+
+        //    //uf
+
+        //    int idUf = Convert.ToInt32(leitorRegistros["IDUF"]);
+
+        //    string nomeUf = Convert.ToString(leitorRegistros["UF"]);
+
+        //    var uf = new Uf(idUf, nomeUf);
+
+        //    //pais
+
+        //    int idPais = Convert.ToInt32(leitorRegistros["IDPais"]);
+
+        //    string nomePais = Convert.ToString(leitorRegistros["Pais"]);
+
+        //    var pais = new Pais(idCidade, nomeCidade);
+
+        //endereco
+
+        //return new Endereco(id, cep, logradouro, bairro, cidade);
     }
+    
 }

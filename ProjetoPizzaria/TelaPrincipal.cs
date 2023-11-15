@@ -1,4 +1,5 @@
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.Compartilhado.Ioc;
 using ProjetoPizzaria.infra.ModuloCliente;
 using ProjetoPizzaria.infra.ModuloEndereco;
 using ProjetoPizzaria.infra.ModuloFuncionario;
@@ -20,6 +21,7 @@ using ProjetoPizzariaDominio.ModuloIgrediente;
 using ProjetoPizzariaDominio.ModuloSabor;
 using System.Configuration;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 
 namespace ProjetoPizzaria
 {
@@ -27,12 +29,14 @@ namespace ProjetoPizzaria
     {
         private ControladorBase controlador;
         private static TelaPrincipal telaPrincipal;
+        private Ioc Ioc;
 
-        IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
-        IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
-        IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
-        IRepositorioCliente repositorioCliente = new RepositorioCliente();
-        IRepositorioSabor repositorioSabor = new RepositorioSabor();
+
+        //IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
+        //IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
+        //IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
+        //IRepositorioCliente repositorioCliente = new RepositorioCliente();
+        //IRepositorioSabor repositorioSabor = new RepositorioSabor();
         
 
         public TelaPrincipal()
@@ -53,6 +57,7 @@ namespace ProjetoPizzaria
 
             FazerLogin();
 
+            this.Ioc = new IocComInjecaoDependecia();
         }
 
         private static void FazerLogin()
@@ -150,51 +155,51 @@ namespace ProjetoPizzaria
 
         private void btnFuncionario_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorFuncionario(repositorioEndereco, repositorioFuncionario);
+            //controlador = new ControladorFuncionario(repositorioEndereco, repositorioFuncionario);
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorFuncionario>());
         }
 
         private void btnCep_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorCep(repositorioEndereco);
+            //controlador = new ControladorCep(repositorioEndereco);
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCep>());
         }
 
         private void btnCliente_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorCliente(repositorioEndereco, repositorioCliente);
+            //controlador = new ControladorCliente(repositorioEndereco, repositorioCliente);
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCliente>());
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorProdutos();
+            //controlador = new ControladorProdutos();
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorProdutos>());
         }
 
         private void btnIgrediente_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorIgrediente(repositorioIgrediente);
+            //controlador = new ControladorIgrediente(repositorioIgrediente);
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorIgrediente>());
         }
 
         private void btnSabores_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
+            //controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorSabores>());
         }
 
         private void btnValores_Click_1(object sender, EventArgs e)
         {
-            controlador = new ControladorValores();
+            //controlador = new ControladorValores();
 
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorValores>());
         }
 
         private void btnConfiguracao_Click_1(object sender, EventArgs e)
@@ -244,39 +249,29 @@ namespace ProjetoPizzaria
             switch (e.KeyCode)
             {
                 case Keys.F2:
-                    controlador = new ControladorFuncionario(repositorioEndereco, repositorioFuncionario);
-
-                    ConfigurarTelaPrincipal(controlador);
+                    ConfigurarTelaPrincipal(Ioc.Get<ControladorFuncionario>());
                     break;
+
                 case Keys.F3:
-                    controlador = new ControladorCep(repositorioEndereco);
-
-                    ConfigurarTelaPrincipal(controlador);
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCep>());
                     break;
-                case Keys.F4:
-                    controlador = new ControladorCliente(repositorioEndereco, repositorioCliente);
 
-                    ConfigurarTelaPrincipal(controlador);
+                case Keys.F4:
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCliente>());
                     break;
                 case Keys.F5:
-                    controlador = new ControladorProdutos();
-
-                    ConfigurarTelaPrincipal(controlador);
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorProdutos>());
                     break;
+
                 case Keys.F6:
-                    controlador = new ControladorIgrediente(repositorioIgrediente);
-
-                    ConfigurarTelaPrincipal(controlador);
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorIgrediente>());
                     break;
-                case Keys.F7:
-                    controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
 
-                    ConfigurarTelaPrincipal(controlador);
+                case Keys.F7:
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorSabores>());
                     break;
                 case Keys.F8:
-                    controlador = new ControladorValores();
-
-                    ConfigurarTelaPrincipal(controlador);
+                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorValores>());
                     break;
                 case Keys.F9:
                     ConfigurarLinguagem();

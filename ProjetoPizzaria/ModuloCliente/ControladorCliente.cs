@@ -15,10 +15,10 @@ namespace ProjetoPizzaria.ModuloCliente
     public class ControladorCliente : ControladorBase
     {
         private TabelaCliente tabelaCliente;
-        private IRepositorioEndereco repositorioEndereco;
-        private IRepositorioCliente repositorioCliente;
+        private IRepositorioEnderecoOrm repositorioEndereco;
+        private IRepositorioClienteOrm repositorioCliente;
 
-        public ControladorCliente(IRepositorioEndereco repositorioEndereco, IRepositorioCliente repositorioCliente)
+        public ControladorCliente(IRepositorioEnderecoOrm repositorioEndereco, IRepositorioClienteOrm repositorioCliente)
         {
             this.tabelaCliente = new TabelaCliente();
             this.repositorioCliente = repositorioCliente;

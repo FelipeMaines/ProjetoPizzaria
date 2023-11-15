@@ -12,9 +12,9 @@ namespace ProjetoPizzaria.ModuloCep
     public class ControladorCep : ControladorBase
     {
         private TabelaCep tabelaCep;
-        private IRepositorioEndereco repositorioEndereco;
+        private IRepositorioEnderecoOrm repositorioEndereco;
 
-        public ControladorCep(IRepositorioEndereco repositorioEndereco)
+        public ControladorCep(IRepositorioEnderecoOrm repositorioEndereco)
         {
             this.tabelaCep = new TabelaCep();
             this.repositorioEndereco = repositorioEndereco;

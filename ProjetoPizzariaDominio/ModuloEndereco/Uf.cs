@@ -10,10 +10,12 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
     public class Uf : EntidadeBase<Uf>
     {
         public string nome { get; set; }
+        public List<Cidade> cidades { get; set; }
+        public Pais pais { get; set; }
 
         public Uf()
         {
-
+            cidades = new List<Cidade>();
         }
 
         public Uf(int idUf, string nomeUf)

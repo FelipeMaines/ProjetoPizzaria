@@ -1,4 +1,5 @@
 ﻿using ProjetoPizzariaDominio.Compartilhado;
+using ProjetoPizzariaDominio.ModuloEndereco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace ProjetoPizzariaDominio.ModuloCliente
         public int EnderecoId { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
+        public Endereco Endereco { get; set; }
 
         public Cliente(int id, string nome, string cpf, string telefone, string email, int enderecoId, string numero, string complemento)
         {

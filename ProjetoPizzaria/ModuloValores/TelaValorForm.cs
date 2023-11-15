@@ -1,18 +1,12 @@
 ﻿using ProjetoPizzaria.Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using ProjetoPizzariaDominio.ModuloSabor;
+using ProjetoPizzariaDominio.ModuloValor;
 
 namespace ProjetoPizzaria.ModuloValores
 {
     public partial class TelaValorForm : Form
     {
+        public Valor valor;
         public TelaValorForm()
         {
             InitializeComponent();
@@ -28,6 +22,17 @@ namespace ProjetoPizzaria.ModuloValores
 
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
 
+            CarregaEnumListBox();
+
+        }
+
+        private void CarregaEnumListBox()
+        {
+            listBoxTamanho.Items.Clear();
+            listBoxTamanho.DataSource = Enum.GetValues(typeof(EnumValorTamanho));
+
+            listBoxCategoria.Items.Clear();
+            listBoxCategoria.DataSource = Enum.GetValues(typeof(EnumSaborCategoria));
         }
 
         private void EventTarget()
@@ -46,6 +51,22 @@ namespace ProjetoPizzaria.ModuloValores
 
             listBoxCategoria.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
             listBoxCategoria.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+        }
+
+        public Valor ObterValor()
+        {
+            return new Valor
+            {
+                Tamanho = (char)(EnumValorTamanho)Enum.Parse(typeof(EnumValorTamanho), listBoxTamanho.Text),
+                Categoria = (char)(EnumSaborCategoria)Enum.Parse(typeof(EnumSaborCategoria), listBoxCategoria.Text),
+                ValorPizza = decimal.Parse(txValor.Text),
+                ValorBorda = decimal.Parse(txValorBorda.Text),
+            };
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            this.valor = ObterValor();
         }
     }
 }

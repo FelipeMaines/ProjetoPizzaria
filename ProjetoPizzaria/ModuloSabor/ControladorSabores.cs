@@ -16,11 +16,11 @@ namespace ProjetoPizzaria.ModuloSabor
 {
     public class ControladorSabores : ControladorBase
     {
-        private IRepositorioSabor repositorioSabor;
-        private IRepositorioIgrediente repositorioIgrediente;
+        private IRepositorioSaborOrm repositorioSabor;
+        private IRepositorioIngredienteOrm repositorioIgrediente;
         private TabelaSabores tabelaSabores;
 
-        public ControladorSabores(IRepositorioSabor repositorioSabor, IRepositorioIgrediente repositorioIgrediente)
+        public ControladorSabores(IRepositorioSaborOrm repositorioSabor, IRepositorioIngredienteOrm repositorioIgrediente)
         {
             this.repositorioSabor = repositorioSabor;
             this.repositorioIgrediente = repositorioIgrediente;
@@ -44,8 +44,6 @@ namespace ProjetoPizzaria.ModuloSabor
             int idSelecionado = tabelaSabores.ObterIdSelecionado();
 
             var sabor = repositorioSabor.SelecionarPorId(idSelecionado);
-
-            sabor.SaborIngredientes = repositorioSabor.SelecionarIgredientesDoSabor(sabor.id);
 
             var telaSabor = new TelaSaborForm(repositorioIgrediente, sabor);
 

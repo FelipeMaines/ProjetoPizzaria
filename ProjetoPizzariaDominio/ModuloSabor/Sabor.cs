@@ -15,6 +15,12 @@ namespace ProjetoPizzariaDominio.ModuloSabor
         public char Categoria { get; set; }
         public char Tipo { get; set; }
         public List<Ingrediente> SaborIngredientes { get; set; }
+
+        public Sabor()
+        {
+            
+        }
+
         public Sabor(int id, string descricao, byte[] foto, char categoria, char tipo, List<Ingrediente> saborIngredientes)
         {
             this.id = id;

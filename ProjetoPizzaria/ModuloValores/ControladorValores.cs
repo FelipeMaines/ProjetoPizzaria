@@ -1,4 +1,5 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzariaDominio.ModuloValor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,15 @@ namespace ProjetoPizzaria.ModuloValores
 {
     public class ControladorValores : ControladorBase
     {
+        IRepositorioValorOrm repositorioValorOrm;
         private TabelaValores tabelaValores;
+
+        public ControladorValores(IRepositorioValorOrm repositorioValorOrm)
+        {
+            this.repositorioValorOrm = repositorioValorOrm;
+            this.tabelaValores = new TabelaValores();
+        }
+
         public override string ToolTipInserir => "Cadastrar Valores";
 
         public override string ToolTipEditar => "Editar Valores";

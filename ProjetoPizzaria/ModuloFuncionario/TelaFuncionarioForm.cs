@@ -15,9 +15,9 @@ namespace ProjetoPizzaria
 {
     public partial class TelaFuncionarioForm : Form
     {
-        private IRepositorioEndereco repositorioEndereco;
+        private IRepositorioEnderecoOrm repositorioEndereco;
         public Funcionario funcionario = new Funcionario();
-        public TelaFuncionarioForm(IRepositorioEndereco repositorioEndereco)
+        public TelaFuncionarioForm(IRepositorioEnderecoOrm repositorioEndereco)
         {
             InitializeComponent();
 
@@ -34,7 +34,7 @@ namespace ProjetoPizzaria
 
             this.repositorioEndereco = repositorioEndereco;
         }
-        public TelaFuncionarioForm(IRepositorioEndereco repositorioEndereco, Funcionario funcionario)
+        public TelaFuncionarioForm(IRepositorioEnderecoOrm repositorioEndereco, Funcionario funcionario)
         {
             InitializeComponent();
 
@@ -135,9 +135,9 @@ namespace ProjetoPizzaria
         private void EncherCamposEndereco(Endereco cep)
         {
             txLograduro.Text = cep.Logradouro;
-            cbPais.Text = cep.Pais.nome;
-            cbCidade.Text = cep.Cidade.nome;
-            cbUf.Text = cep.Uf.nome;
+            cbPais.Text = cep.Pais;
+            cbCidade.Text = cep.Cidade;
+            cbUf.Text = cep.Estado;
             txBairro.Text = cep.Bairro;
             txIdCep.Text = cep.id.ToString();
 

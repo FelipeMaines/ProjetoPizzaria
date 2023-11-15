@@ -17,7 +17,7 @@ namespace ProjetoPizzaria.ModuloSabor
     {
         private List<Ingrediente> ingredientes;
         public Sabor sabor;
-        public TelaSaborForm(IRepositorioIgrediente repositorioIgrediente)
+        public TelaSaborForm(IRepositorioIngredienteOrm repositorioIgrediente)
         {
             InitializeComponent();
 
@@ -39,7 +39,7 @@ namespace ProjetoPizzaria.ModuloSabor
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
-        public TelaSaborForm(IRepositorioIgrediente repositorioIgrediente, Sabor sabor)
+        public TelaSaborForm(IRepositorioIngredienteOrm repositorioIgrediente, Sabor sabor)
         {
             InitializeComponent();
 

@@ -83,9 +83,9 @@ namespace ProjetoPizzaria.ModuloCep
                             item.Cep,
                             item.Logradouro,
                             item.Bairro,
-                            item.Cidade.nome,
-                            item.Uf.nome,
-                            item.Pais.nome);
+                            item.Cidade,
+                            item.Estado,
+                            item.Pais);
         }
 
         public int ObterIdSelecionado()

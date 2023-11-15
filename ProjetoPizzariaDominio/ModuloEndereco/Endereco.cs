@@ -12,26 +12,21 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
         public string Cep { get; set; }
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
-        public int IdCidade { get; set; }
-        public Cidade Cidade { get; set; }
-        public int IdUf { get; set; }
-        public Uf Uf { get; set; }
-        public int IdPais { get; set; }
-        public Pais Pais { get; set; }
-        public Endereco(int id, string cep, string logradouro, string bairro,
-         int idCidade, Cidade cidade,
-         int idUf, Uf uf, int idPais, Pais pais)
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public string Pais { get; set; }
+
+        public Endereco()
+        {
+            
+        }
+        public Endereco(int id, string cep, string logradouro, string bairro, string cidade)
         {
             this.id = id;
-            IdCidade = idCidade;
             Cep = cep;
             Logradouro = logradouro;
             Bairro = bairro;
             Cidade = cidade;
-            IdUf = idUf;
-            Uf = uf;
-            IdPais = idPais;
-            Pais = pais;
         }
     }
 }

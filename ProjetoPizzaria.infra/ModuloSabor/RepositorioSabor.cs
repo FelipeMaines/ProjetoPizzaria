@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzaria.infra.ModuloSabor
 {
-    public class RepositorioSabor : RepositorioBaseSql<Sabor, MapeadorSabor>, IRepositorioSabor
+    public class RepositorioSabor : RepositorioBaseSql<Sabor, MapeadorSabor>, IRepositorioSaborOrm
     {
         protected override string sqlInserir => 
             @"INSERT INTO tb_sabores (descricao_sabor, foto, categoria, tipo) VALUES (@descricao, @foto, @categoria, @tipo) SELECT SCOPE_IDENTITY()";

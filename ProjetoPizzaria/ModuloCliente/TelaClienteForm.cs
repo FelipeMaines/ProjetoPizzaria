@@ -17,9 +17,9 @@ namespace ProjetoPizzaria.ModuloCliente
 {
     public partial class TelaClienteForm : Form
     {
-        private IRepositorioEndereco repositorioEndereco;
+        private IRepositorioEnderecoOrm repositorioEndereco;
         public Cliente cliente;
-        public TelaClienteForm(IRepositorioEndereco repositorioEndereco)
+        public TelaClienteForm(IRepositorioEnderecoOrm repositorioEndereco)
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace ProjetoPizzaria.ModuloCliente
             this.repositorioEndereco = repositorioEndereco;
         }
 
-        public TelaClienteForm(IRepositorioEndereco repositorioEndereco, Cliente cliente)
+        public TelaClienteForm(IRepositorioEnderecoOrm repositorioEndereco, Cliente cliente)
         {
             InitializeComponent();
 
@@ -133,9 +133,9 @@ namespace ProjetoPizzaria.ModuloCliente
         private void EncherCampoEndereco(Endereco cep)
         {
             txLograduro.Text = cep.Logradouro;
-            cbPais.Text = cep.Pais.nome;
-            cbCidade.Text = cep.Cidade.nome;
-            cbUf.Text = cep.Uf.nome;
+            cbPais.Text = cep.Pais;
+            cbCidade.Text = cep.Cidade;
+            cbUf.Text = cep.Cidade;
             txBairro.Text = cep.Bairro;
             txIdCep.Text = cep.id.ToString();
 

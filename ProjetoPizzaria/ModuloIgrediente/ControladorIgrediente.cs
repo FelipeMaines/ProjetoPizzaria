@@ -13,9 +13,9 @@ namespace ProjetoPizzaria.ModuloIgrediente
 {
     public class ControladorIgrediente : ControladorBase
     {
-        IRepositorioIgrediente repositorioIgrediente;
+        IRepositorioIngredienteOrm repositorioIgrediente;
         private TabelaIgredientes tabelaIgredientes;
-        public ControladorIgrediente(IRepositorioIgrediente repositorioIgrediente)
+        public ControladorIgrediente(IRepositorioIngredienteOrm repositorioIgrediente)
         {
             this.tabelaIgredientes = new TabelaIgredientes();
             this.repositorioIgrediente = repositorioIgrediente;

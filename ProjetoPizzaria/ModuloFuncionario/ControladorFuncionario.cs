@@ -12,16 +12,16 @@ namespace ProjetoPizzaria.ModuloFuncionario
     public class ControladorFuncionario : ControladorBase
     {
         private TabelaFuncionario tabelaFuncionario;
-        private IRepositorioFuncionario repositorioFuncionario;
+        private IRepositorioFuncionarioOrm repositorioFuncionario;
 
-        private IRepositorioEndereco repositorioEndereco;
+        private IRepositorioEnderecoOrm repositorioEndereco;
         public override string ToolTipInserir => "Cadastrar Funcionario";
 
         public override string ToolTipEditar => "Editar Funcionario";
 
         public override string ToolTipExcluir => "Excluir Funcionario";
 
-        public ControladorFuncionario(IRepositorioEndereco repositorioEndereco, IRepositorioFuncionario repositorioFuncionario)
+        public ControladorFuncionario(IRepositorioEnderecoOrm repositorioEndereco, IRepositorioFuncionarioOrm repositorioFuncionario)
         {
             tabelaFuncionario = new TabelaFuncionario();
             this.repositorioEndereco = repositorioEndereco;
