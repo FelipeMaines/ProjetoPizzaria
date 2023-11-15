@@ -1,27 +1,13 @@
 using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.Compartilhado.Ioc;
-using ProjetoPizzaria.infra.ModuloCliente;
-using ProjetoPizzaria.infra.ModuloEndereco;
-using ProjetoPizzaria.infra.ModuloFuncionario;
-using ProjetoPizzaria.infra.ModuloIgrediente;
-using ProjetoPizzaria.infra.ModuloSabor;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
 using ProjetoPizzaria.ModuloIgrediente;
 using ProjetoPizzaria.ModuloLogin;
-using ProjetoPizzaria.ModuloPedidos;
-using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
-using ProjetoPizzariaDominio.ModuloCliente;
-using ProjetoPizzariaDominio.ModuloEndereco;
-using ProjetoPizzariaDominio.ModuloFuncionario;
-using ProjetoPizzariaDominio.ModuloIgrediente;
-using ProjetoPizzariaDominio.ModuloSabor;
 using System.Configuration;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 
 namespace ProjetoPizzaria
 {
@@ -30,14 +16,6 @@ namespace ProjetoPizzaria
         private ControladorBase controlador;
         private static TelaPrincipal telaPrincipal;
         private Ioc Ioc;
-
-
-        //IRepositorioIgrediente repositorioIgrediente = new RepositorioIgrendiente();
-        //IRepositorioEndereco repositorioEndereco = new RepositorioEndereco();
-        //IRepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario();
-        //IRepositorioCliente repositorioCliente = new RepositorioCliente();
-        //IRepositorioSabor repositorioSabor = new RepositorioSabor();
-        
 
         public TelaPrincipal()
         {
@@ -174,13 +152,6 @@ namespace ProjetoPizzaria
             ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCliente>());
         }
 
-        private void btnProduto_Click(object sender, EventArgs e)
-        {
-            //controlador = new ControladorProdutos();
-
-            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorProdutos>());
-        }
-
         private void btnIgrediente_Click(object sender, EventArgs e)
         {
             //controlador = new ControladorIgrediente(repositorioIgrediente);
@@ -258,9 +229,6 @@ namespace ProjetoPizzaria
 
                 case Keys.F4:
                     ConfigurarTelaPrincipal(this.Ioc.Get<ControladorCliente>());
-                    break;
-                case Keys.F5:
-                    ConfigurarTelaPrincipal(this.Ioc.Get<ControladorProdutos>());
                     break;
 
                 case Keys.F6:

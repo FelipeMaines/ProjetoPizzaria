@@ -21,7 +21,7 @@ namespace ProjetoPizzariaDominio.ModuloIgrediente
             this.nome = Nome;
         }
 
-        public Ingrediente(string Nome, int Id) 
+        public Ingrediente(string Nome, Guid Id) 
         {
             this.nome = Nome;
             this.id = Id;

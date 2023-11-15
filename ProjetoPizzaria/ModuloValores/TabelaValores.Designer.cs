@@ -41,6 +41,7 @@
             grid.RowTemplate.Height = 25;
             grid.Size = new Size(400, 305);
             grid.TabIndex = 0;
+            grid.CellFormatting += grid_CellFormatting;
             // 
             // TabelaValores
             // 

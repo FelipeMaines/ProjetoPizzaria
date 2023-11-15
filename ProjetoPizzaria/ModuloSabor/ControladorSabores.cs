@@ -41,7 +41,7 @@ namespace ProjetoPizzaria.ModuloSabor
 
         public override void Editar()
         {
-            int idSelecionado = tabelaSabores.ObterIdSelecionado();
+            Guid idSelecionado = tabelaSabores.ObterIdSelecionado();
 
             var sabor = repositorioSabor.SelecionarPorId(idSelecionado);
 
@@ -60,7 +60,7 @@ namespace ProjetoPizzaria.ModuloSabor
 
         public override void Excluir()
         {
-            int idIgrediente = tabelaSabores.ObterIdSelecionado();
+            Guid idIgrediente = tabelaSabores.ObterIdSelecionado();
 
             var sabor = repositorioSabor.SelecionarPorId(idIgrediente);
 

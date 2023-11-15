@@ -58,7 +58,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
             else
             {
-                int id = Convert.ToInt32(txId.Text);
+                Guid id = Guid.Parse(txId.Text);
                 return new Ingrediente(nome, id);
             }
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjetoPizzaria.Infra.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class test : Migration
+    public partial class mds : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,8 +15,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBEndereco",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Cep = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -33,7 +32,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBIngrediente",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     nome = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
@@ -45,7 +44,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBSabor",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Descricao = table.Column<string>(type: "varchar(100)", nullable: false),
                     Foto = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Categoria = table.Column<int>(type: "int", nullable: false),
@@ -60,7 +59,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBValor",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Tamanho = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     Categoria = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     ValorPizza = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -75,21 +74,21 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBCliente",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "varchar(20)", nullable: false),
                     Cpf = table.Column<string>(type: "varchar(20)", nullable: false),
                     Telefone = table.Column<string>(type: "varchar(20)", nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", nullable: false),
-                    EnderecoId = table.Column<int>(type: "int", nullable: false),
                     Numero = table.Column<string>(type: "varchar(10)", nullable: false),
-                    Complemento = table.Column<string>(type: "varchar(100)", nullable: false)
+                    Complemento = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Enderecoid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TBCliente", x => x.id);
                     table.ForeignKey(
                         name: "FK_TBCliente_TBEndereco",
-                        column: x => x.EnderecoId,
+                        column: x => x.Enderecoid,
                         principalTable: "TBEndereco",
                         principalColumn: "id");
                 });
@@ -98,7 +97,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBFuncionario",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "varchar(100)", nullable: false),
                     Cpf = table.Column<string>(type: "varchar(100)", nullable: false),
                     Matricula = table.Column<string>(type: "varchar(100)", nullable: false),
@@ -109,16 +108,16 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                     Observacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefone = table.Column<string>(type: "varchar(100)", nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", nullable: false),
-                    EnderecoId = table.Column<int>(type: "int", nullable: false),
                     Numero = table.Column<string>(type: "varchar(10)", nullable: false),
-                    Complemento = table.Column<string>(type: "varchar(100)", nullable: false)
+                    Complemento = table.Column<string>(type: "varchar(100)", nullable: false),
+                    enderecoid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TBFuncionario", x => x.id);
                     table.ForeignKey(
                         name: "FK_TBFuncionario_TBEndereco",
-                        column: x => x.EnderecoId,
+                        column: x => x.enderecoid,
                         principalTable: "TBEndereco",
                         principalColumn: "id");
                 });
@@ -127,8 +126,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 name: "TBSabor_TBIngrediente",
                 columns: table => new
                 {
-                    SaborIngredientesid = table.Column<int>(type: "int", nullable: false),
-                    Saborid = table.Column<int>(type: "int", nullable: false)
+                    SaborIngredientesid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Saborid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -148,14 +147,14 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_TBCliente_EnderecoId",
+                name: "IX_TBCliente_Enderecoid",
                 table: "TBCliente",
-                column: "EnderecoId");
+                column: "Enderecoid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TBFuncionario_EnderecoId",
+                name: "IX_TBFuncionario_enderecoid",
                 table: "TBFuncionario",
-                column: "EnderecoId");
+                column: "enderecoid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TBSabor_TBIngrediente_Saborid",

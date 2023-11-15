@@ -20,7 +20,7 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
         {
             
         }
-        public Endereco(int id, string cep, string logradouro, string bairro, string cidade)
+        public Endereco(Guid id, string cep, string logradouro, string bairro, string cidade)
         {
             this.id = id;
             Cep = cep;

@@ -1,5 +1,4 @@
 ﻿using ProjetoPizzaria.Compartilhado;
-using ProjetoPizzaria.ModuloProdutos;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzariaDominio.ModuloIgrediente;
 using System;
@@ -35,7 +34,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
         public override void Editar()
         {
-            int idIgrediente = tabelaIgredientes.ObterIdSelecionado();
+            Guid idIgrediente = tabelaIgredientes.ObterIdSelecionado();
 
             var igrediente = repositorioIgrediente.SelecionarPorId(idIgrediente);
 
@@ -51,7 +50,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
         public override void Excluir()
         {
-            int idIgrediente = tabelaIgredientes.ObterIdSelecionado();
+            Guid idIgrediente = tabelaIgredientes.ObterIdSelecionado();
 
             var igrediente = repositorioIgrediente.SelecionarPorId(idIgrediente);
 

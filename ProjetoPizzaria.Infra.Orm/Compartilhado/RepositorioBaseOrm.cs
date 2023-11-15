@@ -44,7 +44,7 @@ namespace ProjetoPizzaria.Infra.Orm.Compartilhado
             return registros.ToList();
         }
 
-        public virtual T SelecionarPorId(int id)
+        public virtual T SelecionarPorId(Guid id)
         {
             return registros.FirstOrDefault(x => x.id == id);
         }

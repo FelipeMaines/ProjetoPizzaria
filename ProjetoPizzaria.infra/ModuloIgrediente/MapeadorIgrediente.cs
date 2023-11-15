@@ -19,13 +19,18 @@ namespace ProjetoPizzaria.infra.ModuloIgrediente
 
         public override Ingrediente ConverterRegistro(SqlDataReader leitorRegistros)
         {
-            
-
-            int id = Convert.ToInt32(leitorRegistros["ID_IGREDIENTE"]);
-
-            string nome = Convert.ToString(leitorRegistros["NOME_IGREDIENTE"]);
-
-            return new Ingrediente(nome, id);
+            throw new NotImplementedException();
         }
+
+        //public override Ingrediente ConverterRegistro(SqlDataReader leitorRegistros)
+        //{
+
+
+        //    Guid id = Convert.ToInt32(leitorRegistros["ID_IGREDIENTE"]);
+
+        //    string nome = Convert.ToString(leitorRegistros["NOME_IGREDIENTE"]);
+
+        //    return new Ingrediente(nome, id);
+        //}
     }
 }

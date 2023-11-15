@@ -33,7 +33,7 @@ namespace ProjetoPizzaria.infra.Compartilhado
 
             var id = comandoInserir.ExecuteScalar();
 
-            registro.id = Convert.ToInt32(id);
+            //registro.id = Convert.ToInt32(id);
 
             conexaoBanco.Close();
         }

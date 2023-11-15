@@ -38,7 +38,7 @@ namespace ProjetoPizzaria.ModuloCliente
 
         public override void Editar()
         {
-            int idSelecionado = tabelaCliente.ObterIdSelecionado();
+            Guid idSelecionado = tabelaCliente.ObterIdSelecionado();
 
             var cliente = repositorioCliente.SelecionarPorId(idSelecionado);
 
@@ -55,7 +55,7 @@ namespace ProjetoPizzaria.ModuloCliente
 
         public override void Excluir()
         {
-            int idSelecionado = tabelaCliente.ObterIdSelecionado();
+            Guid idSelecionado = tabelaCliente.ObterIdSelecionado();
 
             var cliente = repositorioCliente.SelecionarPorId(idSelecionado);
 

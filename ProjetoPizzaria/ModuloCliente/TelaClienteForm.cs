@@ -77,7 +77,7 @@ namespace ProjetoPizzaria.ModuloCliente
             txEmail.Text = cliente.Email;
             txTelefone.Text = cliente.Telefone;
 
-            EncherCampoEndereco(repositorioEndereco.SelecionarPorId(cliente.EnderecoId));
+            EncherCampoEndereco(repositorioEndereco.SelecionarPorId(cliente.Endereco.id));
         }
 
         private void EnventosTarget()
@@ -127,7 +127,7 @@ namespace ProjetoPizzaria.ModuloCliente
             string complemento = txComplemento.Text;
             int enderecoId = Convert.ToInt32(txIdCep.Text);
 
-            return new Cliente(nome, cpf, telefone, email, enderecoId, numero, complemento);
+            return new Cliente(nome, cpf, telefone, email, numero, complemento);
         }
 
         private void EncherCampoEndereco(Endereco cep)
@@ -147,11 +147,7 @@ namespace ProjetoPizzaria.ModuloCliente
         {
             cliente = ObterCliente();
 
-            if (txId.Text != null && txId.Text != "")
-            {
-                int id = Convert.ToInt32(txId.Text);
-                cliente.id = id;
-            }
+            
         }
     }
 }

@@ -26,6 +26,11 @@ namespace ProjetoPizzaria.ModuloValores
 
         }
 
+        public TelaValorForm(Valor valor) : this()
+        {
+            this.valor = valor;
+        }
+
         private void CarregaEnumListBox()
         {
             listBoxTamanho.Items.Clear();

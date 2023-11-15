@@ -79,17 +79,12 @@ namespace ProjetoPizzaria.ModuloCliente
                             item.Cpf,
                             item.Email,
                             item.Telefone,
-                            item.EnderecoId);
+                            item.Endereco.id);
         }
 
-        public int ObterIdSelecionado()
+        public Guid ObterIdSelecionado()
         {
-            if (grid.SelectedRows.Count == 0)
-                return -1;
-
-            int id = Convert.ToInt32(grid.SelectedRows[0].Cells["id"].Value);
-
-            return id;
+            return grid.PegarId();
         }
     }
 }

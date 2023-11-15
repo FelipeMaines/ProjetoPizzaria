@@ -18,7 +18,7 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
         {
             enderecos = new List<Endereco>();
         }
-        public Cidade(int idCidade, string? nomeCidade)
+        public Cidade(Guid idCidade, string? nomeCidade)
         {
             this.id = idCidade;
             this.nome = nomeCidade;

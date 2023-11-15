@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoPizzaria.infra.ModuloSabor
 {
-    public class RepositorioSabor : RepositorioBaseSql<Sabor, MapeadorSabor>, IRepositorioSaborOrm
+    public class RepositorioSabor : RepositorioBaseSql<Sabor, MapeadorSabor>
     {
         protected override string sqlInserir => 
             @"INSERT INTO tb_sabores (descricao_sabor, foto, categoria, tipo) VALUES (@descricao, @foto, @categoria, @tipo) SELECT SCOPE_IDENTITY()";
@@ -76,7 +76,7 @@ namespace ProjetoPizzaria.infra.ModuloSabor
             }
         }
 
-        private void adicionarIngredienteNoSabor(Ingrediente ingrediente, int idSabor)
+        private void adicionarIngredienteNoSabor(Ingrediente ingrediente, Guid idSabor)
         {
             SqlConnection conexaoBanco = new SqlConnection(enderecoBanco);
             conexaoBanco.Open();
@@ -92,7 +92,7 @@ namespace ProjetoPizzaria.infra.ModuloSabor
 
             var id = comandoInserir.ExecuteScalar();
 
-            ingrediente.id = Convert.ToInt32(id);
+            //ingrediente.id = Convert.ToInt32(id);
 
             conexaoBanco.Close();
         }
@@ -116,7 +116,7 @@ namespace ProjetoPizzaria.infra.ModuloSabor
             base.Excluir(registroSelecionado);
         }
 
-        private void excluirIgredientesSabor(int id)
+        private void excluirIgredientesSabor(Guid id)
         {
             SqlConnection conexaoComBanco = new SqlConnection(enderecoBanco);
             conexaoComBanco.Open();
@@ -145,7 +145,7 @@ namespace ProjetoPizzaria.infra.ModuloSabor
             return listaSabores;
         }
 
-        public List<Ingrediente> SelecionarIgredientesDoSabor(int id)
+        public List<Ingrediente> SelecionarIgredientesDoSabor(Guid id)
         {
             SqlConnection conexaoComBanco = new SqlConnection(enderecoBanco);
             conexaoComBanco.Open();

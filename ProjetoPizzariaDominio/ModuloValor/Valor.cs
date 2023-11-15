@@ -26,7 +26,7 @@ namespace ProjetoPizzariaDominio.ModuloValor
             ValorBorda = valorBorda;
         }
 
-        public Valor(int id = 0, char tamanho = ' ', char categoria = ' ', decimal valorPizza = 0, decimal valorBorda = 0)
+        public Valor(Guid id, char tamanho = ' ', char categoria = ' ', decimal valorPizza = 0, decimal valorBorda = 0)
         {
             this.id = id;
             Tamanho = tamanho;

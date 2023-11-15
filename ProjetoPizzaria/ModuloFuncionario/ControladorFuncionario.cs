@@ -34,17 +34,14 @@ namespace ProjetoPizzaria.ModuloFuncionario
             var funcionarios = new List<Funcionario>();
             var enderecos = new List<Endereco>();
 
-            foreach (var funcionario in funcionarios)
-            {
-                enderecos.Add(repositorioEndereco.SelecionarPorId(funcionario.EnderecoId));
-            }
+            
 
-            tabelaFuncionario.AtualizarRegistros(repositorioFuncionario.SelecionarTodos(), enderecos);
+            tabelaFuncionario.AtualizarRegistros(repositorioFuncionario.SelecionarTodos());
         }
 
         public override void Editar()
         {
-            int idSelecionado = tabelaFuncionario.ObterIdSelecionado();
+            Guid idSelecionado = tabelaFuncionario.ObterIdSelecionado();
 
             var funcionario = repositorioFuncionario.SelecionarPorId(idSelecionado);
 
@@ -61,7 +58,7 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
         public override void Excluir()
         {
-            int idSelecionado = tabelaFuncionario.ObterIdSelecionado();
+            Guid idSelecionado = tabelaFuncionario.ObterIdSelecionado();
 
             var funcionario = repositorioFuncionario.SelecionarPorId(idSelecionado);
 

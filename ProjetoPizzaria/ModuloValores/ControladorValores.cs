@@ -1,4 +1,5 @@
-﻿using ProjetoPizzaria.Compartilhado;
+﻿using MySqlX.XDevAPI.Common;
+using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzariaDominio.ModuloValor;
 using System;
 using System.Collections.Generic;
@@ -27,24 +28,57 @@ namespace ProjetoPizzaria.ModuloValores
 
         public override void CarregarItens()
         {
-            throw new NotImplementedException();
+            var lista = repositorioValorOrm.SelecionarTodos();
+
+            tabelaValores.AtualizarRegistros(lista);
         }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            var id = tabelaValores.ObterIdSelecionado();
+
+            var valor = repositorioValorOrm.SelecionarPorId(id);
+
+            var telaValor = new TelaValorForm(valor);
+
+            var result = telaValor.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                repositorioValorOrm.Editar(telaValor.valor);
+
+                CarregarItens();
+            }
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Guid id = tabelaValores.ObterIdSelecionado();
+
+            var valor = repositorioValorOrm.SelecionarPorId(id);
+
+            var result = MessageBox.Show("Deseja Excluir o item {i}", valor.id.ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            repositorioValorOrm.Excluir(valor);
+
+            CarregarItens();
         }
 
         public override void Inserir()
         {
             TelaValorForm telaValoresForm = new TelaValorForm();
 
-            telaValoresForm.ShowDialog();
+            var result = telaValoresForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                repositorioValorOrm.Inserir(telaValoresForm.valor);
+
+                CarregarItens();
+            }
         }
 
         public override UserControl ObterTabela()

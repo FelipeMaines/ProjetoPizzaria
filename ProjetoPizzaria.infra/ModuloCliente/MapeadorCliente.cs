@@ -13,7 +13,7 @@ namespace ProjetoPizzaria.infra.ModuloCliente
             comando.Parameters.AddWithValue("@cpf", registro.Cpf);
             comando.Parameters.AddWithValue("@telefone", registro.Telefone);
             comando.Parameters.AddWithValue("@email", registro.Email);
-            comando.Parameters.AddWithValue("@endereco_id", registro.EnderecoId);
+            comando.Parameters.AddWithValue("@endereco_id", registro.Endereco.id);
             comando.Parameters.AddWithValue("@numero", registro.Numero);
             comando.Parameters.AddWithValue("@complemento", registro.Complemento);
             comando.Parameters.AddWithValue("@id", registro.id);
@@ -50,12 +50,12 @@ namespace ProjetoPizzaria.infra.ModuloCliente
 
             var registro = new Cliente();
 
-            registro.id = Convert.ToInt32(leitorRegistros["ID"]);
+            //registro.id = Convert.ToInt32(leitorRegistros["ID"]);
             registro.Nome = Convert.ToString(leitorRegistros["Nome"]);
             registro.Cpf = Convert.ToString(leitorRegistros["CPF"]);
             registro.Telefone = Convert.ToString(leitorRegistros["Telefone"]);
             registro.Email = Convert.ToString(leitorRegistros["EMail"]);
-            registro.EnderecoId = Convert.ToInt32(leitorRegistros["EnderecoId"]);
+            //registro.EnderecoId = Convert.ToInt32(leitorRegistros["EnderecoId"]);
             registro.Numero = Convert.ToString(leitorRegistros["Numero"]);
             registro.Complemento = Convert.ToString(leitorRegistros["Complemento"]);
 

@@ -43,17 +43,22 @@ namespace ProjetoPizzaria.infra.ModuloSabor
 
         public override Sabor ConverterRegistro(SqlDataReader leitorRegistros)
         {
-            
-            int id = Convert.ToInt32(leitorRegistros["id"]);
-            string descricao = Convert.ToString(leitorRegistros["nome"]);
-            Byte[] fotoSql = (Byte[])leitorRegistros["foto"];
-            byte[] foto = ConvertToByteArray(fotoSql);
-            char categoria = Convert.ToChar(leitorRegistros["categoria"]);
-            char tipo = Convert.ToChar(leitorRegistros["tipo"]);
-
-            var igre = new List<Ingrediente>();
-
-            return new Sabor(id, descricao, foto, categoria, tipo, igre);
+            throw new NotImplementedException();
         }
+
+        //public override Sabor ConverterRegistro(SqlDataReader leitorRegistros)
+        //{
+
+        //    int id = Convert.ToInt32(leitorRegistros["id"]);
+        //    string descricao = Convert.ToString(leitorRegistros["nome"]);
+        //    Byte[] fotoSql = (Byte[])leitorRegistros["foto"];
+        //    byte[] foto = ConvertToByteArray(fotoSql);
+        //    char categoria = Convert.ToChar(leitorRegistros["categoria"]);
+        //    char tipo = Convert.ToChar(leitorRegistros["tipo"]);
+
+        //    var igre = new List<Ingrediente>();
+
+        //    return new Sabor(id, descricao, foto, categoria, tipo, igre);
+        //}
     }
 }

@@ -78,7 +78,7 @@ namespace ProjetoPizzaria
             else 
                 radioButtonEntregador.Checked = true;
 
-            EncherCamposEndereco(repositorioEndereco.SelecionarPorId(funcionario.EnderecoId));
+            EncherCamposEndereco(repositorioEndereco.SelecionarPorId(funcionario.endereco.id));
         }
 
         private void EventTarget()
@@ -167,12 +167,6 @@ namespace ProjetoPizzaria
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             funcionario = ObterFuncionario();
-
-            if (txId.Text != null && txId.Text != "")
-            {
-                int id = Convert.ToInt32(txId.Text);
-                funcionario.id = id;
-            }
         }
     }
 }

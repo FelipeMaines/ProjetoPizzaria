@@ -20,7 +20,6 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
         public string Observacao { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        public int EnderecoId { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
 
@@ -30,7 +29,7 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
         {
             
         }
-        public Funcionario(Endereco endereco, int id = 0, string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
+        public Funcionario(Endereco endereco, Guid id, string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
         motorista = "", DateTime validade_motorista = default, string observacao = "", string telefone = "", string email = "", int endereco_id = 0,
         string numero = "", string complemento = "")
         {
@@ -45,7 +44,6 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
             Observacao = observacao;
             Telefone = telefone;
             Email = email;
-            EnderecoId = endereco_id;
             Numero = numero;
             Complemento = complemento;
             this.endereco = endereco;
@@ -65,7 +63,6 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
             Observacao = observacao;
             Telefone = telefone;
             Email = email;
-            EnderecoId = endereco_id;
             Numero = numero;
             Complemento = complemento;
             

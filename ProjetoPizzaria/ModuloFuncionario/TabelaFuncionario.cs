@@ -89,7 +89,7 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
             grid.Columns.AddRange(colunas);
         }
-        public void AtualizarRegistros(List<Funcionario> Funcionarios, List<Endereco> enderecos)
+        public void AtualizarRegistros(List<Funcionario> Funcionarios)
         {
             grid.Rows.Clear();
 
@@ -109,14 +109,9 @@ namespace ProjetoPizzaria.ModuloFuncionario
                 
         }
 
-        public int ObterIdSelecionado()
+        public Guid ObterIdSelecionado()
         {
-            if (grid.SelectedRows.Count == 0)
-                return -1;
-
-            int id = Convert.ToInt32(grid.SelectedRows[0].Cells["id"].Value);
-
-            return id;
+            return grid.PegarId();
         }
     }
 }

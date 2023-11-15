@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SequentialGuid;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,12 @@ namespace ProjetoPizzariaDominio.Compartilhado
 {
     public class EntidadeBase<T>
     {
-        public int id { get; set; }
+        public Guid id { get; set; }
+
+        public EntidadeBase()
+        {
+            id = SequentialGuidGenerator.Instance.NewGuid();
+
+        }
     }
 }

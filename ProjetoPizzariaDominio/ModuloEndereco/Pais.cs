@@ -17,7 +17,7 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
         {
             estados = new List<Uf>();
         }
-        public Pais(int idPais, string? nomePais)
+        public Pais(Guid idPais, string? nomePais)
         {
             this.nome = nomePais;
             this.id = idPais;

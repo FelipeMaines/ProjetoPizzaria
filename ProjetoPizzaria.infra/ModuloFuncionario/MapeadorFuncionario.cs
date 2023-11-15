@@ -29,7 +29,7 @@ namespace ProjetoPizzaria.infra.ModuloFuncionario
             comando.Parameters.AddWithValue("observacao", registro.Observacao);
             comando.Parameters.AddWithValue("telefone", registro.Telefone);
             comando.Parameters.AddWithValue("email", registro.Email);
-            comando.Parameters.AddWithValue("endereco_id", registro.EnderecoId);
+            comando.Parameters.AddWithValue("endereco_id", registro.endereco.id);
             comando.Parameters.AddWithValue("numero", registro.Numero);
             comando.Parameters.AddWithValue("complemento", registro.Complemento);
             comando.Parameters.AddWithValue("id", registro.id);

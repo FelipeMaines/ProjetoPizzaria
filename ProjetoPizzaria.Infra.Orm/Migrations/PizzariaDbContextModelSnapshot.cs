@@ -24,11 +24,11 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
             modelBuilder.Entity("IngredienteSabor", b =>
                 {
-                    b.Property<int>("SaborIngredientesid")
-                        .HasColumnType("int");
+                    b.Property<Guid>("SaborIngredientesid")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Saborid")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Saborid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("SaborIngredientesid", "Saborid");
 
@@ -39,8 +39,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloCliente.Cliente", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Complemento")
                         .IsRequired()
@@ -54,8 +54,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<int>("EnderecoId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Enderecoid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -71,18 +71,16 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("EnderecoId");
+                    b.HasIndex("Enderecoid");
 
                     b.ToTable("TBCliente", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloEndereco.Endereco", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Bairro")
                         .IsRequired()
@@ -115,8 +113,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloFuncionario.Funcionario", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Complemento")
                         .IsRequired()
@@ -129,9 +127,6 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
-
-                    b.Property<int>("EnderecoId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Grupo")
                         .IsRequired()
@@ -168,17 +163,20 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                     b.Property<DateTime>("Validade")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("enderecoid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("id");
 
-                    b.HasIndex("EnderecoId");
+                    b.HasIndex("enderecoid");
 
                     b.ToTable("TBFuncionario", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloIgrediente.Ingrediente", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("nome")
                         .IsRequired()
@@ -191,8 +189,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloSabor.Sabor", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Categoria")
                         .HasColumnType("int");
@@ -215,8 +213,8 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
 
             modelBuilder.Entity("ProjetoPizzariaDominio.ModuloValor.Valor", b =>
                 {
-                    b.Property<int>("id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Categoria")
                         .IsRequired()
@@ -256,7 +254,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 {
                     b.HasOne("ProjetoPizzariaDominio.ModuloEndereco.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId")
+                        .HasForeignKey("Enderecoid")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired()
                         .HasConstraintName("FK_TBCliente_TBEndereco");
@@ -268,7 +266,7 @@ namespace ProjetoPizzaria.Infra.Orm.Migrations
                 {
                     b.HasOne("ProjetoPizzariaDominio.ModuloEndereco.Endereco", "endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId")
+                        .HasForeignKey("enderecoid")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired()
                         .HasConstraintName("FK_TBFuncionario_TBEndereco");
