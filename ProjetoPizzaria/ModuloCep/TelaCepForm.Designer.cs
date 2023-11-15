@@ -31,9 +31,6 @@
             txId = new TextBox();
             txBairro = new TextBox();
             txLograduro = new TextBox();
-            cbPais = new ComboBox();
-            cbUf = new ComboBox();
-            cbCidade = new ComboBox();
             btnCadastrar = new Button();
             btnCancelar = new Button();
             lbId = new Label();
@@ -43,7 +40,10 @@
             lbUf = new Label();
             lbCidade = new Label();
             lbBairro = new Label();
-            txCep = new MaskedTextBox();
+            txPais = new TextBox();
+            txUf = new TextBox();
+            txCidade = new TextBox();
+            txCep = new TextBox();
             SuspendLayout();
             // 
             // txId
@@ -56,7 +56,7 @@
             // 
             // txBairro
             // 
-            txBairro.Location = new Point(266, 138);
+            txBairro.Location = new Point(239, 138);
             txBairro.Name = "txBairro";
             txBairro.Size = new Size(100, 23);
             txBairro.TabIndex = 6;
@@ -68,30 +68,6 @@
             txLograduro.Size = new Size(188, 23);
             txLograduro.TabIndex = 2;
             // 
-            // cbPais
-            // 
-            cbPais.FormattingEnabled = true;
-            cbPais.Location = new Point(28, 82);
-            cbPais.Name = "cbPais";
-            cbPais.Size = new Size(218, 23);
-            cbPais.TabIndex = 3;
-            // 
-            // cbUf
-            // 
-            cbUf.FormattingEnabled = true;
-            cbUf.Location = new Point(266, 82);
-            cbUf.Name = "cbUf";
-            cbUf.Size = new Size(100, 23);
-            cbUf.TabIndex = 4;
-            // 
-            // cbCidade
-            // 
-            cbCidade.FormattingEnabled = true;
-            cbCidade.Location = new Point(28, 138);
-            cbCidade.Name = "cbCidade";
-            cbCidade.Size = new Size(218, 23);
-            cbCidade.TabIndex = 5;
-            // 
             // btnCadastrar
             // 
             btnCadastrar.DialogResult = DialogResult.OK;
@@ -101,6 +77,7 @@
             btnCadastrar.TabIndex = 7;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnCancelar
             // 
@@ -151,7 +128,7 @@
             // lbUf
             // 
             lbUf.AutoSize = true;
-            lbUf.Location = new Point(266, 64);
+            lbUf.Location = new Point(239, 64);
             lbUf.Name = "lbUf";
             lbUf.Size = new Size(21, 15);
             lbUf.TabIndex = 13;
@@ -169,20 +146,39 @@
             // lbBairro
             // 
             lbBairro.AutoSize = true;
-            lbBairro.Location = new Point(266, 120);
+            lbBairro.Location = new Point(239, 120);
             lbBairro.Name = "lbBairro";
             lbBairro.Size = new Size(38, 15);
             lbBairro.TabIndex = 15;
             lbBairro.Text = "Bairro";
             // 
+            // txPais
+            // 
+            txPais.Location = new Point(28, 82);
+            txPais.Name = "txPais";
+            txPais.Size = new Size(188, 23);
+            txPais.TabIndex = 16;
+            // 
+            // txUf
+            // 
+            txUf.Location = new Point(239, 82);
+            txUf.Name = "txUf";
+            txUf.Size = new Size(188, 23);
+            txUf.TabIndex = 17;
+            // 
+            // txCidade
+            // 
+            txCidade.Location = new Point(28, 138);
+            txCidade.Name = "txCidade";
+            txCidade.Size = new Size(188, 23);
+            txCidade.TabIndex = 18;
+            // 
             // txCep
             // 
             txCep.Location = new Point(146, 35);
-            txCep.Mask = "00 . 000 - 000";
             txCep.Name = "txCep";
             txCep.Size = new Size(100, 23);
-            txCep.TabIndex = 1;
-            txCep.TextAlign = HorizontalAlignment.Center;
+            txCep.TabIndex = 19;
             // 
             // TelaCepForm
             // 
@@ -190,6 +186,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(459, 233);
             Controls.Add(txCep);
+            Controls.Add(txCidade);
+            Controls.Add(txUf);
+            Controls.Add(txPais);
             Controls.Add(lbBairro);
             Controls.Add(lbCidade);
             Controls.Add(lbUf);
@@ -199,9 +198,6 @@
             Controls.Add(lbId);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
-            Controls.Add(cbCidade);
-            Controls.Add(cbUf);
-            Controls.Add(cbPais);
             Controls.Add(txLograduro);
             Controls.Add(txBairro);
             Controls.Add(txId);
@@ -218,9 +214,6 @@
         private TextBox txId;
         private TextBox txBairro;
         private TextBox txLograduro;
-        private ComboBox cbPais;
-        private ComboBox cbUf;
-        private ComboBox cbCidade;
         private Button btnCadastrar;
         private Button btnCancelar;
         private Label lbId;
@@ -230,6 +223,9 @@
         private Label lbUf;
         private Label lbCidade;
         private Label lbBairro;
-        private MaskedTextBox txCep;
+        private TextBox txPais;
+        private TextBox txUf;
+        private TextBox txCidade;
+        private TextBox txCep;
     }
 }

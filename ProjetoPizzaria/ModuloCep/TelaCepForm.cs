@@ -1,5 +1,6 @@
 ﻿using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.Properties;
+using ProjetoPizzariaDominio.ModuloEndereco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProjetoPizzaria.ModuloCep
 {
     public partial class TelaCepForm : Form
     {
+        public Endereco enderco;
         public TelaCepForm()
         {
             InitializeComponent();
@@ -28,39 +30,20 @@ namespace ProjetoPizzaria.ModuloCep
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
 
-            EventTarget();
 
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
-        private void EventTarget()
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+            var pais = txPais.Text;
+            var cep = txCep.Text;
+            var estado = txUf.Text;
+            var cidade = txCidade.Text;
+            var logradouro = txLograduro.Text;
+            var bairro = txBairro.Text;
 
-            txBairro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txBairro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            txLograduro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txLograduro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            cbPais.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            cbPais.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            cbUf.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            cbUf.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            cbCidade.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            cbCidade.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            txId.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txId.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            txBairro.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txBairro.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
-
-            txCep.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
-            txCep.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
+            this.enderco = new Endereco(pais, cep, logradouro, bairro, cidade, estado);
         }
     }
 }

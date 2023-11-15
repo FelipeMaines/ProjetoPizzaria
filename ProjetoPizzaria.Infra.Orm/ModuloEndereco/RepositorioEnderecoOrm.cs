@@ -12,10 +12,5 @@ namespace ProjetoPizzaria.Infra.Orm.ModuloEndereco
 
             return registros.FirstOrDefault(x => x.Cep == cep);
         }
-
-        public override List<Endereco> SelecionarTodos()
-        {
-            return registros.ToList();
-        }
     }
 }

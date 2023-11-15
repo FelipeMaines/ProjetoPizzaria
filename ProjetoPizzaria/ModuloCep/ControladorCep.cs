@@ -45,7 +45,12 @@ namespace ProjetoPizzaria.ModuloCep
         {
             TelaCepForm telaCepForm = new TelaCepForm();
 
-            telaCepForm.ShowDialog();
+            var result = telaCepForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                repositorioEndereco.Inserir(telaCepForm.enderco);
+            }
         }
 
         public override UserControl ObterTabela()

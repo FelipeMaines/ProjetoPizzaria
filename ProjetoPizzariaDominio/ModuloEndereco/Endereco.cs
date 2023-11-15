@@ -28,5 +28,15 @@ namespace ProjetoPizzariaDominio.ModuloEndereco
             Bairro = bairro;
             Cidade = cidade;
         }
+
+        public Endereco(string pais, string cep, string logradouro, string bairro, string cidade, string estado)
+        {
+            Pais = pais;
+            Cep = cep;
+            Logradouro = logradouro;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+        }
     }
 }
