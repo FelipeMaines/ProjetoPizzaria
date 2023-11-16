@@ -162,6 +162,7 @@
             btnProduto.TabIndex = 7;
             btnProduto.Text = "Produto";
             btnProduto.UseVisualStyleBackColor = false;
+            btnProduto.Click += btnProduto_Click;
             // 
             // btnCliente
             // 

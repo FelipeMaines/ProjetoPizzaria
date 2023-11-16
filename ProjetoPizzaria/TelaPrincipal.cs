@@ -5,6 +5,7 @@ using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
 using ProjetoPizzaria.ModuloIgrediente;
 using ProjetoPizzaria.ModuloLogin;
+using ProjetoPizzaria.ModuloProduto;
 using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
 using System.Configuration;
@@ -116,7 +117,7 @@ namespace ProjetoPizzaria
 
             controlador.Editar();
 
-            
+
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -159,6 +160,11 @@ namespace ProjetoPizzaria
             ConfigurarTelaPrincipal(this.Ioc.Get<ControladorIgrediente>());
         }
 
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            ConfigurarTelaPrincipal(this.Ioc.Get<ControladorProduto>());
+        }
+
         private void btnSabores_Click_1(object sender, EventArgs e)
         {
             //controlador = new ControladorSabores(repositorioSabor, repositorioIgrediente);
@@ -195,7 +201,7 @@ namespace ProjetoPizzaria
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if(controlador == null)
+            if (controlador == null)
             {
                 MessageBox.Show("Selecione uma area primeiro!");
                 return;
@@ -300,6 +306,6 @@ namespace ProjetoPizzaria
             notifyIconSystemTray.Visible = false;
         }
 
-
+       
     }
 }
