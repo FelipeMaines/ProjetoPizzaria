@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoPizzaria.Infra.Orm.Compartilhado;
 
@@ -11,9 +12,11 @@ using ProjetoPizzaria.Infra.Orm.Compartilhado;
 namespace ProjetoPizzaria.Infra.Orm.Migrations
 {
     [DbContext(typeof(PizzariaDbContext))]
-    partial class PizzariaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231116021746_asdasd")]
+    partial class asdasd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

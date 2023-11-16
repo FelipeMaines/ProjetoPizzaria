@@ -45,15 +45,15 @@ namespace ProjetoPizzaria.ModuloSabor
 
             var sabor = repositorioSabor.SelecionarPorId(idSelecionado);
 
-            var telaSabor = new TelaSaborForm(repositorioIgrediente, sabor);
+            var telaSabor = new TelaSaborForm(repositorioIgrediente);
+
+            telaSabor.SetarTela(sabor);
 
             var result = telaSabor.ShowDialog();
 
             if (result == DialogResult.OK)
             {
-                var SaborModificado = telaSabor.ObterSabor();
-                SaborModificado.id = sabor.id;
-                repositorioSabor.Editar(SaborModificado);
+                repositorioSabor.Editar(telaSabor.sabor);
                 CarregarItens();
             }
         }
@@ -78,6 +78,8 @@ namespace ProjetoPizzaria.ModuloSabor
         public override void Inserir()
         {
             var telaValoresForm = new TelaSaborForm(repositorioIgrediente);
+
+            telaValoresForm.SetarTela(new Sabor());
 
             var result = telaValoresForm.ShowDialog();
 

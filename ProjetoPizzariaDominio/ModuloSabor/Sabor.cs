@@ -18,7 +18,7 @@ namespace ProjetoPizzariaDominio.ModuloSabor
 
         public Sabor()
         {
-            
+            SaborIngredientes = new List<Ingrediente>();
         }
 
         public Sabor(Guid id, string descricao, byte[] foto, char categoria, char tipo, List<Ingrediente> saborIngredientes)

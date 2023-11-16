@@ -45,7 +45,9 @@ namespace ProjetoPizzaria.ModuloFuncionario
 
             var funcionario = repositorioFuncionario.SelecionarPorId(idSelecionado);
 
-            var telaFuncionario = new TelaFuncionarioForm(repositorioEndereco ,funcionario);
+            var telaFuncionario = new TelaFuncionarioForm(repositorioEndereco);
+
+            telaFuncionario.SetarTela(funcionario);
 
             var result = telaFuncionario.ShowDialog();
 
@@ -70,6 +72,8 @@ namespace ProjetoPizzaria.ModuloFuncionario
         public override void Inserir()
         {
             TelaFuncionarioForm telaFuncionarioForm = new TelaFuncionarioForm(repositorioEndereco);
+
+            telaFuncionarioForm.SetarTela(new Funcionario());
 
             var result = telaFuncionarioForm.ShowDialog();
 

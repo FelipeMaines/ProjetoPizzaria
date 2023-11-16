@@ -27,7 +27,7 @@ namespace PizzariaDoZe.Infra.Orm.ModuloFuncionario
 
             builder.Property(c => c.Numero).HasColumnType("varchar(10)").IsRequired();
 
-            builder.HasOne(c => c.endereco).WithMany().IsRequired().HasConstraintName("FK_TBFuncionario_TBEndereco").OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(c => c.Endereco).WithMany().IsRequired().HasConstraintName("FK_TBFuncionario_TBEndereco").OnDelete(DeleteBehavior.NoAction);
 
 
 

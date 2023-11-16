@@ -1,4 +1,5 @@
 ﻿using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzariaDominio.ModuloCliente;
 using ProjetoPizzariaDominio.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloFuncionario;
 using System;
@@ -7,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace ProjetoPizzaria
     public partial class TelaFuncionarioForm : Form
     {
         private IRepositorioEnderecoOrm repositorioEndereco;
-        public Funcionario funcionario = new Funcionario();
+        public Funcionario funcionario;
         public TelaFuncionarioForm(IRepositorioEnderecoOrm repositorioEndereco)
         {
             InitializeComponent();
@@ -34,35 +36,19 @@ namespace ProjetoPizzaria
 
             this.repositorioEndereco = repositorioEndereco;
         }
-        public TelaFuncionarioForm(IRepositorioEnderecoOrm repositorioEndereco, Funcionario funcionario)
+
+        public void SetarTela(Funcionario funcionario)
         {
-            InitializeComponent();
+            this.funcionario = funcionario;
 
-            #region idioma/região interface - satellite assembly
-
-            Funcoes.AjustaResourcesControl(this);
-
-            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
-            #endregion
-
-            EventTarget();
-
-            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
-
-            this.repositorioEndereco = repositorioEndereco;
-
-            SetarTela(funcionario);
-        }
-
-        private void SetarTela(Funcionario funcionario)
-        {
             txId.Text = funcionario.id.ToString();
             txNome.Text = funcionario.Nome;
             txMatricula.Text = funcionario.Matricula;
             txCarteira.Text = funcionario.Motorista;
             txEmail.Text = funcionario.Email;
             txSenha.Text = funcionario.Senha;
-            txValidade.Value = funcionario.Validade;
+            if(funcionario.Validade.Date != Convert.ToDateTime("01/01/0001 00:00:0"))
+                txValidade.Value = funcionario.Validade.Date;
             txDescricao.Text = funcionario.Observacao;
             txCpf.Text = funcionario.Cpf;
             txTelefone.Text = funcionario.Telefone;
@@ -78,7 +64,7 @@ namespace ProjetoPizzaria
             else 
                 radioButtonEntregador.Checked = true;
 
-            EncherCamposEndereco(repositorioEndereco.SelecionarPorId(funcionario.endereco.id));
+            EncherCamposEndereco(funcionario.Endereco);
         }
 
         private void EventTarget()
@@ -145,10 +131,10 @@ namespace ProjetoPizzaria
                 txCep.Text = cep.Cep;
         }
 
-        private Funcionario ObterFuncionario()
+        private void ObterFuncionario()
         {
-            int enderecoId = Convert.ToInt32(txIdCep.Text);
             string nome = txNome.Text;
+            string cep = txCep.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             string cpf = txCpf.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             string matricula = txMatricula.Text;
             string email = txEmail.Text;
@@ -161,12 +147,37 @@ namespace ProjetoPizzaria
             string numero = txNumero.Text;
             string complemento = txComplemento.Text;
 
-            return new Funcionario(nome, cpf, matricula, senha, grupo, carteiraMotoriste, validade, descricao, telefone, email, enderecoId, numero, complemento);
+            funcionario.Nome = nome;
+            funcionario.Cpf = cpf;
+            funcionario.Matricula= matricula;
+            funcionario.Email = email;
+            funcionario.Grupo = grupo;
+            funcionario.Telefone = telefone;
+            funcionario.Motorista = carteiraMotoriste;
+            funcionario.Validade = validade;
+            funcionario.Senha = senha;
+            funcionario.Observacao = descricao;
+            funcionario.Numero = numero;
+            funcionario.Complemento = complemento;
+
+            if (repositorioEndereco.SelecionarPorCep(cep) == null)
+            {
+                funcionario.Endereco.Logradouro = txLograduro.Text;
+                funcionario.Endereco.Cep = cep;
+                funcionario.Endereco.Cidade = cbCidade.Text;
+                funcionario.Endereco.Estado = cbUf.Text;
+                funcionario.Endereco.Pais = cbPais.Text;
+                funcionario.Endereco.Bairro = txBairro.Text;
+            }
+            else
+            {
+                funcionario.Endereco = repositorioEndereco.SelecionarPorCep(cep);
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            funcionario = ObterFuncionario();
+            ObterFuncionario();
         }
     }
 }

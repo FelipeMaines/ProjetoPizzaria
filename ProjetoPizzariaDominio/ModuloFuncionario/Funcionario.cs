@@ -22,12 +22,11 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
         public string Email { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
-
-        public Endereco endereco { get; set; }
+        public Endereco Endereco { get; set; }
 
         public Funcionario()
         {
-            
+            Endereco = new Endereco();  
         }
         public Funcionario(Endereco endereco, Guid id, string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string
         motorista = "", DateTime validade_motorista = default, string observacao = "", string telefone = "", string email = "", int endereco_id = 0,
@@ -46,7 +45,7 @@ namespace ProjetoPizzariaDominio.ModuloFuncionario
             Email = email;
             Numero = numero;
             Complemento = complemento;
-            this.endereco = endereco;
+            this.Endereco = endereco;
         }
 
         public Funcionario(string nome = "", string cpf = "", string matricula = "", string senha = "", char grupo = default, string

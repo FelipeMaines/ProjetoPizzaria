@@ -39,36 +39,11 @@ namespace ProjetoPizzaria.ModuloSabor
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
-        public TelaSaborForm(IRepositorioIngredienteOrm repositorioIgrediente, Sabor sabor)
+        public void SetarTela(Sabor sabor)
         {
-            InitializeComponent();
-
-            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
-
-            #region idioma/região interface - satellite assembly
-
-            Funcoes.AjustaResourcesControl(this);
-
-            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
-            #endregion
-
-            this.ingredientes = repositorioIgrediente.SelecionarTodos();
-
-            EventTarget();
-
-            CarregaEnumListBox();
-
-            CarregarComboBoxIgredientes();
-
             this.sabor = sabor;
 
-            SetarTela();
-
-        }
-
-        private void SetarTela()
-        {
-            txNome.Text = this.sabor.Descricao;
+            txNome.Text = sabor.Descricao;
             txId.Text = sabor.id.ToString();
             pictureBox.Image = Funcoes.ConverteByteArrayParaImagem(sabor.Foto);
             ListBoxCategoria.Text = EnumExtensions.GetDescription((EnumSaborCategoria)char.Parse(sabor.Categoria.ToString()));
@@ -123,7 +98,7 @@ namespace ProjetoPizzaria.ModuloSabor
             ListBoxTipo.Enter += new EventHandler(Funcoes.CampoEventoEnter!);
         }
 
-        public Sabor ObterSabor()
+        public void ObterSabor()
         {
             string Descricao = txNome.Text;
             var Foto = Funcoes.ConverteImagemParaByteArray(pictureBox.Image);
@@ -131,7 +106,11 @@ namespace ProjetoPizzaria.ModuloSabor
             var Tipo = (char)(EnumSaborTipo)Enum.Parse(typeof(EnumSaborTipo), ListBoxTipo.Text);
             var SaborIngredientes = cbIgredientes.CheckedItems.OfType<Ingrediente>().ToList();
 
-            return new Sabor(Descricao, Foto, Categoria, Tipo, SaborIngredientes);
+            sabor.Descricao = Descricao;
+            sabor.Tipo = Tipo;
+            sabor.Categoria = Categoria;
+            sabor.Foto = Foto;
+            sabor.SaborIngredientes = SaborIngredientes;
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -154,7 +133,7 @@ namespace ProjetoPizzaria.ModuloSabor
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            this.sabor = ObterSabor();
+            ObterSabor();
         }
     }
 }

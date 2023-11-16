@@ -13,7 +13,7 @@ namespace ProjetoPizzaria.Infra.Orm.ModuloFuncionario
         }
 
         public List<Funcionario> SelecionarTodos() {
-            return registros.Include(x => x.endereco).ToList();
+            return registros.Include(x => x.Endereco).ToList();
         }
     }
 }

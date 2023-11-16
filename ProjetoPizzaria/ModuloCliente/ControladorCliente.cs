@@ -42,7 +42,9 @@ namespace ProjetoPizzaria.ModuloCliente
 
             var cliente = repositorioCliente.SelecionarPorId(idSelecionado);
 
-            var telaCliente = new TelaClienteForm(repositorioEndereco, cliente);
+            var telaCliente = new TelaClienteForm(repositorioEndereco);
+
+            telaCliente.SetarTela(cliente);
 
             var result = telaCliente.ShowDialog();
 
@@ -67,6 +69,8 @@ namespace ProjetoPizzaria.ModuloCliente
         public override void Inserir()
         {
             TelaClienteForm telaCliente = new TelaClienteForm(repositorioEndereco);
+
+            telaCliente.SetarTela(new Cliente());
 
             var result = telaCliente.ShowDialog();
 

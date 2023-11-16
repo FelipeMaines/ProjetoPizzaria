@@ -41,6 +41,7 @@ namespace ProjetoPizzariaDominio.ModuloCliente
 
         public Cliente()
         {
+            Endereco = new Endereco();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProjetoPizzaria.Compartilhado;
+﻿using Microsoft.Identity.Client.Extensibility;
+using ProjetoPizzaria.Compartilhado;
 using ProjetoPizzaria.infra.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloCliente;
 using ProjetoPizzariaDominio.ModuloEndereco;
@@ -40,44 +41,21 @@ namespace ProjetoPizzaria.ModuloCliente
             this.repositorioEndereco = repositorioEndereco;
         }
 
-        public TelaClienteForm(IRepositorioEnderecoOrm repositorioEndereco, Cliente cliente)
+        public void SetarTela(Cliente cliente)
         {
-            InitializeComponent();
-
-            #region idioma/região interface - satellite assembly
-            // com base no idioma/região escolhido pelo usuário,
-            // ajusta as propriedades dos componentes da tela com base no conteúdo do arquivo
-            //resources
-            Funcoes.AjustaResourcesControl(this);
-            //ajuste manual de campos ou mensagens para o usuário que não puderam ser
-            //automatizadas acima
-            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
-            #endregion
-
-            EnventosTarget();
-
-            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
-
-            this.repositorioEndereco = repositorioEndereco;
-
-            this.repositorioEndereco = repositorioEndereco;
             this.cliente = cliente;
 
-            SetarTela();
-        }
-
-        private void SetarTela()
-        {
             txId.Text = cliente.id.ToString();
-            txCpf.Text = cliente.Cpf.ToString();
-            txCep.Text = cliente.Cpf.ToString();
+            txCpf.Text = cliente.Cpf;
+            txCep.Text = cliente.Endereco.Cep;
             txNome.Text = cliente.Nome;
             txComplemento.Text = cliente.Complemento;
             txNumero.Text = cliente.Numero;
             txEmail.Text = cliente.Email;
             txTelefone.Text = cliente.Telefone;
 
-            EncherCampoEndereco(repositorioEndereco.SelecionarPorId(cliente.Endereco.id));
+
+            EncherCampoEndereco(cliente.Endereco);
         }
 
         private void EnventosTarget()
@@ -116,7 +94,7 @@ namespace ProjetoPizzaria.ModuloCliente
                 EncherCampoEndereco(cep);
         }
 
-        private Cliente ObterCliente()
+        private void ObterCliente()
         {
             string nome = txNome.Text;
             string cpf = txCpf.Text.Replace(".", "").Replace("-", "").Replace(",", ""); 
@@ -125,9 +103,28 @@ namespace ProjetoPizzaria.ModuloCliente
             string email = txEmail.Text;
             string numero = txNumero.Text;
             string complemento = txComplemento.Text;
-            int enderecoId = Convert.ToInt32(txIdCep.Text);
 
-            return new Cliente(nome, cpf, telefone, email, numero, complemento);
+            cliente.Nome = nome;
+            cliente.Cpf = cpf;
+            cliente.Telefone = telefone;
+            cliente.Email = email;
+            cliente.Numero = numero;
+            cliente.Complemento = complemento;
+
+            if(repositorioEndereco.SelecionarPorCep(cep) == null)
+            {
+                cliente.Endereco.Logradouro = txLograduro.Text;
+                cliente.Endereco.Cep = cep;
+                cliente.Endereco.Cidade = cbCidade.Text;
+                cliente.Endereco.Estado = cbUf.Text;
+                cliente.Endereco.Pais = cbPais.Text;
+                cliente.Endereco.Bairro = txBairro.Text;
+            }
+            else
+            {
+                cliente.Endereco = repositorioEndereco.SelecionarPorCep(cep);
+            }
+           
         }
 
         private void EncherCampoEndereco(Endereco cep)
@@ -145,9 +142,7 @@ namespace ProjetoPizzaria.ModuloCliente
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            cliente = ObterCliente();
-
-            
+            ObterCliente();
         }
     }
 }
