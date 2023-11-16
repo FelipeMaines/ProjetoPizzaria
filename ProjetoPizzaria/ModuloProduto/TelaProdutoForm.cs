@@ -1,5 +1,6 @@
 ﻿using Org.BouncyCastle.Asn1.BC;
 using ProjetoPizzaria.Compartilhado;
+using ProjetoPizzaria.Infra.Orm.Migrations;
 using ProjetoPizzariaDominio.ModuloProduto;
 using ProjetoPizzariaDominio.ModuloSabor;
 using ProjetoPizzariaDominio.ModuloValor;
@@ -34,13 +35,6 @@ namespace ProjetoPizzaria.ModuloProduto
             CarregaEnumListBox();
         }
 
-        public TelaProdutoForm(Produto produto) : this()
-        {
-            this.produto = produto;
-
-            SetarTela();
-        }
-
         private void CarregaEnumListBox()
         {
             listBoxTipo.Items.Clear();
@@ -53,31 +47,31 @@ namespace ProjetoPizzaria.ModuloProduto
             listBoxTamanho.Items.Add("1000");
             listBoxTamanho.Items.Add("1500");
             listBoxTamanho.Items.Add("2000");
-
         }
 
-        private void SetarTela()
+        public void SetarTela(Produto produto)
         {
+            this.produto = produto;
+
             txId.Text = produto.id.ToString();
             txNome.Text = produto.Descricao;
-            txValor.Text = produto.Descricao.ToString();
+            txValor.Text = produto.Valor.ToString();
             listBoxTipo.Text = EnumExtensions.GetDescription((EnumProdutoTipo)char.Parse(produto.Tipo.ToString()));
+            listBoxTamanho.Text = produto.ML;
         }
 
-        private Produto ObterProduto()
+        private void ObterProduto()
         {
-            return new Produto
-            {
-                Descricao = txNome.Text,
-                Valor = decimal.Parse(txValor.Text),
-                Tipo = (char)(EnumProdutoTipo)Enum.Parse(typeof(EnumProdutoTipo), listBoxTipo.Text),
-                ML = listBoxTamanho.Text,
-            };
+            produto.Descricao = txNome.Text;
+            produto.Valor = decimal.Parse(txValor.Text);
+            produto.Tipo = (char)(EnumProdutoTipo)Enum.Parse(typeof(EnumProdutoTipo), listBoxTipo.Text);
+            produto.ML = listBoxTamanho.Text;
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            produto = ObterProduto();
+            ObterProduto();
         }
     }
 }

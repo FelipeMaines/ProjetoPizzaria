@@ -19,6 +19,8 @@ namespace ProjetoPizzaria.ModuloProduto
         {
             this.repositorioProdutoOrm = repositorioProdutoOrm;
             tabelaProduto = new TabelaProduto();
+
+            CarregarItens();
         }
 
         public override string ToolTipInserir => "Inserir Produto";
@@ -38,7 +40,9 @@ namespace ProjetoPizzaria.ModuloProduto
 
             var produto = repositorioProdutoOrm.SelecionarPorId(id);
 
-            var telaProduto = new TelaProdutoForm(produto);
+            var telaProduto = new TelaProdutoForm();
+
+            telaProduto.SetarTela(produto);
 
             var resultado = telaProduto.ShowDialog();
 
@@ -69,6 +73,8 @@ namespace ProjetoPizzaria.ModuloProduto
         public override void Inserir()
         {
             var telaProduto = new TelaProdutoForm();
+
+            telaProduto.SetarTela(new Produto());
 
             var resultado = telaProduto.ShowDialog();
 

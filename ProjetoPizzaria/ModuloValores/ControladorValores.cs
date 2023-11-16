@@ -18,6 +18,8 @@ namespace ProjetoPizzaria.ModuloValores
         {
             this.repositorioValorOrm = repositorioValorOrm;
             this.tabelaValores = new TabelaValores();
+
+            CarregarItens();
         }
 
         public override string ToolTipInserir => "Cadastrar Valores";
@@ -39,7 +41,9 @@ namespace ProjetoPizzaria.ModuloValores
 
             var valor = repositorioValorOrm.SelecionarPorId(id);
 
-            var telaValor = new TelaValorForm(valor);
+            var telaValor = new TelaValorForm();
+
+            telaValor.SetarTela(valor);
 
             var result = telaValor.ShowDialog();
 
@@ -70,6 +74,8 @@ namespace ProjetoPizzaria.ModuloValores
         public override void Inserir()
         {
             TelaValorForm telaValoresForm = new TelaValorForm();
+
+            telaValoresForm.SetarTela(new Valor());
 
             var result = telaValoresForm.ShowDialog();
 

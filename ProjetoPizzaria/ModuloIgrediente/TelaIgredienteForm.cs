@@ -49,23 +49,24 @@ namespace ProjetoPizzaria.ModuloIgrediente
             txNome.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
-        public Ingrediente PegarIgrendiente(bool edicao = false)
+        public void PegarIgrendiente(bool edicao = false)
         {
             string nome = txNome.Text;
 
-            if(!edicao)
-                return new Ingrediente(nome);
+            if (!edicao)
+                igrediente.nome = nome;
 
             else
             {
                 Guid id = Guid.Parse(txId.Text);
-                return new Ingrediente(nome, id);
+                igrediente.id = id;
+                igrediente.nome = nome;
             }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            igrediente = PegarIgrendiente();
+            PegarIgrendiente();
         }
 
         private void SetarTela()

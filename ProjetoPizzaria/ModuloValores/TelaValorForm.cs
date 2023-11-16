@@ -26,9 +26,14 @@ namespace ProjetoPizzaria.ModuloValores
 
         }
 
-        public TelaValorForm(Valor valor) : this()
+        public void SetarTela(Valor valor)
         {
             this.valor = valor;
+            listBoxTamanho.Text = EnumExtensions.GetDescription((EnumValorTamanho)char.Parse(valor.Tamanho.ToString()));
+            listBoxCategoria.Text = EnumExtensions.GetDescription((EnumSaborCategoria)char.Parse(valor.Categoria.ToString()));
+            txValor.Text = valor.ValorPizza.ToString();
+            txValorBorda.Text = valor.ValorBorda.ToString();
+            txId.Text = valor.id.ToString();
         }
 
         private void CarregaEnumListBox()
@@ -58,20 +63,19 @@ namespace ProjetoPizzaria.ModuloValores
             listBoxCategoria.Leave += new EventHandler(Funcoes.CampoEventoLeave!);
         }
 
-        public Valor ObterValor()
+        public void ObterValor()
         {
-            return new Valor
-            {
-                Tamanho = (char)(EnumValorTamanho)Enum.Parse(typeof(EnumValorTamanho), listBoxTamanho.Text),
-                Categoria = (char)(EnumSaborCategoria)Enum.Parse(typeof(EnumSaborCategoria), listBoxCategoria.Text),
-                ValorPizza = decimal.Parse(txValor.Text),
-                ValorBorda = decimal.Parse(txValorBorda.Text),
-            };
+
+            valor.Tamanho = (char)(EnumValorTamanho)Enum.Parse(typeof(EnumValorTamanho), listBoxTamanho.Text);
+            valor.Categoria = (char)(EnumSaborCategoria)Enum.Parse(typeof(EnumSaborCategoria), listBoxCategoria.Text);
+            valor.ValorPizza = decimal.Parse(txValor.Text);
+            valor.ValorBorda = decimal.Parse(txValorBorda.Text);
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            this.valor = ObterValor();
+            ObterValor();
         }
     }
 }

@@ -9,17 +9,20 @@ using ProjetoPizzaria.Infra.Orm.ModuloCliente;
 using ProjetoPizzaria.Infra.Orm.ModuloEndereco;
 using ProjetoPizzaria.Infra.Orm.ModuloFuncionario;
 using ProjetoPizzaria.Infra.Orm.ModuloProduto;
+using ProjetoPizzaria.Infra.Orm.ModuloSabor;
 using ProjetoPizzaria.ModuloCep;
 using ProjetoPizzaria.ModuloCliente;
 using ProjetoPizzaria.ModuloFuncionario;
 using ProjetoPizzaria.ModuloIgrediente;
 using ProjetoPizzaria.ModuloProduto;
+using ProjetoPizzaria.ModuloSabor;
 using ProjetoPizzaria.ModuloValores;
 using ProjetoPizzariaDominio.ModuloCliente;
 using ProjetoPizzariaDominio.ModuloEndereco;
 using ProjetoPizzariaDominio.ModuloFuncionario;
 using ProjetoPizzariaDominio.ModuloIgrediente;
 using ProjetoPizzariaDominio.ModuloProduto;
+using ProjetoPizzariaDominio.ModuloSabor;
 using ProjetoPizzariaDominio.ModuloValor;
 using System;
 using System.Collections.Generic;
@@ -66,6 +69,9 @@ namespace ProjetoPizzaria.Compartilhado.Ioc
 
             servicos.AddTransient<ControladorProduto>();
             servicos.AddTransient<IRepositorioProdutoOrm, RepositorioProdutoOrm>();
+
+            servicos.AddTransient<ControladorSabores>();
+            servicos.AddTransient<IRepositorioSaborOrm, RepositorioSaborOrm>();
 
             container = servicos.BuildServiceProvider();
 

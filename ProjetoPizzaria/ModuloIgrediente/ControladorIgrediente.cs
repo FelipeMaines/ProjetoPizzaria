@@ -42,7 +42,7 @@ namespace ProjetoPizzaria.ModuloIgrediente
 
             if(telaIgrediente.ShowDialog() == DialogResult.OK)
             {
-                repositorioIgrediente.Editar(telaIgrediente.PegarIgrendiente(true));
+                repositorioIgrediente.Editar(telaIgrediente.igrediente);
             }
 
             tabelaIgredientes.AtualizarRegistros(repositorioIgrediente.SelecionarTodos());
